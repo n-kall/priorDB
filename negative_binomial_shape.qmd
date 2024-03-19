@@ -1,0 +1,7 @@
+---
+title: Weakly informative prior for shape
+---
+
+$$
+\phi \sim \text{InvGamma}(0.4, 0.3)
+$$

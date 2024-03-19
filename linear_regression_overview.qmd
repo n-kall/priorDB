@@ -1,0 +1,24 @@
+---
+title: Linear regression overview
+---
+
+Model:
+
+$$
+y_i \sim \text{normal}(\mu_i, \sigma)
+$$
+
+$$
+\mu_i = \alpha + \beta \cdot x_i
+$$
+
+Parameters needing priors:
+
+- $\alpha$ (intercept)
+- $\beta$ (predictor weights)
+- $\sigma$ (observation model standard deviation)
+
+Data:
+
+- $y$ (continuous outcome)
+- $x$ (predictors)

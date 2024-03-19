@@ -1,0 +1,16 @@
+---
+title: Minnesota
+---
+
+# Description
+
+Discount previous time points exponentially
+
+# Definition
+
+$$
+\phi_i \sim \text{normal}(0, 1/i)
+$$
+
+
+# Stan code

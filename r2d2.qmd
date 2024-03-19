@@ -1,0 +1,22 @@
+---
+title: R2-D2
+---
+
+The R2-D2 prior [@r2d2] is a global-local shrinkage prior.
+
+
+$$
+\begin{align}
+y_i \sim \\text{normal} (\mu_i,\sigma^2) \\
+\mu_i = \beta \cdot x_i \\
+\beta_i \sim \text{normal}\left(0, \frac{\sigma^2}{\sigma_{y_{t}\mid \theta}^2}\tau^2\psi_i\right) \\
+\tau^2 = \frac{R^2}{1 - R^2} \\
+R^2 \sim \text{beta}(\mu_R,\sigma_R) \\ 
+\sigma^2 \sim p(\sigma^2) \\
+\psi \sim \text{Dirichlet}(\xi_1,\dotsc,\xi_p)
+\end{align}
+$$
+
+
+```{.stan include="stan/r2d2.stan"}
+```

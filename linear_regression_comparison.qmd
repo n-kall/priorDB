@@ -1,0 +1,44 @@
+---
+title: Linear regression prior comparison
+---
+
+# US Crime data set
+
+```{r}
+#| output: false
+#| warning: false
+library(MASS)
+library(brms)
+
+data(UScrime, package = "MASS")
+UScrime[, -c(2, ncol(UScrime))] <- log(UScrime[, -c(2, ncol(UScrime))])
+
+bform <- bf(y ~ M + So + Ed + Po1 + Po2 + LF + M.F + Pop + NW + U1 + U2 + GDP + Ineq + Prob + Time, family = "gaussian")
+
+r2d2_model <- brm(
+  formula = bform,
+  data = UScrime,
+  prior = prior(R2D2()),
+  backend = "cmdstanr",
+  silent = 2,
+  refresh = 0
+)
+
+rhs_model <- brm(
+  formula = bform,
+  data = UScrime,
+  prior = prior(horseshoe()),
+  backend = "cmdstanr",
+  silent = 2,
+  refresh = 0
+)
+```
+
+## LOO-CV comparison
+
+```{r}
+r2d2_model <- add_criterion(r2d2_model, "loo")
+rhs_model <- add_criterion(rhs_model, "loo")
+loo_compare(r2d2_model, rhs_model)
+```
+

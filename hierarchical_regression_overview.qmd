@@ -1,0 +1,15 @@
+---
+title: Hierarchical regression overview
+---
+
+Model:
+
+$$
+y_{ij} \sim \text{normal}(\mu_{ij}, \sigma_{ij})
+$$
+
+$$
+\mu_{ij} = \alpha_j + \beta_j \cdot x_{ij}
+$$
+
+

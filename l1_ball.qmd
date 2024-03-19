@@ -1,0 +1,9 @@
+---
+title: L1 Ball
+---
+
+The L1 Ball prior [@l1_ball] is a spike-and-slab type prior.
+
+
+```{.stan include="stan/l1_ball.stan"}
+```

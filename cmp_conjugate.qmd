@@ -1,0 +1,14 @@
+---
+title: CMP conjugate weakly informative prior
+---
+
+# Description
+
+This is based on [@cmp].
+
+# Definition
+
+# Stan code
+
+```{.stan include="stan/cmp_conjugate.stan"}
+```
