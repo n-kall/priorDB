@@ -1,0 +1,11 @@
+---
+title: Conway-Maxwell-Poisson models
+---
+
+CMP models are models of count data.
+
+Model:
+
+$$
+P(X = x) = \frac{\lambda^x}{(x!)^\nu Z(\lambda, \nu)}
+$$

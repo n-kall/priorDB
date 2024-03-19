@@ -1,0 +1,30 @@
+---
+title: ARR2
+---
+
+## Description
+
+Like the R2-D2 prior [@r2d2] but for autoregression.
+
+## Definition
+
+$$
+\begin{align*}
+\phi_i &\sim \text{normal}\left(0, \frac{\sigma^2}{\sigma_{y}^2}\tau^2\psi_i\right) \\
+\tau^2 &= \frac{R^2}{1 - R^2} \\
+R^2 &\sim \text{beta}(\mu_R,\sigma_R) \\ 
+\psi &\sim \text{Dirichlet}(\xi_1,\dotsc,\xi_p) \\
+\sigma^2 &\sim p(\sigma^2) \\
+\end{align*}
+$$
+
+## Things to specify
+
+- Prior on $\sigma^2$
+- $\xi_1 \dotsc \xi_p$ (concentration parameters corresponding to lag coefficients)
+- $\mu_R$ and $\sigma_R$ (location and precision of $R^2$ prior
+
+## Stan code
+
+```{.stan include="stan/arr2.stan"}
+```

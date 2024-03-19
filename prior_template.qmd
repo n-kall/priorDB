@@ -1,0 +1,14 @@
+---
+Title: Prior template
+---
+
+# Description
+
+
+# Definition
+
+
+# Things to specify
+
+
+# Stan code
