@@ -1,10 +1,6 @@
 functions {
   real signum(real x) {
-    if (x >= 0) {
-      return (1);
-    } else {
-      return (-1);
-    }
+    return (x >= 0) ? 1 : -1;
   }
 
   vector L1ball_project(vector beta, real r, int p) {
@@ -34,19 +30,19 @@ functions {
       // get the index corresponding to the smallest abs beta above the
       // threshold
       for (i in 1:p) {
-	mu_tilde[i] = mu[i] / i; // threshold
-	if (sorted_beta_abs[i] < mu_tilde[i]) {
-	  c = i - 1;
-	  break;
-	}
+        mu_tilde[i] = mu[i] / i; // threshold
+        if (sorted_beta_abs[i] < mu_tilde[i]) {
+          c = i - 1;
+          break;
+        }
       }
 
       // do the projection and keep track of the sign
       for (i in 1:p) {
-	  theta[i] = signum(beta[i]) * max({beta_abs[i] - mu_tilde[c], 0});
-	}
+        theta[i] = signum(beta[i]) * max({beta_abs[i] - mu_tilde[c], 0});
+      }
     }
-    return(theta);
+    return theta;
   }
 }
 
@@ -72,6 +68,8 @@ data {
 
 transformed data {
   matrix[(T-p), p] Y_matrix;
+  vector[T-p] Y_lagged = Y[(p+1):T]; // Subset only once for efficiency
+
   for(t in 1:(T-p)) {
     for(i in 1:p) {
       Y_matrix[t, p-i+1] = Y[t + (i-1)];
@@ -80,14 +78,11 @@ transformed data {
 }
 
 parameters {
-
   real<lower=0> r;
   vector[p] phi_o; // original phi
   real alpha; // intercept
   real<lower=0> sigma;
-
 }
-
 
 transformed parameters {
   vector[p] phi; // projected phi
@@ -95,7 +90,6 @@ transformed parameters {
 }
 
 model {
-
   // priors
   alpha ~ normal(alpha_mean, alpha_sd);
   phi_o ~ normal(0, phi_sd);
@@ -103,5 +97,5 @@ model {
   r ~ exponential(r_alpha);
 
   // likelihood
-  Y[(p+1):T] ~ normal_id_glm(Y_matrix, alpha, phi, sigma);
+  Y_lagged ~ normal_id_glm(Y_matrix, alpha, phi, sigma);
 }
