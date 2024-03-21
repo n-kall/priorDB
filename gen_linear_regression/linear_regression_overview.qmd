@@ -22,7 +22,7 @@ Data:
 - $y$ (continuous outcome)
 - $x$ (predictors)
 
-See also:
+### See also:
 
 - [Stan manual](https://mc-stan.org/docs/functions-reference/unbounded_continuous_distributions.html#normal-distribution)
 - [Distribution explorer](https://distribution-explorer.github.io/continuous/normal.html)
