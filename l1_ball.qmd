@@ -23,9 +23,9 @@ The prior is:
 $$
 \begin{align}
 \beta &= \text{argmin}_{\|x\|_1 \leq r} \|\beta_{\text{unprojected}} - x\|^2_2 \\
-\beta_{unprojected} \sim \text{normal}(0, 1) \\
-\sigma &\sim p(\sigma)
-\r &\sim p(r)
+\beta_{unprojected} &\sim \text{normal}(0, 1) \\
+\sigma &\sim p(\sigma) \\
+r &\sim p(r)
 \end{align}
 $$
 
