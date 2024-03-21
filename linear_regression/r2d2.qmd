@@ -1,6 +1,5 @@
 ---
 title: R2-D2
-bibliography: references.bib
 ---
 
 # Description
@@ -37,5 +36,5 @@ Priors on $\alpha$ and $\sigma$. Hyperparameters $\xi$, $\mu_{R^2}$, $\phi_{R^2}
 
 # Stan code
 
-```{.stan include="stan/r2d2.stan"}
+```{.stan include="../stan/r2d2.stan"}
 ```

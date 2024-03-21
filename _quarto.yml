@@ -1,32 +1,28 @@
 project:
   type: website
-
+  execute-dir: project
 website:
   title: "priorDB"
   navbar:
     left:
       - text: "Linear regression"
         menu:
-          - linear_regression_overview.qmd
-          - linear_regression_comparison.qmd
-          - scaled_default.qmd
-          - l1_ball.qmd
-          - r2d2.qmd
-          - rhs.qmd
+          - linear_regression/linear_regression_overview.qmd
+          - linear_regression/linear_regression_comparison.qmd
+          - linear_regression/scaled_default.qmd
+          - linear_regression/l1_ball.qmd
+          - linear_regression/r2d2.qmd
+          - linear_regression/rhs.qmd
       - text: "Hierarchical linear regression"
         menu:
-          - hierarchical_regression_overview.qmd
-          - r2d2m2.qmd
-      - text: "Logistic regression"
-        menu:
-          - logistic_regression_overview.qmd
-          - logistic_default.qmd
+          - hierarchical_regression/hierarchical_regression_overview.qmd
+          - hierarhical_regression/r2d2m2.qmd
       - text: "Autoregression"
         menu:
-          - autoregression_overview.qmd
-          - autoregression_comparison.qmd
-          - minnesota.qmd
-          - arr2.qmd
+          - autoregression/autoregression_overview.qmd
+          - autoregression/autoregression_comparison.qmd
+          - autoregression/minnesota.qmd
+          - autoregression/arr2.qmd
       - text: "Negative binomial"
         menu:
           - negative_binomial_overview.qmd
@@ -47,3 +43,6 @@ format:
 
 filters:
   - include-code-files
+
+
+bibliography: references.bib

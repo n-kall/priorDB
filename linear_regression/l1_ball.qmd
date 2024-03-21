@@ -1,6 +1,5 @@
 ---
 title: L1 Ball
-bibliography: references.bib
 ---
 
 # Description
@@ -35,5 +34,5 @@ Prior on the radius, prior on $\sigma$
 
 # Stan code
 
-```{.stan include="stan/l1_ball.stan"}
+```{.stan include="../stan/l1_ball.stan"}
 ```
