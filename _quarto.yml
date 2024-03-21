@@ -3,36 +3,36 @@ project:
   execute-dir: project
 website:
   title: "priorDB"
-  navbar:
-    left:
-      - text: "Linear regression"
-        menu:
-          - linear_regression/linear_regression_overview.qmd
-          - linear_regression/linear_regression_comparison.qmd
-          - linear_regression/scaled_default.qmd
-          - linear_regression/l1_ball.qmd
-          - linear_regression/r2d2.qmd
-          - linear_regression/rhs.qmd
-      - text: "Hierarchical linear regression"
-        menu:
-          - hierarchical_regression/hierarchical_regression_overview.qmd
-          - hierarhical_regression/r2d2m2.qmd
-      - text: "Autoregression"
-        menu:
+  sidebar:
+    contents:
+      - section: "(Generalised) linear regression"
+        contents:
+          - section: "Normal (Gaussian)"
+            contents:
+              - title: "Overview"
+                file: linear_regression/linear_regression_overview.qmd
+              - linear_regression/r2d2.qmd
+              - linear_regression/rhs.qmd
+              - linear_regression/l1_ball.qmd
+          - section: "Bernoulli (logistic)"
+            contents:
+          - section: "Student-t"
+          - section: "Negative binomial"
+            contents:
+              - title: "Overview"
+                file: negative_binomial_overview.qmd
+              - negative_binomial_shape.qmd
+      - section: "Autoregression"
+        contents:
           - autoregression/autoregression_overview.qmd
-          - autoregression/autoregression_comparison.qmd
-          - autoregression/minnesota.qmd
           - autoregression/arr2.qmd
-      - text: "Negative binomial"
-        menu:
-          - negative_binomial_overview.qmd
-          - negative_binomial_shape.qmd
-      - text: "Conway-Maxwell-Poisson"
-        menu:
-          - cmp_overview.qmd
-          - cmp_conjugate.qmd
+          - autoregression/minnesota.qmd
 
-          
+      - section: "Hierarchical regression"
+        contents:
+          - hierarchical_regression/hierarchical_regression_overview.qmd
+          - hierarchical_regression/r2d2m2.qmd
+        
 format:
   html:
     theme: cosmo
@@ -46,3 +46,4 @@ filters:
 
 
 bibliography: references.bib
+
