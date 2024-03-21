@@ -2,3 +2,9 @@
 title: Negative-binomial models
 ---
 
+
+
+### See also
+
+- [Stan manual](https://mc-stan.org/docs/functions-reference/unbounded_discrete_distributions.html#negative-binomial-distribution)
+- [Distribution explorer](https://distribution-explorer.github.io/discrete/negative_binomial.html)
