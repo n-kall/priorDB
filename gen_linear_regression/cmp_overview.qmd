@@ -9,3 +9,8 @@ Model:
 $$
 P(X = x) = \frac{\lambda^x}{(x!)^\nu Z(\lambda, \nu)}
 $$
+
+
+See also:
+
+- [Wikipedia](https://en.wikipedia.org/wiki/Conway%E2%80%93Maxwell%E2%80%93Poisson_distribution)
