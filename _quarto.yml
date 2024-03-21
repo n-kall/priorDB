@@ -4,24 +4,28 @@ project:
 website:
   title: "priorDB"
   sidebar:
+    collapse-level: 1
     contents:
       - section: "(Generalised) linear regression"
         contents:
           - section: "Normal (Gaussian)"
             contents:
-              - title: "Overview"
-                file: linear_regression/linear_regression_overview.qmd
-              - linear_regression/r2d2.qmd
-              - linear_regression/rhs.qmd
-              - linear_regression/l1_ball.qmd
+              - gen_linear_regression/linear_regression_overview.qmd
+              - gen_linear_regression/r2d2.qmd
+              - gen_linear_regression/rhs.qmd
+              - gen_linear_regression/l1_ball.qmd
           - section: "Bernoulli (logistic)"
             contents:
           - section: "Student-t"
           - section: "Negative binomial"
             contents:
-              - title: "Overview"
-                file: negative_binomial_overview.qmd
-              - negative_binomial_shape.qmd
+              - gen_linear_regression/negative_binomial_overview.qmd
+              - gen_linear_regression/negative_binomial_shape.qmd
+          - section: "Conway-Maxwell-Poisson"
+            contents:
+              - gen_linear_regression/cmp_overview.qmd
+              - gen_linear_regression/cmp_conjugate.qmd
+              
       - section: "Autoregression"
         contents:
           - autoregression/autoregression_overview.qmd
