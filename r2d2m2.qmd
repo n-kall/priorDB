@@ -1,10 +1,11 @@
 ---
 title: R2D2M2
+bibliography: references.bib
 ---
 
 # Description
 
-An extension of the R2D2 prior for multi-level models.
+An extension of the R2D2 prior for multi-level models [@r2d2m2].
 
 # Definition
 
