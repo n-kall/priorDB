@@ -6,7 +6,7 @@ website:
   sidebar:
     collapse-level: 1
     contents:
-      - section: "(Generalised) linear regression"
+      - section: "(Generalised) linear models"
         contents:
           - section: "Normal (Gaussian)"
             contents:
@@ -16,7 +16,10 @@ website:
               - gen_linear_regression/l1_ball.qmd
           - section: "Bernoulli (logistic)"
             contents:
+              - gen_linear_regression/bernoulli_overview.qmd
           - section: "Student-t"
+            contents:
+              - gen_linear_regression/student_t.qmd
           - section: "Negative binomial"
             contents:
               - gen_linear_regression/negative_binomial_overview.qmd

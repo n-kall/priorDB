@@ -5,11 +5,9 @@ title: Linear regression overview
 Model:
 
 $$
-y_i \sim \text{normal}(\mu_i, \sigma)
-$$
-
-$$
-\mu_i = \alpha + \beta \cdot x_i
+\begin{align}
+y_i &\sim \text{normal}(\mu, \sigma) \\
+\mu_i &= \alpha + \beta \cdot x_i
 $$
 
 Parameters needing priors:
@@ -17,8 +15,14 @@ Parameters needing priors:
 - $\alpha$ (intercept)
 - $\beta$ (predictor weights)
 - $\sigma$ (observation model standard deviation)
+servation modelcontinuousard deviation)
 
 Data:
 
 - $y$ (continuous outcome)
 - $x$ (predictors)
+
+See also:
+
+- [Stan manual](https://mc-stan.org/docs/functions-reference/unbounded_continuous_distributions.html#normal-distribution)
+- [Distribution explorer](https://distribution-explorer.github.io/continuous/normal.html)
