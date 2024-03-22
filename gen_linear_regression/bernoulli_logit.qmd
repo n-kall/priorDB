@@ -1,0 +1,35 @@
+---
+title: Bernoulli-logit (logistic) model (binary outcome)
+---
+
+Model:
+
+$$
+\begin{align}
+y_i \sim \text{Bernoulli}(\text{logit}^{-1}(\mu_i)) \\
+\mu_i = \alpha + \beta \cdot x_i
+\end{align}
+$$
+
+Parameters needing priors:
+
+-   $\alpha$ (intercept)
+-   $\beta$ (predictor weights)
+
+Data:
+
+-   $y$ (binary outcome)
+-   $x$ (predictors)
+
+### Prior on $\alpha$
+
+[@boonstraDefaultPriorsIntercept2019a]
+
+### Prior on $\beta$
+
+[@ghoshDefaultBayesianPriors2003]
+
+### See also:
+
+-   [Stan manual](https://mc-stan.org/docs/functions-reference/binary_distributions.html#bernoulli-logit-distribution)
+-   [Distribution explorer](https://distribution-explorer.github.io/discrete/bernoulli.html)

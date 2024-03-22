@@ -10,6 +10,17 @@ $$
 P(X = x) = \frac{\lambda^x}{(x!)^\nu Z(\lambda, \nu)}
 $$
 
+# Description
+
+This is based on [@meyerNonWeaklyInformativePriors2023].
+
+# Definition
+
+# Stan code
+
+```{.stan include="stan/cmp_conjugate.stan"}
+```
+
 
 See also:
 

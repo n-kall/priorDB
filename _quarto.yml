@@ -8,27 +8,24 @@ website:
     contents:
       - section: "(Generalised) linear models"
         contents:
-          - section: "Normal (Gaussian)"
+          - gen_linear_regression/gen_linear_regression_overview.qmd
+          - section: "Predictor weights"
             contents:
-              - gen_linear_regression/linear_regression_overview.qmd
-              - gen_linear_regression/r2d2.qmd
-              - gen_linear_regression/rhs.qmd
-              - gen_linear_regression/l1_ball.qmd
-          - section: "Bernoulli (logistic)"
+            - gen_linear_regression/r2d2.qmd
+            - gen_linear_regression/rhs.qmd
+            - gen_linear_regression/l1_ball.qmd
+          - section: "Unbounded continuous outcomes"
             contents:
-              - gen_linear_regression/bernoulli_overview.qmd
-          - section: "Student-t"
+            - gen_linear_regression/normal_overview.qmd
+            - gen_linear_regression/student_t.qmd
+          - section: "Binary outcome"
             contents:
-              - gen_linear_regression/student_t.qmd
-          - section: "Negative binomial"
+            - gen_linear_regression/bernoulli_overview.qmd
+          - section: "Count outcome"
             contents:
-              - gen_linear_regression/negative_binomial_overview.qmd
-              - gen_linear_regression/negative_binomial_shape.qmd
-          - section: "Conway-Maxwell-Poisson"
-            contents:
-              - gen_linear_regression/cmp_overview.qmd
-              - gen_linear_regression/cmp_conjugate.qmd
-              
+            - gen_linear_regression/poisson_overview.qmd
+            - gen_linear_regression/negative_binomial_overview.qmd
+            - gen_linear_regression/cmp_overview.qmd    
       - section: "Autoregression"
         contents:
           - autoregression/autoregression_overview.qmd
@@ -53,4 +50,3 @@ filters:
 
 
 bibliography: references.bib
-

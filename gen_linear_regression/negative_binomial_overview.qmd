@@ -1,7 +1,13 @@
 ---
-title: Negative-binomial models
+title: Negative-binomial model
 ---
 
+
+[@vehtariDefaultPriorNegativebinomial2024]
+
+$$
+\phi \sim \text{InvGamma}(0.4, 0.3)
+$$
 
 
 ### See also

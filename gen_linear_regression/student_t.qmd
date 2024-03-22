@@ -1,0 +1,45 @@
+---
+title: Student-t model (continuous outcome)
+---
+
+Also called robust regression.
+
+Model:
+
+$$
+\begin{align}
+y_i \sim \text{StudentT}(\nu, \mu_i, \sigma) \\
+\mu_i = \alpha + \beta \cdot x_i
+\end{align}
+$$
+
+Parameters needing priors:
+
+- $\alpha$ (intercept)
+- $\beta$ (predictor weights)
+- $\sigma$ (observation model standard deviation)
+- $\nu$ (degrees of freedom)
+
+Data:
+
+- $y$ (continuous outcome)
+- $x$ (predictors)
+
+
+# Gamma prior
+
+Analysed by [@juarezModelBasedClusteringNonGaussian2010].
+
+$$
+\nu \sim \text{gamma}(2, .01)
+$$
+
+# PC prior
+
+[@simpsonPenalisingModelComponent2017]
+
+
+### See also
+
+- [Stan manual](https://mc-stan.org/docs/functions-reference/unbounded_continuous_distributions.html#student-t-distribution)
+- [Distribution explorer](https://distribution-explorer.github.io/continuous/student_t.html)

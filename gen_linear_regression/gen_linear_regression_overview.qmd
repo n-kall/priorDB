@@ -1,0 +1,49 @@
+---
+title: Overview
+---
+
+Generalised linear regression can be used for predicting outcomes from
+predictors. A linear predictor term $\eta$ based on the predictors is
+passed through an invere link function, $g^{-1}$, and then used in the
+observation model, $f$. The observation model may have other
+parameters $\theta$ which are not necessarily determined through the
+predictors.
+
+$$
+\begin{align}
+y_i &\sim f(g^{-1}(\eta), \theta) \\
+\eta_i &= \alpha + \beta x_i
+\end{align}
+$$
+
+Depending on the choice of $f$, different link functions $g$ are
+used. For example, if $f$ is the $\text{normal}$ distribution, $g$ is
+the identity function. If $f$ is the $\text{Bernoulli}$ distribution,
+$g$ is most commonly the logit function.
+
+Possible 
+
+- Student
+- bernoulli
+- beta binomial
+- binomial
+- poisson
+- negative binomial
+- geometric
+- lognormal
+- skew normal
+- exponential
+- weibull
+- frechet
+- gen extreme value
+- exgaussian
+- wiener
+- beta
+- dirichlet
+- logistic normal
+- von mises
+- asymmetrical laplace
+- cox
+- categorical
+- multinomial
+- cumulative

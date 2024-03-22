@@ -4,33 +4,22 @@ title: L1 Ball
 
 # Description
 
-The L1 Ball prior [@l1_ball] is a spike-and-slab type prior.
+The L1 Ball prior [@xuBayesianInference1ball2024] is a spike-and-slab type prior.
 
 # Definition
-
-For a linear model:
-
-$$
-\begin{align}
-y_i &\sim \text{normal} (\mu_i,\sigma^2) \\
-\mu_i &= \alpha + \beta \cdot x_i
-\end{align}
-$$
-
-The prior is:
 
 $$
 \begin{align}
 \beta &= \text{argmin}_{\|x\|_1 \leq r} \|\beta_{\text{unprojected}} - x\|^2_2 \\
-\beta_{unprojected} &\sim \text{normal}(0, 1) \\
-\sigma &\sim p(\sigma) \\
+\beta_{\text{unprojected}} &\sim p(\beta_{\text{unprojected}}) \\
 r &\sim p(r)
 \end{align}
 $$
 
 # Things to specify
 
-Prior on the radius, prior on $\sigma$
+Prior on the radius of the ball $r$. Prior on the unprojected $\beta$
+coefficients.
 
 # Stan code
 

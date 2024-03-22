@@ -4,7 +4,8 @@ title: R2-D2
 
 # Description
 
-The R2-D2 prior [@r2d2] is a global-local shrinkage prior.
+The R2-D2 prior [@zhangBayesianRegressionUsing2022a] is a global-local shrinkage prior. This has
+been expanded for generalised linear models [@yanchenkoR2D2PriorGeneralized2024].
 
 # Definition
 
@@ -29,6 +30,7 @@ R^2 &\sim \text{beta}(\mu_{R^2},\phi_{R^2}) \\
 \alpha &\sim p(\alpha)
 \end{align}
 $$
+
 
 # Things to specify
 
