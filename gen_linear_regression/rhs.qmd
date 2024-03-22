@@ -2,4 +2,14 @@
 title: Regularised horse shoe
 ---
 
-Global-local shrinkage prior.
+Global-local shrinkage prior. [@piironenSparsityInformationRegularization2017]
+
+
+
+$$
+\begin{align}
+     \beta_i \;&\sim \text{normal}(0, \tau^2\tilde{\lambda}_j^2) \\
+     \tilde{\lambda}_j^2 \;&= \frac{c^2\lambda_j^2}{c^2 + \tau^2\lambda_j^2} \\
+     \lambda_j \;&\sim \text{Cauchy}^+(0,1) \\
+\end{align}
+$$

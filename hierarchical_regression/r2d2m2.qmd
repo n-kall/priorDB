@@ -4,7 +4,7 @@ title: R2D2M2
 
 # Description
 
-An extension of the R2D2 prior for multi-level models [@r2d2m2].
+An extension of the R2D2 prior for multi-level models [@aguilarIntuitiveJointPriors2023].
 
 # Definition
 

@@ -9,7 +9,12 @@ Discount previous time points exponentially
 # Definition
 
 $$
-\phi_i \sim \text{normal}(0, 1/i)
+\begin{align}
+ y_t &\sim \text{normal}(\mu_t,\sigma^2),\quad t=p+1,\dotsc,T \\
+    \mu_t &= \sum_{i=1}^p\phi_iy_{t-i} + x_t^{\prime}\beta  \\
+    \phi_i &\sim \text{normal}(0, \kappa_1 / i^2), \quad \beta_j \sim N(0,\frac{\sigma_y^2}{\sigma_{x_j}^2}\kappa_2),\quad j=1,\dotsc,m \\
+    \kappa_1 & \sim \text{gamma}(1,1/0.04), \quad \kappa_2\sim \text{gamma}(1,1/0.04^2), \quad \sigma^2\sim p(\sigma^2)
+\end{align}
 $$
 
 
