@@ -9,23 +9,23 @@ website:
       - section: "(Generalised) linear models"
         contents:
           - gen_linear_regression/gen_linear_regression_overview.qmd
-          - section: "Predictor weights"
+          - section: "Sparsity priors"
             contents:
             - gen_linear_regression/r2d2.qmd
             - gen_linear_regression/rhs.qmd
             - gen_linear_regression/l1_ball.qmd
-          - section: "Unbounded continuous outcomes"
+          - section: "Unbounded continuous outcome"
             contents:
-            - gen_linear_regression/normal_overview.qmd
+            - gen_linear_regression/normal.qmd
             - gen_linear_regression/student_t.qmd
           - section: "Binary outcome"
             contents:
-            - gen_linear_regression/bernoulli_overview.qmd
+            - gen_linear_regression/bernoulli_logit.qmd
           - section: "Count outcome"
             contents:
-            - gen_linear_regression/poisson_overview.qmd
-            - gen_linear_regression/negative_binomial_overview.qmd
-            - gen_linear_regression/cmp_overview.qmd    
+            - gen_linear_regression/poisson.qmd
+            - gen_linear_regression/negative_binomial.qmd
+            - gen_linear_regression/conway_maxwell_poisson.qmd    
       - section: "Autoregression"
         contents:
           - autoregression/autoregression_overview.qmd
