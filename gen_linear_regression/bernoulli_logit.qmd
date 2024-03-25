@@ -1,5 +1,5 @@
 ---
-title: Bernoulli-logit (logistic) model (binary outcome)
+title: Bernoulli-logit (logistic) model
 ---
 
 Model:
@@ -25,7 +25,48 @@ Data:
 
 [@boonstraDefaultPriorsIntercept2019a]
 
+Exponential power distribution.
+
+$$
+p(\alpha) \propto \exp{-\abs{\alpha / \sqrt(2) \sigma}^\gamma}
+$$
+
+
+```stan
+target += -fabs((alpha) / (sqrt(2.0) * alpha_scale))^(alpha_power);
+```
+
+$\sigma$ (`alpha_scale` in the Stan code) should be chosen by:
+
+1. choose constant $0 \lt q \lt 1$ which is prior mass outside extreme
+   boundaries. e.g. 0.01
+
+2. calculate $s_n = \exp{-1 / (2n)}$, where $n$ is number of
+   observations
+
+3. select \sigma = \sigma_n such that $P(1 - s_n <
+   \text{logit}^{-1}(\alpha) < s_n | \sigma = \sigma_n) = 1 - q.
+
+This can be done with the following R functions:
+
+```r
+ep_sigma <- function(gamma, n, q) {
+
+  s_n <- exp(-1 / (2 * n))
+
+  root <- uniroot(
+    \(sigma) pgamma(q = (qlogis(s_n) / (sqrt(2) * sigma))^gamma,
+      shape = 1 / gamma, lower.tail = FALSE) - q,
+    interval = c(0, 10))
+
+  root$root
+}
+```
+
+
 ### Prior on $\beta$
+
+Sparsity prior (RHS)
 
 [@ghoshDefaultBayesianPriors2003]
 
