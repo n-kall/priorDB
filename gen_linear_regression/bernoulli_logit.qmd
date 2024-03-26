@@ -33,7 +33,7 @@ $$
 
 
 ```stan
-target += -fabs((alpha) / (sqrt(2.0) * alpha_scale))^(alpha_power);
+target += -abs((alpha) / (sqrt(2.0) * alpha_scale))^(alpha_power);
 ```
 
 $\sigma$ (`alpha_scale` in the Stan code) should be chosen by:
