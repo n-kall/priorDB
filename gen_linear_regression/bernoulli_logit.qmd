@@ -63,6 +63,29 @@ ep_sigma <- function(gamma, n, q) {
 }
 ```
 
+#### Logistic prior
+
+$$
+
+\alpha \sim Logistic(\sigma_n)
+
+$$
+
+
+```r
+logis_sigma <- function(n, q) {
+
+  s_n <- exp(-1 / (2 * n))
+
+  root <- uniroot(
+    \(sigma) plogis(q = qlogis(s_n), scale = sigma, lower.tail = FALSE) - q/2,
+    interval = c(0.1, 10))
+
+  root$root
+}
+```
+
+
 
 ### Prior on $\beta$
 
