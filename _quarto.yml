@@ -9,15 +9,15 @@ website:
       - section: "(Generalised) linear models"
         contents:
           - gen_linear_regression/gen_linear_regression_overview.qmd
-          - section: "Sparsity priors"
+          - section: "Continuous outcome"
             contents:
-            - gen_linear_regression/r2d2.qmd
-            - gen_linear_regression/rhs.qmd
-            - gen_linear_regression/l1_ball.qmd
-          - section: "Unbounded continuous outcome"
-            contents:
-            - gen_linear_regression/normal.qmd
-            - gen_linear_regression/student_t.qmd
+              - section: "Unbounded"
+                contents:
+                  - gen_linear_regression/normal.qmd
+                  - gen_linear_regression/student_t.qmd
+              - section: "Bounded"
+                contents:
+                - gen_linear_regression/beta.qmd
           - section: "Binary outcome"
             contents:
             - gen_linear_regression/bernoulli_logit.qmd
@@ -25,7 +25,12 @@ website:
             contents:
             - gen_linear_regression/poisson.qmd
             - gen_linear_regression/negative_binomial.qmd
-            - gen_linear_regression/conway_maxwell_poisson.qmd    
+            - gen_linear_regression/conway_maxwell_poisson.qmd
+          - section: "Sparsity priors"
+            contents:
+            - gen_linear_regression/r2d2.qmd
+            - gen_linear_regression/rhs.qmd
+            - gen_linear_regression/l1_ball.qmd
       - section: "Autoregression"
         contents:
           - autoregression/autoregression_overview.qmd
