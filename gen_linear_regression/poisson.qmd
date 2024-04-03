@@ -1,5 +1,24 @@
 ---
-title: Poisson model (count outcome)
+title: Poisson model
 ---
+
+Model:
+
+$$
+\begin{align}
+y_i \sim \text{Poisson}(\exp{\mu_i}) \\
+\mu_i = \alpha + \beta \cdot x_i
+\end{align}
+$$
+
+Parameters needing priors:
+
+- $\alpha$ (intercept)
+- $\beta$ (predictor weights)
+
+Data:
+
+- $y$ (continuous outcome)
+- $x$ (predictors)
 
 
