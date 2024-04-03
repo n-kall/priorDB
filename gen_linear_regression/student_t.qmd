@@ -1,5 +1,5 @@
 ---
-title: Student-t model (continuous outcome)
+title: Student-t model
 ---
 
 Also called robust regression.
