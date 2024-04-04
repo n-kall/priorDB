@@ -12,8 +12,8 @@ For binary outcome $y$ and predictors $x$, the model is:
 
 $$
 \begin{align}
-y_i \sim \text{Bernoulli}(\text{logit}^{-1}(\eta_i)) \\
-\eta_i = \alpha + \beta \cdot x_i
+y_i &\sim \text{Bernoulli}(\text{logit}^{-1}(\eta_i)) \\
+\eta_i &= \alpha + \beta \cdot x_i
 \end{align}
 $$
 
