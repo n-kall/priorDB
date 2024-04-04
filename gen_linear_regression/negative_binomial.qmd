@@ -36,8 +36,11 @@ $$
 
 ### Penalized complexity prior
 
+[@SimpsonPenalisingModelComponent2017]
 
 ## See also
 
 - [Stan manual](https://mc-stan.org/docs/functions-reference/unbounded_discrete_distributions.html#negative-binomial-distribution)
 - [Distribution explorer](https://distribution-explorer.github.io/discrete/negative_binomial.html)
+- [Aki Vehtari's case study](https://users.aalto.fi/~ave/modelselection/roaches.html#3_Negative_binomial_model)
+- [bambi example](https://bambinos.github.io/bambi/notebooks/negative_binomial.html)
