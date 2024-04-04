@@ -24,11 +24,10 @@ website:
           - section: "Discrete outcome"
             contents:
               - section: "Unbounded"
+              - section: "Bounded"
                 contents:
                   - gen_linear_regression/poisson.qmd
                   - gen_linear_regression/negative_binomial.qmd
-              - section: "Bounded"
-                contents:
                   - gen_linear_regression/binomial.qmd
                   - gen_linear_regression/categorical.qmd
                   - gen_linear_regression/ordered.qmd
