@@ -21,29 +21,3 @@ used. For example, if $f$ is the $\text{normal}$ distribution, $g$ is
 the identity function. If $f$ is the $\text{Bernoulli}$ distribution,
 $g$ is most commonly the logit function.
 
-Possible 
-
-- Student
-- bernoulli
-- beta binomial
-- binomial
-- poisson
-- negative binomial
-- geometric
-- lognormal
-- skew normal
-- exponential
-- weibull
-- frechet
-- gen extreme value
-- exgaussian
-- wiener
-- beta
-- dirichlet
-- logistic normal
-- von mises
-- asymmetrical laplace
-- cox
-- categorical
-- multinomial
-- cumulative

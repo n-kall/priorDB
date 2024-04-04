@@ -2,22 +2,29 @@
 title: Normal model
 ---
 
-Model:
+## Description
+
+Linear regression with normally distributed residuals.
+
+## Definition
+
+For continuous unbounded outcome $y$ and predictors $x$, the model is:
 
 $$
 \begin{align}
-y_i \sim \text{normal}(\mu_i, \sigma) \\
-\mu_i = \alpha + \beta \cdot x_i
+y_i \sim \text{normal}(\eta_i, \sigma) \\
+\eta_i = \alpha + \beta \cdot x_i
 \end{align}
 $$
 
-Parameters needing priors:
+## Parameters needing priors
 
-- $\alpha$ (intercept)
+- \alpha$ (intercept)
 - $\beta$ (predictor weights)
-- $\sigma$ (observation model standard deviation)
+- $\sigma$ (residual standard deviation)
 
-Data:
+## Prior for $\alpha$
 
-- $y$ (continuous outcome)
-- $x$ (predictors)
+## Prior for $\beta$
+
+## Prior for $\sigma$

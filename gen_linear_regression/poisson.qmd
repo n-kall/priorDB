@@ -2,23 +2,23 @@
 title: Poisson model
 ---
 
-Model:
+## Description
+
+Regression with Poisson model is a simple model used for count data.
+
+## Definition
+
+For discrete positive outcome $y$ and predictors $x$, the model is:
 
 $$
 \begin{align}
-y_i \sim \text{Poisson}(\exp{\mu_i}) \\
-\mu_i = \alpha + \beta \cdot x_i
+y_i \sim \text{Poisson}(\exp{\eta_i}) \\
+\eta_i = \alpha + \beta \cdot x_i
 \end{align}
 $$
 
-Parameters needing priors:
+## Parameters needing priors:
 
 - $\alpha$ (intercept)
 - $\beta$ (predictor weights)
-
-Data:
-
-- $y$ (continuous outcome)
-- $x$ (predictors)
-
 

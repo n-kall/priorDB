@@ -2,6 +2,31 @@
 title: Negative-binomial model
 ---
 
+## Description
+
+The negative-binomial model is a model of counts that allows for
+overdispersion.
+
+## Definition
+
+For discrete positive outcome $y$ and predictors $x$, the model is:
+
+$$
+\begin{align}
+y_i \sim \text{NegBinomial}(\exp{(\eta_i)}, \phi) \\
+\eta_i = \alpha + \beta \cdot x_i
+\end{align}
+$$
+
+## Parameters needing priors
+
+- $\alpha$ (intercept)
+- $\beta$ (predictor weights)
+- $\phi$ (overdispersion parameter)
+
+## Prior for $\phi$
+
+### Weakly informative inverse gamma prior
 
 [@vehtariDefaultPriorNegativebinomial2024]
 
@@ -9,8 +34,10 @@ $$
 \phi \sim \text{InvGamma}(0.4, 0.3)
 $$
 
+### Penalized complexity prior
 
-### See also
+
+## See also
 
 - [Stan manual](https://mc-stan.org/docs/functions-reference/unbounded_discrete_distributions.html#negative-binomial-distribution)
 - [Distribution explorer](https://distribution-explorer.github.io/discrete/negative_binomial.html)

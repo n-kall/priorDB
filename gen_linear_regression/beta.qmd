@@ -1,0 +1,36 @@
+---
+title: Beta model
+---
+
+## Description
+
+Beta regression is used for outcomes on the [0, 1] interval. It is a
+distributional regression, not a generalized linear model.
+
+## Definition
+
+For continuous outcome $y$ bounded [0, 1] and predictors $x$, the model is:
+
+$$
+\begin{align}
+y_i \sim \text{beta}(\text{logit}^{-1}(\mu_i), \log{\phi_i}) \\
+\mu_i = \alpha_{\mu} + \beta_{\mu} \cdot x \\
+\phi_i = \alpha_{\phi} + \beta_{\phi} \cdot x \\
+\end{align}
+$$
+
+## Parameters needing priors
+
+- $\alpha_{\mu}$ (intercept for $\mu$)
+- $\alpha_{\phi}$ (intercept for $\phi$)
+- $\beta_{\mu}$ (predictor weights for $\mu$)
+- $\beta_{\mu}$ (predictor weights for $\phi$)
+
+
+## See also
+
+-   [Distribution explorer](https://distribution-explorer.github.io/continuous/beta.html)
+-   [Stan manual](https://mc-stan.org/docs/functions-reference/continuous_distributions_on_0_1.html#beta-distribution)
+-   [rstanarm manual](https://mc-stan.org/rstanarm/articles/betareg.html)
+-   [bambi manual](https://bambinos.github.io/bambi/notebooks/beta_regression.html)
+-   [Andrew Wheiss' blog](https://www.andrewheiss.com/blog/2021/11/08/beta-regression-guide/)

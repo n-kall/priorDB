@@ -1,20 +1,22 @@
 ---
-title: Conway-Maxwell-Poisson models
+title: Conway-Maxwell-Poisson model
 ---
 
-CMP models are models of count data.
+## Description
 
-Model:
+The Conway-Maxwell-Poisson distribution is used to model count data.
+
+## Definition
+
+For non-negative discrete outcome $y$ and predictors $x$, the model is:
 
 $$
 P(X = x) = \frac{\lambda^x}{(x!)^\nu Z(\lambda, \nu)}
 $$
 
-# Description
+## 
 
 This is based on [@meyerNonWeaklyInformativePriors2023].
-
-# Definition
 
 # Stan code
 

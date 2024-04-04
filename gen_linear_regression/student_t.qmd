@@ -2,44 +2,50 @@
 title: Student-t model
 ---
 
-Also called robust regression.
+## Description
 
-Model:
+Linear regression with Student-t distributed residuals is also called
+robust regression.
+
+## Definition
+
+For continuous unbounded outcome $y$ and predictors $x$, the model is:
 
 $$
 \begin{align}
-y_i \sim \text{StudentT}(\nu, \mu_i, \sigma) \\
-\mu_i = \alpha + \beta \cdot x_i
+y_i \sim \text{StudentT}(\nu, \eta_i, \sigma) \\
+\eta_i = \alpha + \beta \cdot x_i
 \end{align}
 $$
 
-Parameters needing priors:
+## Parameters needing priors:
 
 - $\alpha$ (intercept)
 - $\beta$ (predictor weights)
 - $\sigma$ (observation model standard deviation)
 - $\nu$ (degrees of freedom)
 
-Data:
+## Prior for $\alpha$
 
-- $y$ (continuous outcome)
-- $x$ (predictors)
+## Prior for $\beta$
 
+## Prior for $\nu$
 
-# Gamma prior
+### Weakly informative gamma prior
 
-Analysed by [@juarezModelBasedClusteringNonGaussian2010].
+A gamma prior that has increasing density from zero to ~30 was
+analysed by [@juarezModelBasedClusteringNonGaussian2010].
 
 $$
-\nu \sim \text{gamma}(2, .01)
+\nu \sim \text{gamma}(2, 0.1)
 $$
 
-# PC prior
+### Penalized complexity prior
 
 [@simpsonPenalisingModelComponent2017]
 
 
-### See also
+## See also
 
 - [Stan manual](https://mc-stan.org/docs/functions-reference/unbounded_continuous_distributions.html#student-t-distribution)
 - [Distribution explorer](https://distribution-explorer.github.io/continuous/student_t.html)
