@@ -1,31 +1,30 @@
 ---
-title: Bernoulli-logit (logistic) model
+title: Bernoulli model
 ---
 
-## Model
+## Description
+
+The Bernoulli model is a model of binary data.
+
+## Definition
+
+For binary outcome $y$ and predictors $x$, the model is:
 
 $$
 \begin{align}
-y_i \sim \text{Bernoulli}(\text{logit}^{-1}(\mu_i)) \\
-\mu_i = \alpha + \beta \cdot x_i
+y_i \sim \text{Bernoulli}(\text{logit}^{-1}(\eta_i)) \\
+\eta_i = \alpha + \beta \cdot x_i
 \end{align}
 $$
 
-## Parameters needing priors:
+## Parameters needing priors
 
 -   $\alpha$ (intercept)
 -   $\beta$ (predictor weights)
 
-Data:
+## Prior on $\alpha$
 
--   $y$ (binary outcome)
--   $x$ (predictors)
-
-### Prior on $\alpha$
-
-#### Logistic prior
-
-
+### Weakly informative logistic prior
 
 $\alpha \sim \text{logistic}(\sigma)$
 
@@ -39,8 +38,6 @@ $\sigma$ [@boonstraDefaultPriorsIntercept2019a] should be chosen by:
 
 3. select $\sigma = \sigma_n$ such that $P(1 - s_n <
    \text{logit}^{-1}(\alpha) < s_n | \sigma = \sigma_n) = 1 - q$.
-
-
 
 ```r
 logis_sigma <- function(n, q) {
@@ -56,21 +53,18 @@ logis_sigma <- function(n, q) {
 }
 ```
 
-
-
-#### Exponential power prior
+### Weakly informative exponential power prior
 
 [@boonstraDefaultPriorsIntercept2019a]
 
-
 $p(\alpha) \propto \exp{(-\text{abs}({\alpha / \sqrt(2) \sigma})^\gamma)}$
-
 
 ```stan
 target += -abs((alpha) / (sqrt(2.0) * alpha_scale))^(alpha_power);
 ```
 
-Choosing the $\sigma$ can be done with the following function:
+Similar to the method in the logistic prior, choosing $\sigma$ can be
+done with the following function:
 
 ```r
 ep_sigma <- function(gamma, n, q) {
@@ -86,14 +80,20 @@ ep_sigma <- function(gamma, n, q) {
 }
 ```
 
+## Prior on $\beta$
 
-### Prior on $\beta$
+### Weakly informative Student-t prior
 
-Sparsity prior (RHS)
+$$
+\alpha \sim \text{StudentT}(\nu, 0, \sigma)
+$$
 
-[@ghoshDefaultBayesianPriors2003]
+With $\nu$ between 3 and 7, and $\sigma$ = 2.5 sensible defaults.
 
-### See also:
+[@ghoshUseCauchyPrior2018]
+
+
+## See also
 
 -   [Stan manual](https://mc-stan.org/docs/functions-reference/binary_distributions.html#bernoulli-logit-distribution)
 -   [Distribution explorer](https://distribution-explorer.github.io/discrete/bernoulli.html)

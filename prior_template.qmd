@@ -2,13 +2,17 @@
 Title: Prior template
 ---
 
-# Description
+## Description
 
 
-# Definition
+## Definition
 
+For outcome $y$ and predictors $x$, the model is:
 
-# Things to specify
+## Parameters needing priors
 
+## Prior on $\theta$
 
-# Stan code
+### First prior on $\theta$
+
+## See also

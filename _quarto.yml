@@ -6,7 +6,7 @@ website:
   sidebar:
     collapse-level: 1
     contents:
-      - section: "(Generalised) linear models"
+      - section: "Regression"
         contents:
           - gen_linear_regression/gen_linear_regression_overview.qmd
           - section: "Continuous outcome"
@@ -17,15 +17,21 @@ website:
                   - gen_linear_regression/student_t.qmd
               - section: "Bounded"
                 contents:
-                - gen_linear_regression/beta.qmd
+                  - gen_linear_regression/beta.qmd
           - section: "Binary outcome"
             contents:
             - gen_linear_regression/bernoulli_logit.qmd
-          - section: "Count outcome"
+          - section: "Discrete outcome"
             contents:
-            - gen_linear_regression/poisson.qmd
-            - gen_linear_regression/negative_binomial.qmd
-            - gen_linear_regression/conway_maxwell_poisson.qmd
+              - section: "Unbounded"
+                contents:
+                  - gen_linear_regression/poisson.qmd
+                  - gen_linear_regression/negative_binomial.qmd
+              - section: "Bounded"
+                contents:
+                  - gen_linear_regression/binomial.qmd
+                  - gen_linear_regression/categorical.qmd
+                  - gen_linear_regression/ordered.qmd
           - section: "Sparsity priors"
             contents:
             - gen_linear_regression/r2d2.qmd
