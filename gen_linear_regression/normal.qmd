@@ -19,7 +19,7 @@ $$
 
 ## Parameters needing priors
 
-- \alpha$ (intercept)
+- $\alpha$ (intercept)
 - $\beta$ (predictor weights)
 - $\sigma$ (residual standard deviation)
 
