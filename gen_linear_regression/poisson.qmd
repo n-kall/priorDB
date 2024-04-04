@@ -17,8 +17,13 @@ y_i &\sim \text{Poisson}(\exp{\eta_i}) \\
 \end{align}
 $$
 
-## Parameters needing priors:
+## Parameters needing priors
 
 - $\alpha$ (intercept)
 - $\beta$ (predictor weights)
 
+## See also
+
+- [Distribution explorer](https://distribution-explorer.github.io/discrete/poisson.html)
+- [Stan manual](https://mc-stan.org/docs/functions-reference/unbounded_discrete_distributions.html#poisson-log-glm)
+- [brms tutorial paper](https://compass.onlinelibrary.wiley.com/doi/10.1111/lnc3.12439)

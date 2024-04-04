@@ -2,5 +2,12 @@
 title: "PriorDB"
 ---
 
+PriorDB aims to make choosing a prior for a Bayesian model easier.  As
+the prior cannot be understood without the context of the model
+[@gelmanPriorCanOften2017], the first thing to do is choose a model in
+the sidebar. For each model, the parameters requiring priors are
+listed, as well as recommended defaults and comparisons between them
+(if they are available).
 
-
+Models are broadly grouped by structure and then categorsed by
+properties of the outcome variable.
