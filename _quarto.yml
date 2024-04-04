@@ -18,18 +18,21 @@ website:
               - section: "Bounded"
                 contents:
                   - gen_linear_regression/beta.qmd
-          - section: "Binary outcome"
-            contents:
-            - gen_linear_regression/bernoulli_logit.qmd
           - section: "Discrete outcome"
             contents:
-              - section: "Unbounded"
-              - section: "Bounded"
+              - section: "Binary"
+                contents:
+                - gen_linear_regression/bernoulli_logit.qmd
+              - section: "Count"
                 contents:
                   - gen_linear_regression/poisson.qmd
                   - gen_linear_regression/negative_binomial.qmd
                   - gen_linear_regression/binomial.qmd
+              - section: "Categorical"
+                contents:
                   - gen_linear_regression/categorical.qmd
+              - section: "Ordered"
+                contents:
                   - gen_linear_regression/ordered.qmd
           - section: "Sparsity priors"
             contents:
