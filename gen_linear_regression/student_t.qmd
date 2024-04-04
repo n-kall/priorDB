@@ -13,8 +13,8 @@ For continuous unbounded outcome $y$ and predictors $x$, the model is:
 
 $$
 \begin{align}
-y_i \sim \text{StudentT}(\nu, \eta_i, \sigma) \\
-\eta_i = \alpha + \beta \cdot x_i
+y_i &\sim \text{StudentT}(\nu, \eta_i, \sigma) \\
+\eta_i &= \alpha + \beta \cdot x_i
 \end{align}
 $$
 
