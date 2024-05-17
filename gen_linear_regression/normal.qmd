@@ -25,6 +25,42 @@ $$
 
 ## Prior for $\alpha$
 
+### Data-scaled prior
+
+[@gelmanRegressionOtherStories2020] Chapter 9
+
+Centered intercept (expected value of $y$ when predictors as set to mean of data)
+
+$$
+\alpha_{centered} \sim \text{normal}{\text{mean}(y), 2.5 \text{sd}(y))
+$$
+
 ## Prior for $\beta$
 
+### Data-scaled prior
+
+[@gelmanRegressionOtherStories2020] Chapter 9
+
+$$
+\beta_k \sim \text{normal}(0, 2.5 \text{sd}(y)/\text{sd}(x_k).
+$$
+
+### Corpus-based prior
+
+[@vanZwet2022]
+
+If estimates and standard errors are available
+
+$$
+
+$$
+
 ## Prior for $\sigma$
+
+### Data-scaled prior
+
+[@gelmanRegressionOtherStories2020] Chapter 9
+
+$$
+\sigma \sim \text{exponential}(1/\text{sd}(y)
+$$

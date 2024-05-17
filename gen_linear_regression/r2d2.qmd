@@ -1,11 +1,10 @@
 ---
-title: R2-D2
+title: Generalised R2
 ---
 
 # Description
 
-The R2-D2 prior [@zhangBayesianRegressionUsing2022a] is a global-local shrinkage prior. This has
-been expanded for generalised linear models [@yanchenkoR2D2PriorGeneralized2024].
+The GR2 prior [@aguilarGeneralizedDecompositionPriors2024] is a global-local shrinkage prior. It is a generalisation of the R2-D2.
 
 # Definition
 
