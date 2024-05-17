@@ -1,11 +1,10 @@
 ---
-title: R2-D2
+title: Generalised R2
 ---
 
 # Description
 
-The R2-D2 prior [@zhangBayesianRegressionUsing2022a] is a global-local shrinkage prior. This has
-been expanded for generalised linear models [@yanchenkoR2D2PriorGeneralized2024].
+The GR2 prior [@aguilarGeneralizedDecompositionPriors2024] is a global-local shrinkage prior. It is a generalisation of the R2-D2.
 
 # Definition
 
@@ -22,11 +21,11 @@ The prior is:
 
 $$
 \begin{align}
-\beta_i &\sim \text{normal}\left(0, \frac{\sigma^2}{\sigma_{y_{t}\mid \theta}^2}\tau^2\psi_i\right) \\
+\beta_k &\sim \text{normal}\left(0, \sigma^2 \phi_k \tau^2\right) \\
 \tau^2 &= \frac{R^2}{1 - R^2} \\
-R^2 &\sim \text{beta}(\mu_{R^2},\phi_{R^2}) \\ 
-\psi &\sim \text{Dirichlet}(\xi_1,\dotsc,\xi_p) \\
-\sigma^2 &\sim p(\sigma^2) \\
+R^2 &\sim \text{beta}(\mu_{R^2},\varphi_{R^2}) \\ 
+\phi \sim p(\nu_\phi) \\
+\sigma &\sim p(\sigma) \\
 \alpha &\sim p(\alpha)
 \end{align}
 $$
@@ -35,6 +34,8 @@ $$
 # Things to specify
 
 Priors on $\alpha$ and $\sigma$. Hyperparameters $\xi$, $\mu_{R^2}$, $\phi_{R^2}$. 
+
+Prior on simplex $\phi$.
 
 # Stan code
 
