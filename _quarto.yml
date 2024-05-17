@@ -36,6 +36,7 @@ website:
                   - gen_linear_regression/ordered.qmd
           - section: "Sparsity priors"
             contents:
+            - gen_linear_regression/gr2.qmd
             - gen_linear_regression/r2d2.qmd
             - gen_linear_regression/rhs.qmd
             - gen_linear_regression/l1_ball.qmd
