@@ -25,5 +25,6 @@ $$
 ## See also
 
 - [Distribution explorer](https://distribution-explorer.github.io/discrete/poisson.html)
+- [PreliZ](https://preliz.readthedocs.io/en/latest/examples/gallery/poisson.html)
 - [Stan manual](https://mc-stan.org/docs/functions-reference/unbounded_discrete_distributions.html#poisson-log-glm)
 - [brms tutorial paper](https://compass.onlinelibrary.wiley.com/doi/10.1111/lnc3.12439)
