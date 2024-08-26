@@ -48,5 +48,6 @@ $$
 ## See also
 
 - [Distribution explorer](https://distribution-explorer.github.io/continuous/student_t.html)
+- [PreliZ](https://preliz.readthedocs.io/en/latest/examples/gallery/students_t.html)
 - [Stan manual](https://mc-stan.org/docs/functions-reference/unbounded_continuous_distributions.html#student-t-distribution)
 - [bambi example](https://bambinos.github.io/bambi/notebooks/t_regression.html)
