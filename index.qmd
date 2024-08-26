@@ -9,5 +9,5 @@ the sidebar. For each model, the parameters requiring priors are
 listed, as well as recommended defaults and comparisons between them
 (if they are available).
 
-Models are broadly grouped by structure and then categorsed by
+Models are broadly grouped by structure and then categorized by
 properties of the outcome variable.
