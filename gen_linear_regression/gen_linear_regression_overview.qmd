@@ -2,9 +2,9 @@
 title: Overview
 ---
 
-Generalised linear regression can be used for predicting outcomes from
+Regression models can be used to predict outcomes from
 predictors. A linear predictor term $\eta$ based on the predictors is
-passed through an invere link function, $g^{-1}$, and then used in the
+passed through an inverse link function, $g^{-1}$, and then used in the
 observation model, $f$. The observation model may have other
 parameters $\theta$ which are not necessarily determined through the
 predictors.
@@ -27,5 +27,5 @@ $g$ is most commonly the logit function.
 |---------|:-----|
 | $y_i$   |  Observed outcome |
 | $x_i$   | Observed predictors |
-| $\alpha | Intercept |
-| $\beta | Regression coefficients (predictor weights) |
+| $\alpha$ | Intercept |
+| $\beta$ | Regression coefficients (predictor weights) |

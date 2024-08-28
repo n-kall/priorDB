@@ -40,23 +40,21 @@ $$
 
 ## Prior for $\beta$
 
-### Weakly informative data-adaptive prior
+### Weakly informative data-adaptive normal prior
 
-@gelmanRegressionOtherStories2020 Chapter 9
+@gelmanRegressionOtherStories2020 Chapter 9 describes a data-adaptive normal prior
 
 $$
 \begin{align}
-\beta_k \sim \text{normal}(\mu = 0, \sigma = 2.5 \text{SD}(y)/\text{SD}(x_k).
+\beta_k \sim \text{normal}(0, 2.5 \text{SD}(y)/\text{SD}(x_k)).
 \end{align}
 $$
 
-Where $\mu$ is the mean and $\sigma$ is the scale of the normal distribution.
-
 ## Prior for $\sigma$
 
-### Weakly informative data-adaptive prior
+### Weakly informative data-adaptive exponential prior
 
-@gelmanRegressionOtherStories2020 Chapter 9
+@gelmanRegressionOtherStories2020 Chapter 9 describes a data-adaptive exponential prior
 
 $$
 \sigma \sim \text{exponential}(1/\text{SD}(y))
