@@ -1,0 +1,10 @@
+---
+title: Penalized complexity for autoregression
+---
+
+# Description
+
+Defined in [@pc_autoregression].
+
+# Definition
+

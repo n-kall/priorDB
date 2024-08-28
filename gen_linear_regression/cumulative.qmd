@@ -1,0 +1,22 @@
+---
+title: Cumulative probit model
+---
+
+## Description
+
+The cumulative probit model is a model of ordered discrete data.
+
+## Definition
+
+For discrete ordered outcome $y$ and predictors $x$, the model is:
+
+$$
+\begin{align}
+y_i \sim \text{cumulative}(\eta_i, c) \\
+\eta_i = \alpha + \beta \cdot x_i
+\end{align}
+$$
+
+## Parameters needing priors
+
+
