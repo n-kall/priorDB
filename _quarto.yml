@@ -33,7 +33,7 @@ website:
                   - gen_linear_regression/categorical.qmd
               - section: "Ordered"
                 contents:
-                  - gen_linear_regression/ordered.qmd
+                  - gen_linear_regression/ordinal.qmd
           - section: "Sparsity priors"
             contents:
             - gen_linear_regression/gr2.qmd
