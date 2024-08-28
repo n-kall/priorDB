@@ -59,3 +59,10 @@ $$
 $$
 \sigma \sim \text{exponential}(1/\text{SD}(y))
 $$
+
+## See also
+
+- [Distribution explorer](https://distribution-explorer.github.io/continuous/normal.html)
+- [PreliZ](https://preliz.readthedocs.io/en/latest/examples/gallery/normal.html)
+- [Stan manual](https://mc-stan.org/docs/functions-reference/unbounded_continuous_distributions.html#normal-distribution)
+- [bambi example](https://bambinos.github.io/bambi/notebooks/ESCS_multiple_regression.html)
