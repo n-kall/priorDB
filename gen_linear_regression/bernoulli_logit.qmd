@@ -98,4 +98,4 @@ With $\nu$ between 3 and 7, and $\sigma$ = 2.5 sensible defaults.
 
 - [Distribution explorer](https://distribution-explorer.github.io/discrete/bernoulli.html)
 - [PreliZ](https://preliz.readthedocs.io/en/latest/examples/gallery/bernoulli.html)
-- [Stan manual](https://mc-stan.org/docs/functions-reference/binary_distributions.html#bernoulli-logit-distribution)
+- [Stan Functions Reference](https://mc-stan.org/docs/functions-reference/binary_distributions.html#bernoulli-logit-distribution)

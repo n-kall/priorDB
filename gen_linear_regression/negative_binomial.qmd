@@ -42,6 +42,6 @@ $\phi \sim \text{InvGamma}(0.4, 0.3)$
 - [Distribution explorer](https://distribution-explorer.github.io/discrete/negative_binomial.html)
 - [PreliZ](https://preliz.readthedocs.io/en/latest/examples/gallery/negativebinomial.html)
 - [Aki Vehtari's case study](https://users.aalto.fi/~ave/modelselection/roaches.html#3_Negative_binomial_model)
-- [Stan manual](https://mc-stan.org/docs/functions-reference/unbounded_discrete_distributions.
+- [Stan Functions Reference](https://mc-stan.org/docs/functions-reference/unbounded_discrete_distributions.
 html#negative-binomial-distribution)
 - [bambi example](https://bambinos.github.io/bambi/notebooks/negative_binomial.html)
