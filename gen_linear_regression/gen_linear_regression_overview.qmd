@@ -21,3 +21,11 @@ used. For example, if $f$ is the $\text{normal}$ distribution, $g$ is
 the identity function. If $f$ is the $\text{Bernoulli}$ distribution,
 $g$ is most commonly the logit function.
 
+## Notation
+
+| Symbol  | Explanation | 
+|---------|:-----|
+| $y_i$   |  Observed outcome |
+| $x_i$   | Observed predictors |
+| $\alpha | Intercept |
+| $\beta | Regression coefficients (predictor weights) |

@@ -25,42 +25,39 @@ $$
 
 ## Prior for $\alpha$
 
-### Data-scaled prior
+### Weakly informative data-adaptive prior
 
-[@gelmanRegressionOtherStories2020] Chapter 9
+@gelmanRegressionOtherStories2020 Chapter 9
 
-Centered intercept (expected value of $y$ when predictors as set to mean of data)
+Centered intercept (expected value of $y$ when predictors are set to mean values of observed data)
 
 $$
-\alpha_{centered} \sim \text{normal}{\text{mean}(y), 2.5 \text{sd}(y))
+\begin{align}
+\alpha_{\text{centered}} \sim \text{normal}(\text{mean}(y), 2.5 \text{SD}(y)) \\
+\end{align}
 $$
+
 
 ## Prior for $\beta$
 
-### Data-scaled prior
+### Weakly informative data-adaptive prior
 
-[@gelmanRegressionOtherStories2020] Chapter 9
-
-$$
-\beta_k \sim \text{normal}(0, 2.5 \text{sd}(y)/\text{sd}(x_k).
-$$
-
-### Corpus-based prior
-
-[@vanZwet2022]
-
-If estimates and standard errors are available
+@gelmanRegressionOtherStories2020 Chapter 9
 
 $$
-
+\begin{align}
+\beta_k \sim \text{normal}(\mu = 0, \sigma = 2.5 \text{SD}(y)/\text{SD}(x_k).
+\end{align}
 $$
+
+Where $\mu$ is the mean and $\sigma$ is the scale of the normal distribution.
 
 ## Prior for $\sigma$
 
-### Data-scaled prior
+### Weakly informative data-adaptive prior
 
-[@gelmanRegressionOtherStories2020] Chapter 9
+@gelmanRegressionOtherStories2020 Chapter 9
 
 $$
-\sigma \sim \text{exponential}(1/\text{sd}(y)
+\sigma \sim \text{exponential}(1/\text{SD}(y))
 $$

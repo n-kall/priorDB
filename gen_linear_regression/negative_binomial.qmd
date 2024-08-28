@@ -28,15 +28,13 @@ $$
 
 ### Weakly informative inverse gamma prior
 
-[@vehtariDefaultPriorNegativebinomial2024]
+@vehtariDefaultPriorNegativebinomial2024 suggested an inverse gamma prior as an approximation of the penalized complexity prior:
 
-$$
-\phi \sim \text{InvGamma}(0.4, 0.3)
-$$
+$\phi \sim \text{InvGamma}(0.4, 0.3)
 
 ### Penalized complexity prior
 
-[@SimpsonPenalisingModelComponent2017]
+@simpsonPenalisingModelComponent2017 suggested a penalized complexity prior
 
 ## See also
 

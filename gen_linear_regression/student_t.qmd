@@ -22,7 +22,7 @@ $$
 
 - $\alpha$ (intercept)
 - $\beta$ (predictor weights)
-- $\sigma$ (observation model standard deviation)
+- $\sigma$ (resdiual scale)
 - $\nu$ (degrees of freedom)
 
 ## Prior for $\alpha$
@@ -34,7 +34,7 @@ $$
 ### Weakly informative gamma prior
 
 A gamma prior that has increasing density from zero to ~30 was
-analysed by [@juarezModelBasedClusteringNonGaussian2010].
+analysed and suggested by @juarezModelBasedClusteringNonGaussian2010.
 
 $$
 \nu \sim \text{gamma}(2, 0.1)
@@ -42,7 +42,7 @@ $$
 
 ### Penalized complexity prior
 
-[@simpsonPenalisingModelComponent2017]
+@simpsonPenalisingModelComponent2017
 
 
 ## See also
