@@ -31,7 +31,7 @@ $$
 
 - [Distribution explorer](https://distribution-explorer.github.io/continuous/beta.html)
 - [PreliZ](https://preliz.readthedocs.io/en/latest/examples/gallery/beta.html)
-- [Stan manual](https://mc-stan.org/docs/functions-reference/continuous_distributions_on_0_1.html#beta-distribution)
+- [Stan Functions Reference](https://mc-stan.org/docs/functions-reference/continuous_distributions_on_0_1.html#beta-distribution)
 - [rstanarm manual](https://mc-stan.org/rstanarm/articles/betareg.html)
 - [bambi manual](https://bambinos.github.io/bambi/notebooks/beta_regression.html)
 - [Andrew Wheiss' blog](https://www.andrewheiss.com/blog/2021/11/08/beta-regression-guide/)

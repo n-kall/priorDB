@@ -68,5 +68,5 @@ functions {
 ```
 
 ## See also
-- [Stan manual](https://mc-stan.org/docs/functions-reference/bounded_discrete_distributions.html#ordered-logistic-distribution)
+- [Stan Function Reference](https://mc-stan.org/docs/functions-reference/bounded_discrete_distributions.html#ordered-logistic-distribution)
 - [Stan Users Guide](https://mc-stan.org/docs/stan-users-guide/regression.html#ordered-logistic-regression)
