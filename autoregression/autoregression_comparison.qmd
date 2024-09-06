@@ -4,7 +4,7 @@ title: Autoregression prior comparison
 
 # Lake Huron data set
 
-```{r}
+```r
 #| output: false
 #| warning: false
 #| eval: false
