@@ -87,11 +87,11 @@ ep_sigma <- function(gamma, n, q) {
 
 ### Weakly informative Student-t prior
 
-@ghoshUseCauchyPrior2018 suggested a Student-t prior
+@ghoshUseCauchyPrior2018 suggested a Student-t prior on scaled predictors.
 
-$\alpha \sim \text{StudentT}(\nu, 0, \sigma)$
+$\beta \sim \text{StudentT}(\nu, 0, \sigma)$
 
-With $\nu$ between 3 and 7, and $\sigma$ = 2.5 sensible defaults.
+With $\nu$ between 3 and 7, and $\nu = 7$, $\sigma$ = 2.5 sensible defaults.
 
 
 ## See also
@@ -99,3 +99,4 @@ With $\nu$ between 3 and 7, and $\sigma$ = 2.5 sensible defaults.
 - [Distribution explorer](https://distribution-explorer.github.io/discrete/bernoulli.html)
 - [PreliZ](https://preliz.readthedocs.io/en/latest/examples/gallery/bernoulli.html)
 - [Stan Functions Reference](https://mc-stan.org/docs/functions-reference/binary_distributions.html#bernoulli-logit-distribution)
+- [Jörn Alexander Quent's notebook](https://jaquent.github.io/2021/01/the-priors-that-i-use-for-logistic-regression-now/)
