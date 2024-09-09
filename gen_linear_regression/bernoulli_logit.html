@@ -548,9 +548,9 @@ y_i &amp;\sim \text{Bernoulli}(\text{logit}^{-1}(\eta_i)) \\
 <h2 class="anchored" data-anchor-id="prior-on-beta">Prior on <span class="math inline">\(\beta\)</span></h2>
 <section id="weakly-informative-student-t-prior" class="level3">
 <h3 class="anchored" data-anchor-id="weakly-informative-student-t-prior">Weakly informative Student-t prior</h3>
-<p><span class="citation" data-cites="ghoshUseCauchyPrior2018">Ghosh, Li, and Mitra (<a href="#ref-ghoshUseCauchyPrior2018" role="doc-biblioref">2018</a>)</span> suggested a Student-t prior</p>
-<p><span class="math inline">\(\alpha \sim \text{StudentT}(\nu, 0, \sigma)\)</span></p>
-<p>With <span class="math inline">\(\nu\)</span> between 3 and 7, and <span class="math inline">\(\sigma\)</span> = 2.5 sensible defaults.</p>
+<p><span class="citation" data-cites="ghoshUseCauchyPrior2018">Ghosh, Li, and Mitra (<a href="#ref-ghoshUseCauchyPrior2018" role="doc-biblioref">2018</a>)</span> suggested a Student-t prior on scaled predictors.</p>
+<p><span class="math inline">\(\beta \sim \text{StudentT}(\nu, 0, \sigma)\)</span></p>
+<p>With <span class="math inline">\(\nu\)</span> between 3 and 7, and <span class="math inline">\(\nu = 7\)</span>, <span class="math inline">\(\sigma\)</span> = 2.5 sensible defaults.</p>
 </section>
 </section>
 <section id="see-also" class="level2">
@@ -559,6 +559,7 @@ y_i &amp;\sim \text{Bernoulli}(\text{logit}^{-1}(\eta_i)) \\
 <li><a href="https://distribution-explorer.github.io/discrete/bernoulli.html">Distribution explorer</a></li>
 <li><a href="https://preliz.readthedocs.io/en/latest/examples/gallery/bernoulli.html">PreliZ</a></li>
 <li><a href="https://mc-stan.org/docs/functions-reference/binary_distributions.html#bernoulli-logit-distribution">Stan Functions Reference</a></li>
+<li><a href="https://jaquent.github.io/2021/01/the-priors-that-i-use-for-logistic-regression-now/">Jörn Alexander Quent’s notebook</a></li>
 </ul>
 
 

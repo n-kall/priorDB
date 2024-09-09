@@ -147,7 +147,7 @@
     "href": "gen_linear_regression/bernoulli_logit.html#prior-on-beta",
     "title": "Bernoulli model",
     "section": "Prior on \\(\\beta\\)",
-    "text": "Prior on \\(\\beta\\)\n\nWeakly informative Student-t prior\nGhosh, Li, and Mitra (2018) suggested a Student-t prior\n\\(\\alpha \\sim \\text{StudentT}(\\nu, 0, \\sigma)\\)\nWith \\(\\nu\\) between 3 and 7, and \\(\\sigma\\) = 2.5 sensible defaults.",
+    "text": "Prior on \\(\\beta\\)\n\nWeakly informative Student-t prior\nGhosh, Li, and Mitra (2018) suggested a Student-t prior on scaled predictors.\n\\(\\beta \\sim \\text{StudentT}(\\nu, 0, \\sigma)\\)\nWith \\(\\nu\\) between 3 and 7, and \\(\\nu = 7\\), \\(\\sigma\\) = 2.5 sensible defaults.",
     "crumbs": [
       "Regression",
       "Discrete outcome",
@@ -160,7 +160,7 @@
     "href": "gen_linear_regression/bernoulli_logit.html#see-also",
     "title": "Bernoulli model",
     "section": "See also",
-    "text": "See also\n\nDistribution explorer\nPreliZ\nStan Functions Reference",
+    "text": "See also\n\nDistribution explorer\nPreliZ\nStan Functions Reference\nJörn Alexander Quent’s notebook",
     "crumbs": [
       "Regression",
       "Discrete outcome",
