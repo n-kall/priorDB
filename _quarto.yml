@@ -50,6 +50,8 @@ website:
         contents:
           - hierarchical_regression/hierarchical_regression_overview.qmd
           - hierarchical_regression/r2d2m2.qmd
+      - text: "Tools"
+        href: tools.qmd
         
 format:
   html:
