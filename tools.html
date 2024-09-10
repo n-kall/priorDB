@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Beta model – priorDB</title>
+<title>Useful tools – priorDB</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -67,37 +67,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-sidebar floating">
@@ -109,7 +80,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../gen_linear_regression/gen_linear_regression_overview.html">Regression</a></li><li class="breadcrumb-item">Continuous outcome</li><li class="breadcrumb-item"><a href="../gen_linear_regression/beta.html">Bounded</a></li><li class="breadcrumb-item"><a href="../gen_linear_regression/beta.html">Beta model</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./tools.html">Tools</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -124,7 +95,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">priorDB</a> 
+      <a href="./">priorDB</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -136,28 +107,28 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Regression</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../gen_linear_regression/gen_linear_regression_overview.html" class="sidebar-item-text sidebar-link">
+  <a href="./gen_linear_regression/gen_linear_regression_overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Continuous outcome</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
@@ -169,13 +140,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../gen_linear_regression/normal.html" class="sidebar-item-text sidebar-link">
+  <a href="./gen_linear_regression/normal.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Normal model</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../gen_linear_regression/student_t.html" class="sidebar-item-text sidebar-link">
+  <a href="./gen_linear_regression/student_t.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Student-t model</span></a>
   </div>
 </li>
@@ -183,16 +154,16 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
  <span class="menu-text">Bounded</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../gen_linear_regression/beta.html" class="sidebar-item-text sidebar-link active">
+  <a href="./gen_linear_regression/beta.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Beta model</span></a>
   </div>
 </li>
@@ -220,7 +191,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../gen_linear_regression/bernoulli_logit.html" class="sidebar-item-text sidebar-link">
+  <a href="./gen_linear_regression/bernoulli_logit.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bernoulli model</span></a>
   </div>
 </li>
@@ -237,19 +208,19 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../gen_linear_regression/poisson.html" class="sidebar-item-text sidebar-link">
+  <a href="./gen_linear_regression/poisson.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Poisson model</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../gen_linear_regression/negative_binomial.html" class="sidebar-item-text sidebar-link">
+  <a href="./gen_linear_regression/negative_binomial.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Negative-binomial model</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../gen_linear_regression/binomial.html" class="sidebar-item-text sidebar-link">
+  <a href="./gen_linear_regression/binomial.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Binomial model</span></a>
   </div>
 </li>
@@ -280,7 +251,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../gen_linear_regression/ordinal.html" class="sidebar-item-text sidebar-link">
+  <a href="./gen_linear_regression/ordinal.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Ordered logistic model</span></a>
   </div>
 </li>
@@ -299,25 +270,25 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../gen_linear_regression/gr2.html" class="sidebar-item-text sidebar-link">
+  <a href="./gen_linear_regression/gr2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Generalised R2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../gen_linear_regression/r2d2.html" class="sidebar-item-text sidebar-link">
+  <a href="./gen_linear_regression/r2d2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R2-D2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../gen_linear_regression/rhs.html" class="sidebar-item-text sidebar-link">
+  <a href="./gen_linear_regression/rhs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Regularised horse shoe</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../gen_linear_regression/l1_ball.html" class="sidebar-item-text sidebar-link">
+  <a href="./gen_linear_regression/l1_ball.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">L1 Ball</span></a>
   </div>
 </li>
@@ -336,19 +307,19 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../autoregression/autoregression_overview.html" class="sidebar-item-text sidebar-link">
+  <a href="./autoregression/autoregression_overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Autoregression overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../autoregression/arr2.html" class="sidebar-item-text sidebar-link">
+  <a href="./autoregression/arr2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ARR2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../autoregression/minnesota.html" class="sidebar-item-text sidebar-link">
+  <a href="./autoregression/minnesota.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Minnesota</span></a>
   </div>
 </li>
@@ -365,13 +336,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../hierarchical_regression/hierarchical_regression_overview.html" class="sidebar-item-text sidebar-link">
+  <a href="./hierarchical_regression/hierarchical_regression_overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Hierarchical regression overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../hierarchical_regression/r2d2m2.html" class="sidebar-item-text sidebar-link">
+  <a href="./hierarchical_regression/r2d2m2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R2D2M2</span></a>
   </div>
 </li>
@@ -379,7 +350,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tools.html" class="sidebar-item-text sidebar-link">
+  <a href="./tools.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Tools</span></a>
   </div>
 </li>
@@ -388,24 +359,15 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#description" id="toc-description" class="nav-link active" data-scroll-target="#description">Description</a></li>
-  <li><a href="#definition" id="toc-definition" class="nav-link" data-scroll-target="#definition">Definition</a></li>
-  <li><a href="#parameters-needing-priors" id="toc-parameters-needing-priors" class="nav-link" data-scroll-target="#parameters-needing-priors">Parameters needing priors</a></li>
-  <li><a href="#see-also" id="toc-see-also" class="nav-link" data-scroll-target="#see-also">See also</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../gen_linear_regression/gen_linear_regression_overview.html">Regression</a></li><li class="breadcrumb-item">Continuous outcome</li><li class="breadcrumb-item"><a href="../gen_linear_regression/beta.html">Bounded</a></li><li class="breadcrumb-item"><a href="../gen_linear_regression/beta.html">Beta model</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Beta model</h1>
+<h1 class="title">Useful tools</h1>
 </div>
 
 
@@ -422,43 +384,16 @@ window.Quarto = {
 </header>
 
 
-<section id="description" class="level2">
-<h2 class="anchored" data-anchor-id="description">Description</h2>
-<p>Beta regression is used for outcomes on the [0, 1] interval. It is a distributional regression, not a generalized linear model.</p>
-</section>
-<section id="definition" class="level2">
-<h2 class="anchored" data-anchor-id="definition">Definition</h2>
-<p>For continuous outcome <span class="math inline">\(y\)</span> bounded [0, 1] and predictors <span class="math inline">\(x\)</span>, the model is:</p>
-<p><span class="math display">\[
-\begin{align}
-y_i \sim \text{beta}(\text{logit}^{-1}(\mu_i), \log{\phi_i}) \\
-\mu_i = \alpha_{\mu} + \beta_{\mu} \cdot x \\
-\phi_i = \alpha_{\phi} + \beta_{\phi} \cdot x \\
-\end{align}
-\]</span></p>
-</section>
-<section id="parameters-needing-priors" class="level2">
-<h2 class="anchored" data-anchor-id="parameters-needing-priors">Parameters needing priors</h2>
+<p>Here we list software packages for prior elicitation, specification and diagnostics.</p>
 <ul>
-<li><span class="math inline">\(\alpha_{\mu}\)</span> (intercept for <span class="math inline">\(\mu\)</span>)</li>
-<li><span class="math inline">\(\alpha_{\phi}\)</span> (intercept for <span class="math inline">\(\phi\)</span>)</li>
-<li><span class="math inline">\(\beta_{\mu}\)</span> (predictor weights for <span class="math inline">\(\mu\)</span>)</li>
-<li><span class="math inline">\(\beta_{\mu}\)</span> (predictor weights for <span class="math inline">\(\phi\)</span>)</li>
-</ul>
-</section>
-<section id="see-also" class="level2">
-<h2 class="anchored" data-anchor-id="see-also">See also</h2>
-<ul>
-<li><a href="https://distribution-explorer.github.io/continuous/beta.html">Distribution explorer</a></li>
-<li><a href="https://preliz.readthedocs.io/en/latest/examples/gallery/beta.html">PreliZ</a></li>
-<li><a href="https://mc-stan.org/docs/functions-reference/continuous_distributions_on_0_1.html#beta-distribution">Stan Functions Reference</a></li>
-<li><a href="https://mc-stan.org/rstanarm/articles/betareg.html">rstanarm manual</a></li>
-<li><a href="https://bambinos.github.io/bambi/notebooks/beta_regression.html">bambi manual</a></li>
-<li><a href="https://www.andrewheiss.com/blog/2021/11/08/beta-regression-guide/">Andrew Wheiss’ blog</a></li>
+<li><a href="https://github.com/ingebogh/makemyprior">makemyprior</a>: R package for construction and visualizing priors</li>
+<li><a href="https://preliz.readthedocs.io/en/latest/">preliz</a>: Python package for prior elicitation</li>
+<li><a href="https://n-kall.github.io/priorsense/index.html">priorsense</a>: R package for diagnosing influence of priors</li>
+<li><a href="https://python.arviz.org/en/latest/api/generated/arviz.psens.html">arviz.psens</a>: Python function for diagnosing influence of priors</li>
+<li><a href="https://opensource.nibr.com/RBesT/index.html">RBesT</a>: R package including functions for deriving priors from historical data</li>
 </ul>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
