@@ -6,7 +6,7 @@ on:
 jobs:
     contrib-readme-job:
         runs-on: ubuntu-latest
-        name: A job to automate contrib in readme
+        name: A job to automate contributors in webpage
         permissions:
           contents: write
           pull-requests: write
