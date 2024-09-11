@@ -4,7 +4,7 @@
     "href": "tools.html",
     "title": "Useful tools",
     "section": "",
-    "text": "Here we list software packages for prior elicitation, specification and diagnostics.\n\nmakemyprior: R package for construction and visualizing priors\npreliz: Python package for prior elicitation\npriorsense: R package for diagnosing influence of priors\narviz.psens: Python function for diagnosing influence of priors\nRBesT: R package including functions for deriving priors from historical data",
+    "text": "Here we list software packages for prior elicitation, specification and diagnostics.\n\nmakemyprior: R package for construction and visualizing priors\npreliz: Python package for prior elicitation\npriorsense: R package for diagnosing influence of priors\narviz.psens: Python function for diagnosing influence of priors\nRBesT: R package including functions for deriving priors from historical data\npbbo: R package for specifying prior based on predictive distribution",
     "crumbs": [
       "Tools"
     ]
@@ -1041,7 +1041,7 @@
     "href": "contributors.html",
     "title": "priorDB",
     "section": "",
-    "text": "Osvaldo A Martin \n\n\n   Noa Kallioinen \n\n\n   Andrew Johnson",
+    "text": "Noa Kallioinen \n\n\n   Osvaldo A Martin \n\n\n   Andrew Johnson",
     "crumbs": [
       "Contributors"
     ]
@@ -1051,7 +1051,7 @@
     "href": "contributors.html#contributors",
     "title": "priorDB",
     "section": "",
-    "text": "Osvaldo A Martin \n\n\n   Noa Kallioinen \n\n\n   Andrew Johnson",
+    "text": "Noa Kallioinen \n\n\n   Osvaldo A Martin \n\n\n   Andrew Johnson",
     "crumbs": [
       "Contributors"
     ]
