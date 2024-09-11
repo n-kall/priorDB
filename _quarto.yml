@@ -52,6 +52,8 @@ website:
           - hierarchical_regression/r2d2m2.qmd
       - text: "Tools"
         href: tools.qmd
+      - text: "Contributors"
+        href: contributors.md
         
 format:
   html:
