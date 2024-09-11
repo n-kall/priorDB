@@ -18,6 +18,9 @@ y_i \sim \text{beta}(\text{logit}^{-1}(\mu_i), \kappa) \\
 \end{align}
 $$
 
+The [logit](https://en.wikipedia.org/wiki/Logit) function is the quantile function associated with the standard logistic distribution. Its inverse maps $\mu_i$ from the real line into a value within the interval (0, 1).
+
+
 ## Parameters needing priors
 
 - $\alpha$ (intercept)
@@ -25,6 +28,7 @@ $$
 - $\kappa$ (concentration parameter)
 
 The larger the value of $\kappa$, the more concentrated the distribution is around the mean. This parameter is also named the precision parameter or the sample size parameters. Greek letters $\nu$ and $\phi$ are also commonly used to refer to this parameter.
+
 
 ## Prior for $\kappa$
 
