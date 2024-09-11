@@ -9,6 +9,6 @@ Here we list software packages for prior elicitation, specification and diagnost
 - [priorsense](https://n-kall.github.io/priorsense/index.html): R package for diagnosing influence of priors
 - [arviz.psens](https://python.arviz.org/en/latest/api/generated/arviz.psens.html): Python function for diagnosing influence of priors
 - [RBesT](https://opensource.nibr.com/RBesT/index.html): R package including functions for deriving priors from historical data
-
+- [pbbo](https://github.com/hhau/pbbo): R package for specifying prior based on predictive distribution
 
 
