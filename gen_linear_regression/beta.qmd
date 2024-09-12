@@ -27,12 +27,12 @@ The [logit](https://en.wikipedia.org/wiki/Logit) function is the quantile functi
 - $\beta$ (predictor weights)
 - $\kappa$ (concentration parameter)
 
-The larger the value of $\kappa$, the more concentrated the distribution is around the mean. This parameter is also named the precision parameter or the sample size parameters. Greek letters $\nu$ and $\phi$ are also commonly used to refer to this parameter.
+The larger the value of $\kappa$, the more concentrated the distribution is around the mean. This parameter is also named the precision parameter or the sample size parameter. Greek letters $\nu$ and $\phi$ are also commonly used to refer to this parameter.
 
 
 ## Prior for $\kappa$
 
-For weakly informative prior we can use a gamma distribution with low probability mass on very small values of $\kappa$, such priors disfavors u-shaped beta distributions which are generally less common in real-world data. For instance we could choose $\text{gamma}(4, 0.1)$ as discussed by [Solomon Kurz](https://solomonkurz.netlify.app/blog/2023-06-25-causal-inference-with-beta-regression/), wich place most of the prior mass on the double-digit range with long right tail allowing for greater concentrations if needed.
+For weakly informative prior we can use a gamma distribution with low probability mass on very small values of $\kappa$, such priors disfavor u-shaped beta distributions which are generally less common in real-world data. For instance, we could choose $\text{gamma}(4, 0.1)$ as discussed by [Solomon Kurz](https://solomonkurz.netlify.app/blog/2023-06-25-causal-inference-with-beta-regression/), which place most of the prior mass on the double-digit range with long right tail allowing for greater concentrations if needed.
 
 
 ## See also
