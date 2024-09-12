@@ -451,11 +451,11 @@ y_i \sim \text{beta}(\text{logit}^{-1}(\mu_i), \kappa) \\
 <li><span class="math inline">\(\beta\)</span> (predictor weights)</li>
 <li><span class="math inline">\(\kappa\)</span> (concentration parameter)</li>
 </ul>
-<p>The larger the value of <span class="math inline">\(\kappa\)</span>, the more concentrated the distribution is around the mean. This parameter is also named the precision parameter or the sample size parameters. Greek letters <span class="math inline">\(\nu\)</span> and <span class="math inline">\(\phi\)</span> are also commonly used to refer to this parameter.</p>
+<p>The larger the value of <span class="math inline">\(\kappa\)</span>, the more concentrated the distribution is around the mean. This parameter is also named the precision parameter or the sample size parameter. Greek letters <span class="math inline">\(\nu\)</span> and <span class="math inline">\(\phi\)</span> are also commonly used to refer to this parameter.</p>
 </section>
 <section id="prior-for-kappa" class="level2">
 <h2 class="anchored" data-anchor-id="prior-for-kappa">Prior for <span class="math inline">\(\kappa\)</span></h2>
-<p>For weakly informative prior we can use a gamma distribution with low probability mass on very small values of <span class="math inline">\(\kappa\)</span>, such priors disfavors u-shaped beta distributions which are generally less common in real-world data. For instance we could choose <span class="math inline">\(\text{gamma}(4, 0.1)\)</span> as discussed by <a href="https://solomonkurz.netlify.app/blog/2023-06-25-causal-inference-with-beta-regression/">Solomon Kurz</a>, wich place most of the prior mass on the double-digit range with long right tail allowing for greater concentrations if needed.</p>
+<p>For weakly informative prior we can use a gamma distribution with low probability mass on very small values of <span class="math inline">\(\kappa\)</span>, such priors disfavor u-shaped beta distributions which are generally less common in real-world data. For instance, we could choose <span class="math inline">\(\text{gamma}(4, 0.1)\)</span> as discussed by <a href="https://solomonkurz.netlify.app/blog/2023-06-25-causal-inference-with-beta-regression/">Solomon Kurz</a>, which place most of the prior mass on the double-digit range with long right tail allowing for greater concentrations if needed.</p>
 </section>
 <section id="see-also" class="level2">
 <h2 class="anchored" data-anchor-id="see-also">See also</h2>

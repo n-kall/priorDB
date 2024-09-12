@@ -790,7 +790,7 @@
     "href": "gen_linear_regression/beta.html#parameters-needing-priors",
     "title": "Beta model",
     "section": "Parameters needing priors",
-    "text": "Parameters needing priors\n\n\\(\\alpha\\) (intercept)\n\\(\\beta\\) (predictor weights)\n\\(\\kappa\\) (concentration parameter)\n\nThe larger the value of \\(\\kappa\\), the more concentrated the distribution is around the mean. This parameter is also named the precision parameter or the sample size parameters. Greek letters \\(\\nu\\) and \\(\\phi\\) are also commonly used to refer to this parameter.",
+    "text": "Parameters needing priors\n\n\\(\\alpha\\) (intercept)\n\\(\\beta\\) (predictor weights)\n\\(\\kappa\\) (concentration parameter)\n\nThe larger the value of \\(\\kappa\\), the more concentrated the distribution is around the mean. This parameter is also named the precision parameter or the sample size parameter. Greek letters \\(\\nu\\) and \\(\\phi\\) are also commonly used to refer to this parameter.",
     "crumbs": [
       "Regression",
       "Continuous outcome",
@@ -803,7 +803,7 @@
     "href": "gen_linear_regression/beta.html#prior-for-kappa",
     "title": "Beta model",
     "section": "Prior for \\(\\kappa\\)",
-    "text": "Prior for \\(\\kappa\\)\nFor weakly informative prior we can use a gamma distribution with low probability mass on very small values of \\(\\kappa\\), such priors disfavors u-shaped beta distributions which are generally less common in real-world data. For instance we could choose \\(\\text{gamma}(4, 0.1)\\) as discussed by Solomon Kurz, wich place most of the prior mass on the double-digit range with long right tail allowing for greater concentrations if needed.",
+    "text": "Prior for \\(\\kappa\\)\nFor weakly informative prior we can use a gamma distribution with low probability mass on very small values of \\(\\kappa\\), such priors disfavor u-shaped beta distributions which are generally less common in real-world data. For instance, we could choose \\(\\text{gamma}(4, 0.1)\\) as discussed by Solomon Kurz, which place most of the prior mass on the double-digit range with long right tail allowing for greater concentrations if needed.",
     "crumbs": [
       "Regression",
       "Continuous outcome",
