@@ -402,6 +402,7 @@ window.Quarto = {
   <li><a href="#description" id="toc-description" class="nav-link active" data-scroll-target="#description">Description</a></li>
   <li><a href="#definition" id="toc-definition" class="nav-link" data-scroll-target="#definition">Definition</a></li>
   <li><a href="#parameters-needing-priors" id="toc-parameters-needing-priors" class="nav-link" data-scroll-target="#parameters-needing-priors">Parameters needing priors</a></li>
+  <li><a href="#prior-for-kappa" id="toc-prior-for-kappa" class="nav-link" data-scroll-target="#prior-for-kappa">Prior for <span class="math inline">\(\kappa\)</span></a></li>
   <li><a href="#see-also" id="toc-see-also" class="nav-link" data-scroll-target="#see-also">See also</a></li>
   </ul>
 </nav>
@@ -430,27 +431,31 @@ window.Quarto = {
 
 <section id="description" class="level2">
 <h2 class="anchored" data-anchor-id="description">Description</h2>
-<p>Beta regression is used for outcomes on the [0, 1] interval. It is a distributional regression, not a generalized linear model.</p>
+<p>Beta regression is used for outcomes on the [0, 1] interval.</p>
 </section>
 <section id="definition" class="level2">
 <h2 class="anchored" data-anchor-id="definition">Definition</h2>
 <p>For continuous outcome <span class="math inline">\(y\)</span> bounded [0, 1] and predictors <span class="math inline">\(x\)</span>, the model is:</p>
 <p><span class="math display">\[
 \begin{align}
-y_i \sim \text{beta}(\text{logit}^{-1}(\mu_i), \log{\phi_i}) \\
-\mu_i = \alpha_{\mu} + \beta_{\mu} \cdot x \\
-\phi_i = \alpha_{\phi} + \beta_{\phi} \cdot x \\
+y_i \sim \text{beta}(\text{logit}^{-1}(\mu_i), \kappa) \\
+\mu_i = \alpha + \beta \cdot x_i \\
 \end{align}
 \]</span></p>
+<p>The <a href="https://en.wikipedia.org/wiki/Logit">logit</a> function is the quantile function associated with the standard logistic distribution. Its inverse maps <span class="math inline">\(\mu_i\)</span> from the real line into a value within the interval (0, 1).</p>
 </section>
 <section id="parameters-needing-priors" class="level2">
 <h2 class="anchored" data-anchor-id="parameters-needing-priors">Parameters needing priors</h2>
 <ul>
-<li><span class="math inline">\(\alpha_{\mu}\)</span> (intercept for <span class="math inline">\(\mu\)</span>)</li>
-<li><span class="math inline">\(\alpha_{\phi}\)</span> (intercept for <span class="math inline">\(\phi\)</span>)</li>
-<li><span class="math inline">\(\beta_{\mu}\)</span> (predictor weights for <span class="math inline">\(\mu\)</span>)</li>
-<li><span class="math inline">\(\beta_{\mu}\)</span> (predictor weights for <span class="math inline">\(\phi\)</span>)</li>
+<li><span class="math inline">\(\alpha\)</span> (intercept)</li>
+<li><span class="math inline">\(\beta\)</span> (predictor weights)</li>
+<li><span class="math inline">\(\kappa\)</span> (concentration parameter)</li>
 </ul>
+<p>The larger the value of <span class="math inline">\(\kappa\)</span>, the more concentrated the distribution is around the mean. This parameter is also named the precision parameter or the sample size parameters. Greek letters <span class="math inline">\(\nu\)</span> and <span class="math inline">\(\phi\)</span> are also commonly used to refer to this parameter.</p>
+</section>
+<section id="prior-for-kappa" class="level2">
+<h2 class="anchored" data-anchor-id="prior-for-kappa">Prior for <span class="math inline">\(\kappa\)</span></h2>
+<p>For weakly informative prior we can use a gamma distribution with low probability mass on very small values of <span class="math inline">\(\kappa\)</span>, such priors disfavors u-shaped beta distributions which are generally less common in real-world data. For instance we could choose <span class="math inline">\(\text{gamma}(4, 0.1)\)</span> as discussed by <a href="https://solomonkurz.netlify.app/blog/2023-06-25-causal-inference-with-beta-regression/">Solomon Kurz</a>, wich place most of the prior mass on the double-digit range with long right tail allowing for greater concentrations if needed.</p>
 </section>
 <section id="see-also" class="level2">
 <h2 class="anchored" data-anchor-id="see-also">See also</h2>

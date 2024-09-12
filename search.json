@@ -751,7 +751,7 @@
     "href": "gen_linear_regression/beta.html",
     "title": "Beta model",
     "section": "",
-    "text": "Beta regression is used for outcomes on the [0, 1] interval. It is a distributional regression, not a generalized linear model.",
+    "text": "Beta regression is used for outcomes on the [0, 1] interval.",
     "crumbs": [
       "Regression",
       "Continuous outcome",
@@ -764,7 +764,7 @@
     "href": "gen_linear_regression/beta.html#description",
     "title": "Beta model",
     "section": "",
-    "text": "Beta regression is used for outcomes on the [0, 1] interval. It is a distributional regression, not a generalized linear model.",
+    "text": "Beta regression is used for outcomes on the [0, 1] interval.",
     "crumbs": [
       "Regression",
       "Continuous outcome",
@@ -777,7 +777,7 @@
     "href": "gen_linear_regression/beta.html#definition",
     "title": "Beta model",
     "section": "Definition",
-    "text": "Definition\nFor continuous outcome \\(y\\) bounded [0, 1] and predictors \\(x\\), the model is:\n\\[\n\\begin{align}\ny_i \\sim \\text{beta}(\\text{logit}^{-1}(\\mu_i), \\log{\\phi_i}) \\\\\n\\mu_i = \\alpha_{\\mu} + \\beta_{\\mu} \\cdot x \\\\\n\\phi_i = \\alpha_{\\phi} + \\beta_{\\phi} \\cdot x \\\\\n\\end{align}\n\\]",
+    "text": "Definition\nFor continuous outcome \\(y\\) bounded [0, 1] and predictors \\(x\\), the model is:\n\\[\n\\begin{align}\ny_i \\sim \\text{beta}(\\text{logit}^{-1}(\\mu_i), \\kappa) \\\\\n\\mu_i = \\alpha + \\beta \\cdot x_i \\\\\n\\end{align}\n\\]\nThe logit function is the quantile function associated with the standard logistic distribution. Its inverse maps \\(\\mu_i\\) from the real line into a value within the interval (0, 1).",
     "crumbs": [
       "Regression",
       "Continuous outcome",
@@ -790,7 +790,20 @@
     "href": "gen_linear_regression/beta.html#parameters-needing-priors",
     "title": "Beta model",
     "section": "Parameters needing priors",
-    "text": "Parameters needing priors\n\n\\(\\alpha_{\\mu}\\) (intercept for \\(\\mu\\))\n\\(\\alpha_{\\phi}\\) (intercept for \\(\\phi\\))\n\\(\\beta_{\\mu}\\) (predictor weights for \\(\\mu\\))\n\\(\\beta_{\\mu}\\) (predictor weights for \\(\\phi\\))",
+    "text": "Parameters needing priors\n\n\\(\\alpha\\) (intercept)\n\\(\\beta\\) (predictor weights)\n\\(\\kappa\\) (concentration parameter)\n\nThe larger the value of \\(\\kappa\\), the more concentrated the distribution is around the mean. This parameter is also named the precision parameter or the sample size parameters. Greek letters \\(\\nu\\) and \\(\\phi\\) are also commonly used to refer to this parameter.",
+    "crumbs": [
+      "Regression",
+      "Continuous outcome",
+      "Bounded",
+      "Beta model"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/beta.html#prior-for-kappa",
+    "href": "gen_linear_regression/beta.html#prior-for-kappa",
+    "title": "Beta model",
+    "section": "Prior for \\(\\kappa\\)",
+    "text": "Prior for \\(\\kappa\\)\nFor weakly informative prior we can use a gamma distribution with low probability mass on very small values of \\(\\kappa\\), such priors disfavors u-shaped beta distributions which are generally less common in real-world data. For instance we could choose \\(\\text{gamma}(4, 0.1)\\) as discussed by Solomon Kurz, wich place most of the prior mass on the double-digit range with long right tail allowing for greater concentrations if needed.",
     "crumbs": [
       "Regression",
       "Continuous outcome",
