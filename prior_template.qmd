@@ -15,4 +15,14 @@ For outcome $y$ and predictors $x$, the model is:
 
 ### First prior on $\theta$
 
+#### Implementation
+
+::: {.panel-tabset}
+
+##### Stan
+
+##### PyMC
+
+:::
+
 ## See also
