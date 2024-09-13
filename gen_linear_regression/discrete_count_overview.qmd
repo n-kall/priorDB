@@ -1,0 +1,16 @@
+---
+title: Discrete count outcome
+---
+
+Counts can be considered in different ways. If the count represents
+simple counting of observations, the [Poisson model](poisson.qmd) may
+be an appropriate starting point. However, if there is
+over-dispersion, the [negative binomial](negative_binomial.qmd) may
+better capture the data.
+
+If the counts are of the number of successes in repeated binary
+trials, then the [binomial model](binomial.qmd) is appropriate.
+
+In cases where there is an over-representation of zeroes in the
+data, this can be modelled with zero-inflated versions of the
+distributions.
