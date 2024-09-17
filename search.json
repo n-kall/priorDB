@@ -981,7 +981,7 @@
     "href": "autoregression/arr2.html",
     "title": "ARR2",
     "section": "",
-    "text": "Like the R2-D2 prior (r2d2?) but for autoregression.",
+    "text": "Developed by (Kohns et al. 2024), it is similar to the R2-D2 prior (Zhang et al. 2022) but for autoregression.",
     "crumbs": [
       "Autoregression",
       "ARR2"
@@ -992,7 +992,7 @@
     "href": "autoregression/arr2.html#description",
     "title": "ARR2",
     "section": "",
-    "text": "Like the R2-D2 prior (r2d2?) but for autoregression.",
+    "text": "Developed by (Kohns et al. 2024), it is similar to the R2-D2 prior (Zhang et al. 2022) but for autoregression.",
     "crumbs": [
       "Autoregression",
       "ARR2"
@@ -1025,7 +1025,7 @@
     "href": "autoregression/arr2.html#stan-code",
     "title": "ARR2",
     "section": "Stan code",
-    "text": "Stan code",
+    "text": "Stan code\ndata {\n  int&lt;lower=1&gt; T; // number of time points\n  vector[T] Y; // observations\n  int&lt;lower=0&gt; p; // AR order\n  // concentration vector of the Dirichlet prior\n  vector&lt;lower=0&gt;[p] cons;\n  // data for the R2D2 prior\n  real&lt;lower=0&gt; mean_R2;  // mean of the R2 prior\n  real&lt;lower=0&gt; prec_R2;  // precision of the R2 prior\n  real&lt;lower=0&gt; sigma_sd; // sd of sigma prior\n  // variance estimates of y\n  real&lt;lower=0&gt; var_y;\n}\n\nparameters {\n  vector[p] phi; // AR coefficients\n  simplex[p] psi; // decomposition simplex\n  real&lt;lower=0, upper=1&gt; R2; // coefficient of determination\n  real&lt;lower=0&gt; sigma; // observation model sd\n}\n\ntransformed parameters {\n  real&lt;lower=0&gt; tau2 = R2 / (1 - R2); // Equation 18\n  vector[T] mu = rep_vector(0.0, T);\n  for (t in (p+1):T) {\n    for (i in 1:p) {\n      mu[t] += phi[i] * Y[t-i]; // Equation 16\n    }\n  }\n}\n\nmodel {\n  // priors\n  phi ~ normal(0, sqrt(sigma^2/var_y * tau2 * psi));  // Equation 17\n  R2 ~ beta(mean_R2 * prec_R2, (1 - mean_R2) * prec_R2);  // Equation 19\n  sigma ~ normal(0, sigma_sd);  // Equation 20\n  psi ~ dirichlet(cons);        // Equation 21\n  // likelihood\n  Y ~ normal_lpdf(mu, sigma);   // Equation 15\n}",
     "crumbs": [
       "Autoregression",
       "ARR2"
