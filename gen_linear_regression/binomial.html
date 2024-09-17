@@ -66,11 +66,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-</head><body class="nav-sidebar floating"><select id="language-selector" style="margin-left: 10px;">
-    <option value="pymc">PyMC</option>
-    <option value="stan">Stan</option>
-  </select>
-<script src="../assets/script.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -103,9 +98,9 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../styles.css">
+</head>
 
-
-
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -459,7 +454,6 @@ y_i \sim \text{Binomial}(N_i, \exp{(\eta_i)}) \\
 <h2 class="anchored" data-anchor-id="see-also">See also</h2>
 <ul>
 <li><a href="https://distribution-explorer.github.io/discrete/binomial.html">Distribution explorer</a></li>
-<li><a href="https://preliz.readthedocs.io/en/latest/examples/gallery/binomial.html">PreliZ</a></li>
 <li><a href="https://mc-stan.org/docs/functions-reference/bounded_discrete_distributions.html#binomial-distribution">Stan Functions Reference</a></li>
 </ul>
 
