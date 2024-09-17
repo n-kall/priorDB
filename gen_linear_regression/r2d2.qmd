@@ -36,7 +36,12 @@ $$
 
 Priors on $\alpha$ and $\sigma$. Hyperparameters $\xi$, $\mu_{R^2}$, $\phi_{R^2}$. 
 
-# Stan code
-
+# Implementation
+::: {.example .stan}
 ```{.stan include="../stan/r2d2.stan"}
 ```
+:::
+
+::: {.example .pymc}
+
+:::

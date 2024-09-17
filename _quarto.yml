@@ -6,6 +6,13 @@ website:
   sidebar:
     collapse-level: 1
     contents:
+      - text: |
+            <div id="sidebar-content">
+              <select id="language-selector">
+                <option value="pymc">PyMC</option>
+                <option value="stan">Stan</option>
+              </select>
+            </div>
       - section: "Regression"
         contents:
           - gen_linear_regression/gen_linear_regression_overview.qmd
@@ -58,6 +65,9 @@ website:
 format:
   html:
     theme: cosmo
+    include-after-body: 
+    - text: |
+          <script src="/scripts/language_select.js"></script>
     css: styles.css
     toc: true
     code-fold: true
