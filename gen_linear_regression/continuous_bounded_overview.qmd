@@ -1,0 +1,9 @@
+---
+title: Continuous bounded outcome
+---
+
+For lower-bounded observations, there are the [gamma model](gamma.qmd),
+[lognormal](lognormal.qmd)
+
+For both upper- and lower-bounded observations, the [beta model] may
+be appropriate, particularly if the bounds are 0 and 1 (or can be transformed to this scale).

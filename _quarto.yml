@@ -13,10 +13,12 @@ website:
             contents:
               - section: "Unbounded"
                 contents:
+                  - gen_linear_regression/continuous_unbounded_overview.md
                   - gen_linear_regression/normal.qmd
                   - gen_linear_regression/student_t.qmd
               - section: "Bounded"
                 contents:
+                  - gen_linear_regression/continuous_bounded_overview.md
                   - gen_linear_regression/beta.qmd
           - section: "Discrete outcome"
             contents:
@@ -25,6 +27,7 @@ website:
                 - gen_linear_regression/bernoulli_logit.qmd
               - section: "Count"
                 contents:
+                  - gen_linear_regression/discrete_count_overview.qmd
                   - gen_linear_regression/poisson.qmd
                   - gen_linear_regression/negative_binomial.qmd
                   - gen_linear_regression/binomial.qmd
@@ -54,7 +57,7 @@ website:
         href: tools.qmd
       - text: "Contributors"
         href: contributors.md
-        
+
 format:
   html:
     theme: cosmo
