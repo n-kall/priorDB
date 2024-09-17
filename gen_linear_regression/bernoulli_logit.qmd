@@ -62,9 +62,11 @@ logis_sigma <- function(n, q) {
 
 $p(\alpha) \propto \exp{(-\text{abs}({\alpha / \sqrt(2) \sigma})^\gamma)}$
 
+:::{.example .stan}
 ```stan
 target += -abs((alpha) / (sqrt(2.0) * alpha_scale))^(alpha_power);
 ```
+:::
 
 Similar to the method for the logistic prior, choosing $\sigma$ can be
 done with the following function:

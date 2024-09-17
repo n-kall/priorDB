@@ -8,7 +8,9 @@ An extension of the R2D2 prior for multi-level models [@aguilarIntuitiveJointPri
 
 # Definition
 
-# Stan code
+# Implementation
 
+:::{.example .stan}
 ```{.stan include="../stan/r2d2m2.stan"}
 ```
+:::

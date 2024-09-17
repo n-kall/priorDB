@@ -21,7 +21,9 @@ $$
 Prior on the radius of the ball $r$. Prior on the unprojected $\beta$
 coefficients.
 
-# Stan code
+# Implementation
 
+::: {.example .stan}
 ```{.stan include="../stan/l1_ball.stan"}
 ```
+:::
