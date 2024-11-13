@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Noa Kallioinen">
 
 <title>Ordered logistic model – priorDB</title>
 <style>
@@ -84,15 +85,19 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../gen_linear_regression/gr2.html" rel="next">
+<link href="../gen_linear_regression/categorical.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -152,6 +157,54 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../styles.css">
+<meta name="citation_title" content="Ordered logistic model">
+<meta name="citation_author" content="Noa Kallioinen">
+<meta name="citation_fulltext_html_url" content="https://n-kall.github.io/priorDB/gen_linear_regression/ordinal.html">
+<meta name="citation_language" content="en">
+<meta name="citation_reference" content="citation_title=The ARR2 prior: Flexible predictive prior definition for Bayesian auto-regressions;,citation_abstract=We present the ARR2 prior, a joint prior over the auto-regressive components in Bayesian time-series models and their induced $R^2$. Compared to other priors designed for times-series models, the ARR2 prior allows for flexible and intuitive shrinkage. We derive the prior for pure auto-regressive models, and extend it to auto-regressive models with exogenous inputs, and state-space models. Through both simulations and real-world modelling exercises, we demonstrate the efficacy of the ARR2 prior in improving sparse and reliable inference, while showing greater inference quality and predictive performance than other shrinkage priors. An open-source implementation of the prior is provided.;,citation_author=David Kohns;,citation_author=Noa Kallioinen;,citation_author=Yann McLatchie;,citation_author=Aki Vehtari;,citation_publication_date=2024-05-31;,citation_cover_date=2024-05-31;,citation_year=2024;,citation_fulltext_html_url=http://arxiv.org/abs/2405.19920;">
+<meta name="citation_reference" content="citation_title=A default prior for regression coefficients;,citation_author=Erik Zwet;,citation_publication_date=2018-10;,citation_cover_date=2018-10;,citation_year=2018;,citation_fulltext_html_url=https://arxiv.org/abs/1809.08449;,citation_journal_title=arXiv:1809.08449 [stat];">
+<meta name="citation_reference" content="citation_title=Penalising Model Component Complexity: A Principled, Practical Approach to Constructing Priors;,citation_author=Daniel Simpson;,citation_author=Håvard Rue;,citation_author=Andrea Riebler;,citation_author=Thiago G. Martins;,citation_author=Sigrunn H. Sørbye;,citation_publication_date=2017-02;,citation_cover_date=2017-02;,citation_year=2017;,citation_issue=1;,citation_doi=10.1214/16-STS576;,citation_issn=0883-4237;,citation_volume=32;,citation_language=en-US;,citation_journal_title=Statistical Science;">
+<meta name="citation_reference" content="citation_title=On the Use of Cauchy Prior Distributions for Bayesian Logistic Regression;,citation_author=Joyee Ghosh;,citation_author=Yingbo Li;,citation_author=Robin Mitra;,citation_publication_date=2018-06;,citation_cover_date=2018-06;,citation_year=2018;,citation_issue=2;,citation_doi=10.1214/17-BA1051;,citation_issn=1936-0975;,citation_volume=13;,citation_language=en-US;,citation_journal_title=Bayesian Analysis;">
+<meta name="citation_reference" content="citation_title=Regression and Other Stories;,citation_author=Andrew Gelman;,citation_author=Jennifer Hill;,citation_author=Aki Vehtari;,citation_publication_date=2020;,citation_cover_date=2020;,citation_year=2020;,citation_isbn=978-1-107-02398-7;,citation_language=en-US;">
+<meta name="citation_reference" content="citation_title=The Prior Can Often Only Be Understood in the Context of the Likelihood;,citation_author=Andrew Gelman;,citation_author=Daniel Simpson;,citation_author=Michael Betancourt;,citation_publication_date=2017-10;,citation_cover_date=2017-10;,citation_year=2017;,citation_issue=10;,citation_doi=10.3390/e19100555;,citation_issn=1099-4300;,citation_volume=19;,citation_language=en-US;,citation_journal_title=Entropy;">
+<meta name="citation_reference" content="citation_title=Sparsity information and regularization in the horseshoe and other shrinkage priors;,citation_author=Juho Piironen;,citation_author=Aki Vehtari;,citation_publication_date=2017-01;,citation_cover_date=2017-01;,citation_year=2017;,citation_issue=2;,citation_doi=10.1214/17-EJS1337SI;,citation_issn=1935-7524;,citation_volume=11;,citation_journal_title=Electronic Journal of Statistics;">
+<meta name="citation_reference" content="citation_title=Intuitive joint priors for Bayesian linear multilevel models: The R2D2M2 prior;,citation_author=Javier Enrique Aguilar;,citation_author=Paul-Christian Bürkner;,citation_publication_date=2023-01;,citation_cover_date=2023-01;,citation_year=2023;,citation_issue=1;,citation_doi=10.1214/23-EJS2136;,citation_issn=1935-7524;,citation_volume=17;,citation_journal_title=Electronic Journal of Statistics;">
+<meta name="citation_reference" content="citation_title=Bayesian Regression Using a Prior on the Model Fit: The R2-D2 Shrinkage Prior;,citation_author=Yan Dora Zhang;,citation_author=Brian P. Naughton;,citation_author=Howard D. Bondell;,citation_author=Brian J. Reich;,citation_publication_date=2022-04;,citation_cover_date=2022-04;,citation_year=2022;,citation_issue=538;,citation_doi=10.1080/01621459.2020.1825449;,citation_issn=0162-1459, 1537-274X;,citation_volume=117;,citation_language=en-US;,citation_journal_title=Journal of the American Statistical Association;">
+<meta name="citation_reference" content="citation_title=Generalized Decomposition Priors on R2;,citation_author=Javier Enrique Aguilar;,citation_author=Paul-Christian Bürkner;,citation_publication_date=2024-01;,citation_cover_date=2024-01;,citation_year=2024;,citation_fulltext_html_url=https://arxiv.org/abs/2401.10180;,citation_publisher=arXiv;">
+<meta name="citation_reference" content="citation_title=On Non- and Weakly-Informative Priors for the Conway-Maxwell-Poisson (COM-Poisson) Distribution;,citation_author=Mark J. Meyer;,citation_author=Amia Graye;,citation_author=Kimberly F. Sellers;,citation_publication_date=2023-11;,citation_cover_date=2023-11;,citation_year=2023;,citation_fulltext_html_url=https://arxiv.org/abs/2311.18053;,citation_language=en-US;,citation_publisher=arXiv;">
+<meta name="citation_reference" content="citation_title=Default Bayesian Priors for Regression Models with First-Order Autoregressive Residuals;,citation_author=Malay Ghosh;,citation_author=Jungeun Heo;,citation_publication_date=2003;,citation_cover_date=2003;,citation_year=2003;,citation_issue=3;,citation_doi=10.1111/1467-9892.00307;,citation_issn=1467-9892;,citation_volume=24;,citation_language=en-US;,citation_journal_title=Journal of Time Series Analysis;">
+<meta name="citation_reference" content="citation_title=The R2D2 Prior for Generalized Linear Mixed Models;,citation_author=Eric Yanchenko;,citation_author=Howard D. Bondell;,citation_author=Brian J. Reich;,citation_publication_date=2024-01;,citation_cover_date=2024-01;,citation_year=2024;,citation_fulltext_html_url=https://arxiv.org/abs/2111.10718;,citation_doi=10.48550/arXiv.2111.10718;,citation_publisher=arXiv;">
+<meta name="citation_reference" content="citation_title=Bayesian inference with the &amp;amp;amp;lt;i&amp;gt;l&amp;lt;/i&amp;gt; 1-ball prior: Solving combinatorial problems with exact zeros;,citation_author=Maoran Xu;,citation_author=Leo L Duan;,citation_publication_date=2024-02;,citation_cover_date=2024-02;,citation_year=2024;,citation_issue=5;,citation_doi=10.1093/jrsssb/qkad076;,citation_issn=1369-7412, 1467-9868;,citation_volume=85;,citation_language=en-US;,citation_journal_title=Journal of the Royal Statistical Society Series B: Statistical Methodology;">
+<meta name="citation_reference" content="citation_title=Model-Based Clustering of Non-Gaussian Panel Data Based on Skew- &amp;amp;amp;lt;i&amp;gt;t&amp;lt;/i&amp;gt; Distributions;,citation_author=Miguel A. Juárez;,citation_author=Mark F. J. Steel;,citation_publication_date=2010-01;,citation_cover_date=2010-01;,citation_year=2010;,citation_issue=1;,citation_doi=10.1198/jbes.2009.07145;,citation_issn=0735-0015, 1537-2707;,citation_volume=28;,citation_language=en-US;,citation_journal_title=Journal of Business &amp;amp; Economic Statistics;">
+<meta name="citation_reference" content="citation_title=Default prior for negative-binomial shape parameter;,citation_author=Aki Vehtari;,citation_publication_date=2024-03;,citation_cover_date=2024-03;,citation_year=2024;,citation_language=en-US;,citation_publisher=https://users.aalto.fi/~ave/casestudies/Priors/negbinomial_shape_prior.html;">
+<meta name="citation_reference" content="citation_title=Toward Automated Prior Choice;,citation_author=David B. Dunson;,citation_publication_date=2017-02;,citation_cover_date=2017-02;,citation_year=2017;,citation_issue=1;,citation_doi=10.1214/16-STS607;,citation_issn=0883-4237, 2168-8745;,citation_volume=32;,citation_journal_title=Statistical Science;,citation_publisher=Institute of Mathematical Statistics;">
+<meta name="citation_reference" content="citation_title=Penalised Complexity Priors for Stationary Autoregressive Processes;,citation_author=Sigrunn Holbek Sørbye;,citation_author=Håvard Rue;,citation_publication_date=2017;,citation_cover_date=2017;,citation_year=2017;,citation_issue=6;,citation_doi=10.1111/jtsa.12242;,citation_issn=1467-9892;,citation_volume=38;,citation_language=en-US;,citation_journal_title=Journal of Time Series Analysis;">
+<meta name="citation_reference" content="citation_title=Default Priors for the Intercept Parameter in Logistic Regressions;,citation_author=Philip S. Boonstra;,citation_author=Ryan P. Barbaro;,citation_author=Ananda Sen;,citation_publication_date=2019-05;,citation_cover_date=2019-05;,citation_year=2019;,citation_doi=10.1016/j.csda.2018.10.014;,citation_issn=0167-9473;,citation_pmid=31530966;,citation_volume=133;,citation_journal_title=Computational statistics &amp;amp;amp; data analysis;">
+<meta name="citation_reference" content="citation_title=Penalization, bias reduction, and default priors in logistic and related categorical and survival regressions;,citation_author=Sander Greenland;,citation_author=Mohammad Ali Mansournia;,citation_publication_date=2015;,citation_cover_date=2015;,citation_year=2015;,citation_issue=23;,citation_doi=10.1002/sim.6537;,citation_issn=1097-0258;,citation_volume=34;,citation_language=en-US;,citation_journal_title=Statistics in Medicine;">
+<meta name="citation_reference" content="citation_title=Objective Prior for the Number of Degrees of Freedom of a t Distribution;,citation_author=Cristiano Villa;,citation_author=Stephen G. Walker;,citation_publication_date=2014-03;,citation_cover_date=2014-03;,citation_year=2014;,citation_issue=1;,citation_doi=10.1214/13-BA854;,citation_issn=1936-0975;,citation_volume=9;,citation_journal_title=Bayesian Analysis;">
+<meta name="citation_reference" content="citation_title=Poisson regression for linguists: A tutorial introduction to modelling count data with brms;,citation_author=Bodo Winter;,citation_author=Paul-Christian Bürkner;,citation_publication_date=2021-11;,citation_cover_date=2021-11;,citation_year=2021;,citation_issue=11;,citation_doi=10.1111/lnc3.12439;,citation_issn=1749-818X, 1749-818X;,citation_volume=15;,citation_language=en-US;,citation_journal_title=Language and Linguistics Compass;">
+<meta name="citation_reference" content="citation_title=A case for beta regression in the natural sciences;,citation_author=Emilie A. Geissinger;,citation_author=Celyn L. L. Khoo;,citation_author=Isabella C. Richmond;,citation_author=Sally J. M. Faulkner;,citation_author=David C. Schneider;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_issue=2;,citation_doi=10.1002/ecs2.3940;,citation_issn=2150-8925;,citation_volume=13;,citation_language=en-US;,citation_journal_title=Ecosphere;">
+<meta name="citation_reference" content="citation_title=Selection of inverse gamma and half-t priors for hierarchical models: Sensitivity and recommendations;,citation_author=Zachary Brehm;,citation_author=Aaron Wagner;,citation_author=Erik VonKaenel;,citation_author=David Burton;,citation_author=Samuel J. Weisenthal;,citation_author=Martin Cole;,citation_author=Yiping Pang;,citation_author=Sally W. Thurston;,citation_publication_date=2021-08;,citation_cover_date=2021-08;,citation_year=2021;,citation_fulltext_html_url=https://arxiv.org/abs/2108.12045;,citation_doi=10.48550/arXiv.2108.12045;,citation_publisher=arXiv;">
+<meta name="citation_reference" content="citation_title=Ordinal Regression;,citation_author=Michael Betancourt;,citation_publication_date=2019;,citation_cover_date=2019;,citation_year=2019;,citation_publisher=https://betanalpha.github.io/assets/case_studies/ordinal_regression.html;">
+<meta name="citation_reference" content="citation_title=A Proposal for Informative Default Priors Scaled by the Standard Error of Estimates;,citation_author=Erik Zwet;,citation_author=Andrew Gelman;,citation_publication_date=2022-01;,citation_cover_date=2022-01;,citation_year=2022;,citation_issue=1;,citation_doi=10.1080/00031305.2021.1938225;,citation_issn=0003-1305, 1537-2731;,citation_volume=76;,citation_language=en-US;,citation_journal_title=The American Statistician;">
+<meta name="citation_reference" content="citation_title=Prior Distributions for rstanarm Models;,citation_language=en-US;,citation_publisher=http://mc-stan.org/rstanarm/articles/priors.html;">
+<meta name="citation_reference" content="citation_title=On the role of benchmarking data sets and simulations in method comparison studies;,citation_author=Sarah Friedrich;,citation_author=Tim Friede;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_issue=1;,citation_doi=10.1002/bimj.202200212;,citation_issn=1521-4036;,citation_volume=66;,citation_language=en-US;,citation_journal_title=Biometrical Journal;">
+<meta name="citation_reference" content="citation_title=Symbolic regression outperforms other models for small data sets;,citation_author=Casper Wilstrup;,citation_author=Jaan Kasak;,citation_publication_date=2021-05;,citation_cover_date=2021-05;,citation_year=2021;,citation_fulltext_html_url=https://arxiv.org/abs/2103.15147;,citation_doi=10.48550/arXiv.2103.15147;,citation_publisher=arXiv;">
+<meta name="citation_reference" content="citation_title=Benchmarking in classification and regression;,citation_author=Frank Hoffmann;,citation_author=Torsten Bertram;,citation_author=Ralf Mikut;,citation_author=Markus Reischl;,citation_author=Oliver Nelles;,citation_publication_date=2019;,citation_cover_date=2019;,citation_year=2019;,citation_issue=5;,citation_doi=10.1002/widm.1318;,citation_issn=1942-4795;,citation_volume=9;,citation_language=en-US;,citation_journal_title=WIREs Data Mining and Knowledge Discovery;">
+<meta name="citation_reference" content="citation_title=PMLB: A large benchmark suite for machine learning evaluation and comparison;,citation_author=Randal S. Olson;,citation_author=William La Cava;,citation_author=Patryk Orzechowski;,citation_author=Ryan J. Urbanowicz;,citation_author=Jason H. Moore;,citation_publication_date=2017;,citation_cover_date=2017;,citation_year=2017;,citation_doi=10.1186/s13040-017-0154-4;,citation_pmid=29238404;,citation_volume=10;,citation_language=en-US;,citation_journal_title=BioData Mining;,citation_publisher=BMC;">
+<meta name="citation_reference" content="citation_title=Optimal selection of benchmarking datasets for unbiased machine learning algorithm evaluation;,citation_author=João Luiz Junho Pereira;,citation_author=Kate Smith-Miles;,citation_author=Mario Andrés Muñoz;,citation_author=Ana Carolina Lorena;,citation_publication_date=2024-03;,citation_cover_date=2024-03;,citation_year=2024;,citation_issue=2;,citation_doi=10.1007/s10618-023-00957-1;,citation_issn=1573-756X;,citation_volume=38;,citation_language=en-US;,citation_journal_title=Data Mining and Knowledge Discovery;">
+<meta name="citation_reference" content="citation_title=Bayesian Inference in High-Dimensional Linear Models Using an Empirical Correlation-Adaptive Prior;,citation_author=Chang Liu;,citation_author=Yue Yang;,citation_author=Howard Bondell;,citation_author=Ryan Martin;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_fulltext_html_url=https://www.jstor.org/stable/27089328;,citation_issue=4;,citation_issn=1017-0405;,citation_volume=31;,citation_journal_title=Statistica Sinica;,citation_publisher=Institute of Statistical Science, Academia Sinica;">
+<meta name="citation_reference" content="citation_title=Moving beyond noninformative priors: Why and how to choose weakly informative priors in Bayesian analyses;,citation_author=Nathan P. Lemoine;,citation_publication_date=2019;,citation_cover_date=2019;,citation_year=2019;,citation_issue=7;,citation_doi=10.1111/oik.05985;,citation_issn=1600-0706;,citation_volume=128;,citation_language=en-US;,citation_journal_title=Oikos;">
+<meta name="citation_reference" content="citation_title=Dangers of the Defaults: A Tutorial on the Impact of Default Priors When Using Bayesian SEM With Small Samples;,citation_author=Sanne C. Smid;,citation_author=Sonja D. Winter;,citation_publication_date=2020-12;,citation_cover_date=2020-12;,citation_year=2020;,citation_doi=10.3389/fpsyg.2020.611963;,citation_issn=1664-1078;,citation_volume=11;,citation_language=en-US;,citation_journal_title=Frontiers in Psychology;,citation_publisher=Frontiers;">
+<meta name="citation_reference" content="citation_title=Spatial habitat heterogeneity influences host–pathogen dynamics in a patchy population of Ranchman’s tiger moth;,citation_author=Adam Pepi;,citation_author=Vincent Pan;,citation_author=Patrick Grof-Tisza;,citation_author=Marcel Holyoak;,citation_author=Alexis Ballman;,citation_author=Aiyanna Laws-McNeil;,citation_author=Vinay Mase;,citation_author=Cameron Moseley;,citation_author=Richard Karban;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_issue=10;,citation_doi=10.1002/ecy.4144;,citation_issn=1939-9170;,citation_volume=104;,citation_language=en-US;,citation_journal_title=Ecology;">
+<meta name="citation_reference" content="citation_title=Multiple timescales of learning indicated by changes in evidence-accumulation processes during perceptual decision-making;,citation_author=Aaron Cochrane;,citation_author=Chris R. Sims;,citation_author=Vikranth R. Bejjanki;,citation_author=C. Shawn Green;,citation_author=Daphne Bavelier;,citation_publication_date=2023-06;,citation_cover_date=2023-06;,citation_year=2023;,citation_issue=1;,citation_doi=10.1038/s41539-023-00168-9;,citation_issn=2056-7936;,citation_volume=8;,citation_language=en-US;,citation_journal_title=npj Science of Learning;,citation_publisher=Nature Publishing Group;">
+<meta name="citation_reference" content="citation_title=Effects of average reward rate on vigor as a function of individual variation in striatal dopamine;,citation_author=Lieke Hofmans;,citation_author=Andrew Westbrook;,citation_author=Ruben Bosch;,citation_author=Jan Booij;,citation_author=Robbert-Jan Verkes;,citation_author=Roshan Cools;,citation_publication_date=2022-02;,citation_cover_date=2022-02;,citation_year=2022;,citation_issue=2;,citation_doi=10.1007/s00213-021-06017-0;,citation_issn=1432-2072;,citation_volume=239;,citation_language=en-US;,citation_journal_title=Psychopharmacology;">
+<meta name="citation_reference" content="citation_title=Impulse control disorder in Parkinson’s disease is associated with abnormal frontal value signalling;,citation_author=Jorryt G Tichelaar;,citation_author=Ceyda Sayalı;,citation_author=Rick C Helmich;,citation_author=Roshan Cools;,citation_publication_date=2023-09;,citation_cover_date=2023-09;,citation_year=2023;,citation_issue=9;,citation_doi=10.1093/brain/awad162;,citation_issn=0006-8950;,citation_volume=146;,citation_journal_title=Brain;">
+<meta name="citation_reference" content="citation_title=Bayesian estimation with integrated nested Laplace approximation for binary logit mixed models;,citation_author=L. Grilli;,citation_author=S. Metelli;,citation_author=C. Rampichini;,citation_publication_date=2015-09;,citation_cover_date=2015-09;,citation_year=2015;,citation_issue=13;,citation_doi=10.1080/00949655.2014.935377;,citation_issn=0094-9655;,citation_volume=85;,citation_journal_title=Journal of Statistical Computation and Simulation;,citation_publisher=Taylor &amp;amp;amp; Francis;">
+<meta name="citation_reference" content="citation_title=Where Is the Clean Air? A Bayesian Decision Framework for Personalised Cyclist Route Selection Using R-INLA;,citation_author=Laura C. Dawkins;,citation_author=Daniel B. Williamson;,citation_author=Kerrie L. Mengersen;,citation_author=Lidia Morawska;,citation_author=Rohan Jayaratne;,citation_author=Gavin Shaddick;,citation_publication_date=2021-03;,citation_cover_date=2021-03;,citation_year=2021;,citation_issue=1;,citation_doi=10.1214/19-BA1193;,citation_issn=1936-0975, 1931-6690;,citation_volume=16;,citation_journal_title=Bayesian Analysis;,citation_publisher=International Society for Bayesian Analysis;">
+<meta name="citation_reference" content="citation_title=Modelling Spatially Sampled Proportion Processes;,citation_author=Iosu Paradinas;,citation_author=Maria Grazia Pennino;,citation_author=Antonio López-Quílez;,citation_author=Marcial Marín;,citation_author=José María Bellido;,citation_author=David Conesa;,citation_publication_date=2018-02;,citation_cover_date=2018-02;,citation_year=2018;,citation_issue=1;,citation_doi=10.57805/revstat.v16i1.233;,citation_issn=2183-0371;,citation_volume=16;,citation_language=en-US;,citation_journal_title=REVSTAT-Statistical Journal;">
+<meta name="citation_reference" content="citation_title=Increased default-mode variability is related to reduced task-performance and is evident in adults with ADHD;,citation_author=Athanasia M. Mowinckel;,citation_author=Dag Alnæs;,citation_author=Mads L. Pedersen;,citation_author=Sigurd Ziegler;,citation_author=Mats Fredriksen;,citation_author=Tobias Kaufmann;,citation_author=Edmund Sonuga-Barke;,citation_author=Tor Endestad;,citation_author=Lars T. Westlye;,citation_author=Guido Biele;,citation_publication_date=2017-01;,citation_cover_date=2017-01;,citation_year=2017;,citation_doi=10.1016/j.nicl.2017.03.008;,citation_issn=2213-1582;,citation_volume=16;,citation_journal_title=NeuroImage: Clinical;">
+<meta name="citation_reference" content="citation_title=Notes on the Bayesian cumulative probit;,citation_language=en-US;,citation_journal_title=A. Solomon Kurz;,citation_publisher=https://solomonkurz.netlify.app/blog/2021-12-29-notes-on-the-bayesian-cumulative-probit/;">
 </head>
 
 <body class="nav-sidebar floating">
@@ -179,6 +232,9 @@ window.Quarto = {
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">priorDB</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -188,6 +244,9 @@ window.Quarto = {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+ <span class="menu-text">Models</span>
+  </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
@@ -319,8 +378,11 @@ window.Quarto = {
       </div>
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
- <span class="menu-text">gen_linear_regression/categorical.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../gen_linear_regression/categorical.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Categorical model</span></a>
+  </div>
+</li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
@@ -391,7 +453,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../autoregression/autoregression_overview.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Autoregression overview</span></a>
+ <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -420,7 +482,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../hierarchical_regression/hierarchical_regression_overview.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Hierarchical regression overview</span></a>
+ <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -432,11 +494,26 @@ window.Quarto = {
       </ul>
   </li>
         <li class="sidebar-item">
+ <span class="menu-text"><br></span>
+  </li>
+        <li class="sidebar-item">
+ <span class="menu-text">External resources</span>
+  </li>
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../tools.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Tools</span></a>
+ <span class="menu-text">Software Tools</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Stan_prior_choice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Stan prior guide</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+ <span class="menu-text"><br></span>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../contributors.html" class="sidebar-item-text sidebar-link">
@@ -464,26 +541,14 @@ window.Quarto = {
   </ul></li>
   <li><a href="#see-also" id="toc-see-also" class="nav-link" data-scroll-target="#see-also">See also</a></li>
   </ul>
-</nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/n-kall/priorDB/blob/main/gen_linear_regression/ordinal.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/n-kall/priorDB/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../gen_linear_regression/gen_linear_regression_overview.html">Regression</a></li><li class="breadcrumb-item">Discrete outcome</li><li class="breadcrumb-item"><a href="../gen_linear_regression/ordinal.html">Ordered</a></li><li class="breadcrumb-item"><a href="../gen_linear_regression/ordinal.html">Ordered logistic model</a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title">Ordered logistic model</h1>
-</div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
+<header id="title-block-header">
+<h1 class="title display-7">Ordered logistic model</h1>
+<p class="author"></p>
 
 </header>
 
@@ -588,6 +653,150 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -988,9 +1197,21 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../gen_linear_regression/categorical.html" class="pagination-link" aria-label="Categorical model">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Categorical model</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../gen_linear_regression/gr2.html" class="pagination-link" aria-label="Generalised R2">
+        <span class="nav-page-text">Generalised R2</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
 
 
-</body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/n-kall/priorDB/blob/main/gen_linear_regression/ordinal.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/n-kall/priorDB/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

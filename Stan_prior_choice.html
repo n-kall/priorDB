@@ -8,7 +8,7 @@
 
 <meta name="author" content="Noa Kallioinen">
 
-<title>Generalised R2 – priorDB</title>
+<title>Stan Prior Choice Recommendations – priorDB</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,83 +21,29 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../gen_linear_regression/r2d2.html" rel="next">
-<link href="../gen_linear_regression/ordinal.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./contributors.html" rel="next">
+<link href="./tools.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -126,40 +72,11 @@ div.csl-indent {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../styles.css">
-<meta name="citation_title" content="Generalised R2">
+<link rel="stylesheet" href="styles.css">
+<meta name="citation_title" content="Stan Prior Choice Recommendations">
 <meta name="citation_author" content="Noa Kallioinen">
-<meta name="citation_fulltext_html_url" content="https://n-kall.github.io/priorDB/gen_linear_regression/gr2.html">
+<meta name="citation_fulltext_html_url" content="https://n-kall.github.io/priorDB/Stan_prior_choice.html">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=The ARR2 prior: Flexible predictive prior definition for Bayesian auto-regressions;,citation_abstract=We present the ARR2 prior, a joint prior over the auto-regressive components in Bayesian time-series models and their induced $R^2$. Compared to other priors designed for times-series models, the ARR2 prior allows for flexible and intuitive shrinkage. We derive the prior for pure auto-regressive models, and extend it to auto-regressive models with exogenous inputs, and state-space models. Through both simulations and real-world modelling exercises, we demonstrate the efficacy of the ARR2 prior in improving sparse and reliable inference, while showing greater inference quality and predictive performance than other shrinkage priors. An open-source implementation of the prior is provided.;,citation_author=David Kohns;,citation_author=Noa Kallioinen;,citation_author=Yann McLatchie;,citation_author=Aki Vehtari;,citation_publication_date=2024-05-31;,citation_cover_date=2024-05-31;,citation_year=2024;,citation_fulltext_html_url=http://arxiv.org/abs/2405.19920;">
 <meta name="citation_reference" content="citation_title=A default prior for regression coefficients;,citation_author=Erik Zwet;,citation_publication_date=2018-10;,citation_cover_date=2018-10;,citation_year=2018;,citation_fulltext_html_url=https://arxiv.org/abs/1809.08449;,citation_journal_title=arXiv:1809.08449 [stat];">
@@ -216,7 +133,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../gen_linear_regression/gen_linear_regression_overview.html">Regression</a></li><li class="breadcrumb-item"><a href="../gen_linear_regression/gr2.html">Sparsity priors</a></li><li class="breadcrumb-item"><a href="../gen_linear_regression/gr2.html">Generalised R2</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Stan_prior_choice.html">Stan prior guide</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -231,7 +148,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">priorDB</a> 
+      <a href="./">priorDB</a> 
         <div class="sidebar-tools-main">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
@@ -249,16 +166,16 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Regression</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../gen_linear_regression/gen_linear_regression_overview.html" class="sidebar-item-text sidebar-link">
+  <a href="./gen_linear_regression/gen_linear_regression_overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
@@ -282,13 +199,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../gen_linear_regression/normal.html" class="sidebar-item-text sidebar-link">
+  <a href="./gen_linear_regression/normal.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Normal model</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../gen_linear_regression/student_t.html" class="sidebar-item-text sidebar-link">
+  <a href="./gen_linear_regression/student_t.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Student-t model</span></a>
   </div>
 </li>
@@ -305,7 +222,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../gen_linear_regression/beta.html" class="sidebar-item-text sidebar-link">
+  <a href="./gen_linear_regression/beta.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Beta model</span></a>
   </div>
 </li>
@@ -333,7 +250,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../gen_linear_regression/bernoulli_logit.html" class="sidebar-item-text sidebar-link">
+  <a href="./gen_linear_regression/bernoulli_logit.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bernoulli model</span></a>
   </div>
 </li>
@@ -350,19 +267,19 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../gen_linear_regression/poisson.html" class="sidebar-item-text sidebar-link">
+  <a href="./gen_linear_regression/poisson.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Poisson model</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../gen_linear_regression/negative_binomial.html" class="sidebar-item-text sidebar-link">
+  <a href="./gen_linear_regression/negative_binomial.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Negative-binomial model</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../gen_linear_regression/binomial.html" class="sidebar-item-text sidebar-link">
+  <a href="./gen_linear_regression/binomial.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Binomial model</span></a>
   </div>
 </li>
@@ -379,7 +296,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../gen_linear_regression/categorical.html" class="sidebar-item-text sidebar-link">
+  <a href="./gen_linear_regression/categorical.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Categorical model</span></a>
   </div>
 </li>
@@ -396,7 +313,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../gen_linear_regression/ordinal.html" class="sidebar-item-text sidebar-link">
+  <a href="./gen_linear_regression/ordinal.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Ordered logistic model</span></a>
   </div>
 </li>
@@ -406,34 +323,34 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
  <span class="menu-text">Sparsity priors</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../gen_linear_regression/gr2.html" class="sidebar-item-text sidebar-link active">
+  <a href="./gen_linear_regression/gr2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Generalised R2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../gen_linear_regression/r2d2.html" class="sidebar-item-text sidebar-link">
+  <a href="./gen_linear_regression/r2d2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R2-D2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../gen_linear_regression/rhs.html" class="sidebar-item-text sidebar-link">
+  <a href="./gen_linear_regression/rhs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Regularised horse shoe</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../gen_linear_regression/l1_ball.html" class="sidebar-item-text sidebar-link">
+  <a href="./gen_linear_regression/l1_ball.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">L1 Ball</span></a>
   </div>
 </li>
@@ -452,19 +369,19 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../autoregression/autoregression_overview.html" class="sidebar-item-text sidebar-link">
+  <a href="./autoregression/autoregression_overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../autoregression/arr2.html" class="sidebar-item-text sidebar-link">
+  <a href="./autoregression/arr2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">ARR2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../autoregression/minnesota.html" class="sidebar-item-text sidebar-link">
+  <a href="./autoregression/minnesota.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Minnesota</span></a>
   </div>
 </li>
@@ -481,13 +398,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../hierarchical_regression/hierarchical_regression_overview.html" class="sidebar-item-text sidebar-link">
+  <a href="./hierarchical_regression/hierarchical_regression_overview.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../hierarchical_regression/r2d2m2.html" class="sidebar-item-text sidebar-link">
+  <a href="./hierarchical_regression/r2d2m2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R2D2M2</span></a>
   </div>
 </li>
@@ -501,13 +418,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../tools.html" class="sidebar-item-text sidebar-link">
+  <a href="./tools.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Software Tools</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Stan_prior_choice.html" class="sidebar-item-text sidebar-link">
+  <a href="./Stan_prior_choice.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Stan prior guide</span></a>
   </div>
 </li>
@@ -516,7 +433,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../contributors.html" class="sidebar-item-text sidebar-link">
+  <a href="./contributors.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Contributors</span></a>
   </div>
 </li>
@@ -525,142 +442,24 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#description" id="toc-description" class="nav-link active" data-scroll-target="#description">Description</a></li>
-  <li><a href="#definition" id="toc-definition" class="nav-link" data-scroll-target="#definition">Definition</a></li>
-  <li><a href="#things-to-specify" id="toc-things-to-specify" class="nav-link" data-scroll-target="#things-to-specify">Things to specify</a></li>
-  <li><a href="#stan-code" id="toc-stan-code" class="nav-link" data-scroll-target="#stan-code">Stan code</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/n-kall/priorDB/blob/main/gen_linear_regression/gr2.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/n-kall/priorDB/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header">
-<h1 class="title display-7">Generalised R2</h1>
+<h1 class="title display-7">Stan Prior Choice Recommendations</h1>
 <p class="author"></p>
 
 </header>
 
 
-<section id="description" class="level1">
-<h1>Description</h1>
-<p>The GR2 prior <span class="citation" data-cites="aguilarGeneralizedDecompositionPriors2024">(<a href="#ref-aguilarGeneralizedDecompositionPriors2024" role="doc-biblioref">Aguilar and Bürkner 2024</a>)</span> is a global-local shrinkage prior. It is a generalisation of the R2-D2.</p>
-</section>
-<section id="definition" class="level1">
-<h1>Definition</h1>
-<p>For a linear model:</p>
-<p><span class="math display">\[
-\begin{align}
-y_i &amp;\sim \text{normal} (\mu_i,\sigma^2) \\
-\mu_i &amp;= \alpha + \beta \cdot x_i
-\end{align}
-\]</span></p>
-<p>The prior is:</p>
-<p><span class="math display">\[
-\begin{align}
-\beta_k &amp;\sim \text{normal}\left(0, \sigma^2 \phi_k \tau^2\right) \\
-\tau^2 &amp;= \frac{R^2}{1 - R^2} \\
-R^2 &amp;\sim \text{beta}(\mu_{R^2},\varphi_{R^2}) \\
-\phi \sim p(\nu_\phi) \\
-\sigma &amp;\sim p(\sigma) \\
-\alpha &amp;\sim p(\alpha)
-\end{align}
-\]</span></p>
-</section>
-<section id="things-to-specify" class="level1">
-<h1>Things to specify</h1>
-<p>Priors on <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\sigma\)</span>. Hyperparameters <span class="math inline">\(\xi\)</span>, <span class="math inline">\(\mu_{R^2}\)</span>, <span class="math inline">\(\phi_{R^2}\)</span>.</p>
-<p>Prior on simplex <span class="math inline">\(\phi\)</span>.</p>
-</section>
-<section id="stan-code" class="level1">
-<h1>Stan code</h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode stan code-with-copy"><code class="sourceCode stan"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">functions</span> {</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Efficient computation of the R2D2 prior</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">   * Args:</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">   *   z: standardized population-level coefficients</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">   *   phi: local weight parameters</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">   *   tau2: global scale parameter</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">   * Returns:</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">   *   population-level coefficients following the R2D2 prior</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">   */</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">vector</span> R2D2(<span class="dt">vector</span> z, <span class="dt">vector</span> phi, <span class="dt">real</span> tau2) {</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> z .* sqrt(phi * tau2);</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> {</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; N;</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; K;</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="dt">matrix</span>[N, K] X;</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="dt">vector</span>[N] Y;</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> prior_only;  <span class="co">// should the likelihood be ignored?</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="co">// concentration vector of the D2 prior</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="dt">vector</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt;[K<span class="dv">-1</span>] R2D2_cons_D2;</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="co">// data for the R2D2 prior</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; R2D2_mean_R2;  <span class="co">// mean of the R2 prior</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; R2D2_prec_R2;  <span class="co">// precision of the R2 prior</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="kw">transformed data</span> {</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> Kc = K - <span class="dv">1</span>;</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="dt">matrix</span>[N, Kc] Xc; <span class="co">// centered version of X without an intercept</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  <span class="dt">vector</span>[Kc] means_X; <span class="co">// column means of X before centering</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="dt">real</span> sd_Y = sd(Y);</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">2</span> : K) {</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    means_X[i - <span class="dv">1</span>] = mean(X[ : , i]);</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    Xc[ : , i - <span class="dv">1</span>] = X[ : , i] - means_X[i - <span class="dv">1</span>];</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="kw">parameters</span> {</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  <span class="co">// local parameters for the R2D2 prior</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  <span class="dt">vector</span>[Kc] zb;</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>  <span class="dt">simplex</span>[Kc] R2D2_phi;</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>  <span class="co">// R2D2 shrinkage parameters</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>,<span class="kw">upper</span>=<span class="dv">1</span>&gt; R2D2_R2;  <span class="co">// R2 parameter</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; sigma;  <span class="co">// dispersion parameter</span></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>  <span class="dt">real</span> a_c;</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="kw">transformed parameters</span> {</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>  <span class="dt">vector</span>[Kc] b;  <span class="co">// population-level effects</span></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>  <span class="dt">real</span> R2D2_tau2;  <span class="co">// global R2D2 scale parameter</span></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>  <span class="dt">array</span>[Kc+<span class="dv">4</span>] <span class="dt">real</span> lprior;</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>  R2D2_tau2 = sigma^<span class="dv">2</span> * R2D2_R2 / (<span class="dv">1</span> - R2D2_R2);</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>  <span class="co">// compute actual regression coefficients</span></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>  b = R2D2(zb, R2D2_phi, R2D2_tau2);</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>  lprior[<span class="dv">1</span>] = student_t_lpdf(a_c | <span class="dv">4</span>, <span class="dv">0</span>, sd_Y);</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (k <span class="cf">in</span> <span class="dv">1</span>:Kc) {</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    lprior[k+<span class="dv">1</span>] = std_normal_lpdf(zb[k]);</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>  lprior[Kc+<span class="dv">2</span>] = beta_lpdf(R2D2_R2 | R2D2_mean_R2 * R2D2_prec_R2, (<span class="dv">1</span> - R2D2_mean_R2) * R2D2_prec_R2);</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>  lprior[Kc+<span class="dv">3</span>] = dirichlet_lpdf(R2D2_phi | R2D2_cons_D2);</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>  lprior[Kc+<span class="dv">4</span>] = student_t_lpdf(sigma | <span class="dv">3</span>, <span class="dv">0</span>, sd_Y);</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="kw">model</span> {</span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>  <span class="co">// likelihood including constants</span></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (!prior_only) {</span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>    <span class="kw">target +=</span> normal_id_glm_lpdf(Y | Xc, a_c, b, sigma);</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>  <span class="co">// priors including constants</span></span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>  <span class="kw">target +=</span> sum(lprior);</span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Much of PriorDB is built on the <a href="https://github.com/stan-dev/stan/wiki/Prior-Choice-Recommendations">Stan Prior Choice Recommendations</a>.</p>
 
 
 
-</section>
-
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-aguilarGeneralizedDecompositionPriors2024" class="csl-entry" role="listitem">
-Aguilar, Javier Enrique, and Paul-Christian Bürkner. 2024. <span>“Generalized <span>Decomposition Priors</span> on <span>R2</span>.”</span> arXiv. <a href="https://arxiv.org/abs/2401.10180">https://arxiv.org/abs/2401.10180</a>.
-</div>
-</div></section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1227,13 +1026,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../gen_linear_regression/ordinal.html" class="pagination-link" aria-label="Ordered logistic model">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Ordered logistic model</span>
+      <a href="./tools.html" class="pagination-link" aria-label="Software Tools">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Software Tools</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../gen_linear_regression/r2d2.html" class="pagination-link" aria-label="R2-D2">
-        <span class="nav-page-text">R2-D2</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./contributors.html" class="pagination-link" aria-label="Contributors">
+        <span class="nav-page-text">Contributors</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1242,4 +1041,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/n-kall/priorDB/blob/main/gen_linear_regression/gr2.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/n-kall/priorDB/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/n-kall/priorDB/blob/main/Stan_prior_choice.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/n-kall/priorDB/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
