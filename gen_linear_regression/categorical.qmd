@@ -1,0 +1,15 @@
+---
+title: Categorical model
+---
+
+## Description
+
+
+
+## Definition
+
+
+## Parameters needing priors
+
+
+## See also

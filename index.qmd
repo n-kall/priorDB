@@ -15,9 +15,4 @@ properties of the outcome variable.
 
 ## Contributing
 
-We welcome contributions to PriorDB, we rely on contributions from the community to keep the database up-to-date and accurate. For more information on how to contribute, please see the [contribution guidelines](https://github.com/n-kall/priorDB/blob/main/CONTRIBUTING.md).
-
-## Resources and acknowledgements
-
-Much of PriorDB is built on the [Stan Prior Choice
-Recommendations](https://github.com/stan-dev/stan/wiki/Prior-Choice-Recommendations).
+We welcome contributions to PriorDB, we rely on contributions from the community to keep the database up-to-date and accurate. For more information on how to contribute, please see the [contribution guidelines](https://github.com/n-kall/priorDB/blob/main/CONTRIBUTING.md). This is the list of the [current contributors](contributors.html).
