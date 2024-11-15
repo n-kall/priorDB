@@ -77,8 +77,11 @@ format:
     toc: true
     code-fold: true
     template-partials:
-      - title-block.html
-      
+      - title-block.html  ## remove list of authors from the header of all pages
+    include-in-header:
+      - text: |
+          <meta name="google-site-verification" content="JBA8wBXkShP3bdTtVwzNv-fM1iTo8HZ0hkLK5ZbRgV8" /> 
+           
 theme:
   light: cosmo
   dark: darkly
