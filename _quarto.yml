@@ -48,6 +48,7 @@ website:
             - gen_linear_regression/r2d2.qmd
             - gen_linear_regression/rhs.qmd
             - gen_linear_regression/l1_ball.qmd
+            - gen_linear_regression/becca.qmd
       - section: "Autoregression"
         contents:
           - text: "Overview"
