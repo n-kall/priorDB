@@ -1,15 +1,5 @@
 [
   {
-    "objectID": "tools.html",
-    "href": "tools.html",
-    "title": "Useful tools",
-    "section": "",
-    "text": "Here we list software packages for prior elicitation, specification and diagnostics.\n\nmakemyprior: R package for construction and visualizing priors\npreliz: Python package for prior elicitation\npriorsense: R package for diagnosing influence of priors\narviz.psens: Python function for diagnosing influence of priors\nRBesT: R package including functions for deriving priors from historical data\npbbo: R package for specifying prior based on predictive distribution",
-    "crumbs": [
-      "Software Tools"
-    ]
-  },
-  {
     "objectID": "hierarchical_regression/hierarchical_regression_overview.html",
     "href": "hierarchical_regression/hierarchical_regression_overview.html",
     "title": "Hierarchical regression overview",
@@ -21,61 +11,14 @@
     ]
   },
   {
-    "objectID": "autoregression/pc_ar.html",
-    "href": "autoregression/pc_ar.html",
-    "title": "Penalized complexity for autoregression",
+    "objectID": "tools.html",
+    "href": "tools.html",
+    "title": "Useful tools",
     "section": "",
-    "text": "Description\nDefined in (pc_autoregression?).\n\n\nDefinition"
-  },
-  {
-    "objectID": "autoregression/minnesota.html",
-    "href": "autoregression/minnesota.html",
-    "title": "Minnesota",
-    "section": "",
-    "text": "Description\nDiscount previous time points exponentially\n\n\nDefinition\n\\[\n\\begin{align}\ny_t &\\sim \\text{normal}(\\mu_t,\\sigma^2),\\quad t=p+1,\\dotsc,T \\\\\n    \\mu_t &= \\sum_{i=1}^p\\phi_iy_{t-i} + x_t^{\\prime}\\beta  \\\\\n    \\phi_i &\\sim \\text{normal}(0, \\kappa_1 / i^2), \\quad \\beta_j \\sim N(0,\\frac{\\sigma_y^2}{\\sigma_{x_j}^2}\\kappa_2),\\quad j=1,\\dotsc,m \\\\\n    \\kappa_1 & \\sim \\text{gamma}(1,1/0.04), \\quad \\kappa_2\\sim \\text{gamma}(1,1/0.04^2), \\quad \\sigma^2\\sim p(\\sigma^2)\n\\end{align}\n\\]\n\n\nStan code",
+    "text": "Here we list software packages for prior elicitation, specification and diagnostics.\n\nmakemyprior: R package for construction and visualizing priors\npreliz: Python package for prior elicitation\npriorsense: R package for diagnosing influence of priors\narviz.psens: Python function for diagnosing influence of priors\nRBesT: R package including functions for deriving priors from historical data\npbbo: R package for specifying prior based on predictive distribution",
     "crumbs": [
-      "Autoregression",
-      "Minnesota"
+      "Software Tools"
     ]
-  },
-  {
-    "objectID": "autoregression/autoregression_overview.html",
-    "href": "autoregression/autoregression_overview.html",
-    "title": "Autoregression overview",
-    "section": "",
-    "text": "Model:\n\\[\ny_t \\sim \\text{normal}(\\mu_t, \\sigma)\n\\]\n\\[\n\\mu_t = \\phi \\cdot y_{t-p, \\dots, t-1}\n\\]\nParameters needing priors:\n\n\\(\\phi\\) (lag weights)\n\\(\\sigma\\) (observation model standard deviation)\n\nData:\n\n\\(y\\) (continuous outcome)\n\\(X\\) (predictors)",
-    "crumbs": [
-      "Autoregression",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "prior_template.html#definition",
-    "href": "prior_template.html#definition",
-    "title": "priorDB",
-    "section": "Definition",
-    "text": "Definition\nFor outcome \\(y\\) and predictors \\(x\\), the model is:"
-  },
-  {
-    "objectID": "prior_template.html#parameters-needing-priors",
-    "href": "prior_template.html#parameters-needing-priors",
-    "title": "priorDB",
-    "section": "Parameters needing priors",
-    "text": "Parameters needing priors"
-  },
-  {
-    "objectID": "prior_template.html#prior-on-theta",
-    "href": "prior_template.html#prior-on-theta",
-    "title": "priorDB",
-    "section": "Prior on \\(\\theta\\)",
-    "text": "Prior on \\(\\theta\\)\n\nFirst prior on \\(\\theta\\)"
-  },
-  {
-    "objectID": "prior_template.html#see-also",
-    "href": "prior_template.html#see-also",
-    "title": "priorDB",
-    "section": "See also",
-    "text": "See also"
   },
   {
     "objectID": "about.html",
@@ -85,538 +28,11 @@
     "text": "About this site"
   },
   {
-    "objectID": "gen_linear_regression/binomial.html",
-    "href": "gen_linear_regression/binomial.html",
-    "title": "Binomial model",
-    "section": "",
-    "text": "The binomial model is a model of counts of binary outcomes in sets of trials.",
-    "crumbs": [
-      "Regression",
-      "Discrete outcome",
-      "Count",
-      "Binomial model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/binomial.html#description",
-    "href": "gen_linear_regression/binomial.html#description",
-    "title": "Binomial model",
-    "section": "",
-    "text": "The binomial model is a model of counts of binary outcomes in sets of trials.",
-    "crumbs": [
-      "Regression",
-      "Discrete outcome",
-      "Count",
-      "Binomial model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/binomial.html#definition",
-    "href": "gen_linear_regression/binomial.html#definition",
-    "title": "Binomial model",
-    "section": "Definition",
-    "text": "Definition\nFor counts of successes \\(y\\), number of trials \\(N\\) and predictors \\(x\\), the model is:\n\\[\n\\begin{align}\ny_i \\sim \\text{Binomial}(N_i, \\exp{(\\eta_i)}) \\\\\n\\eta_i = \\alpha + \\beta \\cdot x_i\n\\end{align}\n\\]\nWhere \\(y_i\\) is the number of successes and \\(N_i\\) is the number of trials for observation \\(i\\).",
-    "crumbs": [
-      "Regression",
-      "Discrete outcome",
-      "Count",
-      "Binomial model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/binomial.html#parameters-needing-priors",
-    "href": "gen_linear_regression/binomial.html#parameters-needing-priors",
-    "title": "Binomial model",
-    "section": "Parameters needing priors",
-    "text": "Parameters needing priors\n\n\\(\\alpha\\) (intercept)\n\\(\\beta\\) (predictor weights)",
-    "crumbs": [
-      "Regression",
-      "Discrete outcome",
-      "Count",
-      "Binomial model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/binomial.html#see-also",
-    "href": "gen_linear_regression/binomial.html#see-also",
-    "title": "Binomial model",
-    "section": "See also",
-    "text": "See also\n\nDistribution explorer\nStan Functions Reference",
-    "crumbs": [
-      "Regression",
-      "Discrete outcome",
-      "Count",
-      "Binomial model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/l1_ball.html",
-    "href": "gen_linear_regression/l1_ball.html",
-    "title": "L1 Ball",
-    "section": "",
-    "text": "Description\nThe L1 Ball prior (Xu and Duan 2024) is a spike-and-slab type prior.\n\n\nDefinition\n\\[\n\\begin{align}\n\\beta &= \\text{argmin}_{\\|x\\|_1 \\leq r} \\|\\beta_{\\text{unprojected}} - x\\|^2_2 \\\\\n\\beta_{\\text{unprojected}} &\\sim p(\\beta_{\\text{unprojected}}) \\\\\nr &\\sim p(r)\n\\end{align}\n\\]\n\n\nThings to specify\nPrior on the radius of the ball \\(r\\). Prior on the unprojected \\(\\beta\\) coefficients.\n\n\nStan code\nfunctions {\n  real signum(real x) {\n    return (x &gt;= 0) ? 1 : -1;\n  }\n\n  vector L1ball_project(vector beta, real r, int K) {\n    /* Projection on to L1-ball\n     * Args:\n     * beta: weight parameters\n     * r: radius\n     * K: number of weights\n     */\n    vector[K] beta_abs;\n    vector[K] theta;\n    vector[K] sorted_beta_abs;\n    vector[K] mu;\n    vector[K] mu_tilde;\n    int c = 0;\n\n    // if norm of beta is within radius, keep as is\n    if (norm1(beta) &lt;= r) {\n      theta = beta;\n    } else {\n      // sort beta by descending absolute values\n      beta_abs = abs(beta);\n      sorted_beta_abs = sort_desc(beta_abs);\n\n      // calculate cumulative sum for thresholding\n      mu = fdim(cumulative_sum(sorted_beta_abs), r);\n      // calculate thresholds\n      for (i in 1:K) {\n\tmu_tilde[i] = mu[i] / i;\n      }\n      \n      // get the index corresponding to the smallest abs beta above\n      // the corresponding threshold\n      for (i in 1:K) {\n        if (sorted_beta_abs[i] &lt;= mu_tilde[i]) {\n\t  c = i - 1;\n          break;\n        }\n      }\n      \n      // do the projection and keep track of the sign\n      for (i in 1:K) {\n\tif (c != 0) { \n\t  theta[i] = signum(beta[i]) * fdim(beta_abs[i], (mu_tilde[c]));\n\t} else { // handle no betas being above the threshold\n\t   theta[i] = 0;\n\t}\n      }\n    }\n    return theta;\n  }\n}\ndata {\n\n  int&lt;lower=1&gt; N; // number of observations\n  vector[N] Y; // response variable\n  int&lt;lower=0&gt; K; // number of covariates\n  matrix[N, K] X; // design matrix\n\n  // sigma prior sd\n  real&lt;lower=0&gt; sigma_sd; // sd of sigma prior\n\n  // phi prior sd\n  real&lt;lower=0&gt; beta_sd; // sd of beta prior\n\n  // intercept prior\n  real alpha_mean;\n  real&lt;lower=0&gt; alpha_sd;\n\n  // l1 ball radius alpha\n  real&lt;lower=0&gt; r_alpha;\n}\n\nparameters {\n  real&lt;lower=0&gt; r; // radius\n  vector[K] beta_o; // original beta\n  real alpha; // intercept\n  real&lt;lower=0&gt; sigma; // residual sd\n}\n\ntransformed parameters {\n  vector[K] beta; // projected beta\n  beta = L1ball_project(beta_o, r, K);\n}\n\nmodel {\n  // priors\n  alpha ~ normal(alpha_mean, alpha_sd);\n  beta_o ~ normal(0, beta_sd);\n  sigma ~ normal(0, sigma_sd);\n  r ~ exponential(r_alpha);\n\n  // likelihood\n  Y ~ normal_id_glm(X, alpha, beta, sigma);\n}\n\n\n\n\n\nReferences\n\nXu, Maoran, and Leo L Duan. 2024. “Bayesian Inference with the l 1-Ball Prior: Solving Combinatorial Problems with Exact Zeros.” Journal of the Royal Statistical Society Series B: Statistical Methodology 85 (5): 1538–60. https://doi.org/10.1093/jrsssb/qkad076.",
-    "crumbs": [
-      "Regression",
-      "Sparsity priors",
-      "L1 Ball"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/gr2.html",
-    "href": "gen_linear_regression/gr2.html",
-    "title": "Generalised R2",
-    "section": "",
-    "text": "Description\nThe GR2 prior (Aguilar and Bürkner 2024) is a global-local shrinkage prior. It is a generalisation of the R2-D2.\n\n\nDefinition\nFor a linear model:\n\\[\n\\begin{align}\ny_i &\\sim \\text{normal} (\\mu_i,\\sigma^2) \\\\\n\\mu_i &= \\alpha + \\beta \\cdot x_i\n\\end{align}\n\\]\nThe prior is:\n\\[\n\\begin{align}\n\\beta_k &\\sim \\text{normal}\\left(0, \\sigma^2 \\phi_k \\tau^2\\right) \\\\\n\\tau^2 &= \\frac{R^2}{1 - R^2} \\\\\nR^2 &\\sim \\text{beta}(\\mu_{R^2},\\varphi_{R^2}) \\\\\n\\phi \\sim p(\\nu_\\phi) \\\\\n\\sigma &\\sim p(\\sigma) \\\\\n\\alpha &\\sim p(\\alpha)\n\\end{align}\n\\]\n\n\nThings to specify\nPriors on \\(\\alpha\\) and \\(\\sigma\\). Hyperparameters \\(\\xi\\), \\(\\mu_{R^2}\\), \\(\\phi_{R^2}\\).\nPrior on simplex \\(\\phi\\).\n\n\nStan code\nfunctions {\n  /* Efficient computation of the R2D2 prior\n   * Args:\n   *   z: standardized population-level coefficients\n   *   phi: local weight parameters\n   *   tau2: global scale parameter\n   * Returns:\n   *   population-level coefficients following the R2D2 prior\n   */\n  vector R2D2(vector z, vector phi, real tau2) {\n    return z .* sqrt(phi * tau2);\n  }\n}\n\ndata {\n  int&lt;lower=0&gt; N;\n  int&lt;lower=0&gt; K;\n  matrix[N, K] X;\n  vector[N] Y;\n  int prior_only;  // should the likelihood be ignored?\n  // concentration vector of the D2 prior\n  vector&lt;lower=0&gt;[K-1] R2D2_cons_D2;\n  // data for the R2D2 prior\n  real&lt;lower=0&gt; R2D2_mean_R2;  // mean of the R2 prior\n  real&lt;lower=0&gt; R2D2_prec_R2;  // precision of the R2 prior\n}\ntransformed data {\n  int Kc = K - 1;\n  matrix[N, Kc] Xc; // centered version of X without an intercept\n  vector[Kc] means_X; // column means of X before centering\n  real sd_Y = sd(Y);\n  for (i in 2 : K) {\n    means_X[i - 1] = mean(X[ : , i]);\n    Xc[ : , i - 1] = X[ : , i] - means_X[i - 1];\n  }\n}\nparameters {\n  // local parameters for the R2D2 prior\n  vector[Kc] zb;\n  simplex[Kc] R2D2_phi;\n  // R2D2 shrinkage parameters\n  real&lt;lower=0,upper=1&gt; R2D2_R2;  // R2 parameter\n  real&lt;lower=0&gt; sigma;  // dispersion parameter\n  real a_c;\n}\n\ntransformed parameters {\n  vector[Kc] b;  // population-level effects\n  real R2D2_tau2;  // global R2D2 scale parameter\n  array[Kc+4] real lprior;\n  R2D2_tau2 = sigma^2 * R2D2_R2 / (1 - R2D2_R2);\n  // compute actual regression coefficients\n  b = R2D2(zb, R2D2_phi, R2D2_tau2);\n  lprior[1] = student_t_lpdf(a_c | 4, 0, sd_Y);\n  for (k in 1:Kc) {\n    lprior[k+1] = std_normal_lpdf(zb[k]);\n  }\n  lprior[Kc+2] = beta_lpdf(R2D2_R2 | R2D2_mean_R2 * R2D2_prec_R2, (1 - R2D2_mean_R2) * R2D2_prec_R2);\n  lprior[Kc+3] = dirichlet_lpdf(R2D2_phi | R2D2_cons_D2);\n  lprior[Kc+4] = student_t_lpdf(sigma | 3, 0, sd_Y);\n  \n}\n\nmodel {\n  // likelihood including constants\n  if (!prior_only) {\n    target += normal_id_glm_lpdf(Y | Xc, a_c, b, sigma);\n  }\n  // priors including constants\n  target += sum(lprior);\n}\n\n\n\n\n\n\nReferences\n\nAguilar, Javier Enrique, and Paul-Christian Bürkner. 2024. “Generalized Decomposition Priors on R2.” arXiv. https://arxiv.org/abs/2401.10180.",
-    "crumbs": [
-      "Regression",
-      "Sparsity priors",
-      "Generalised R2"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/beta.html",
-    "href": "gen_linear_regression/beta.html",
-    "title": "Beta model",
-    "section": "",
-    "text": "Beta regression is used for outcomes on the [0, 1] interval.",
-    "crumbs": [
-      "Regression",
-      "Continuous outcome",
-      "Bounded",
-      "Beta model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/beta.html#description",
-    "href": "gen_linear_regression/beta.html#description",
-    "title": "Beta model",
-    "section": "",
-    "text": "Beta regression is used for outcomes on the [0, 1] interval.",
-    "crumbs": [
-      "Regression",
-      "Continuous outcome",
-      "Bounded",
-      "Beta model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/beta.html#definition",
-    "href": "gen_linear_regression/beta.html#definition",
-    "title": "Beta model",
-    "section": "Definition",
-    "text": "Definition\nFor continuous outcome \\(y\\) bounded [0, 1] and predictors \\(x\\), the model is:\n\\[\n\\begin{align}\ny_i \\sim \\text{beta}(\\text{logit}^{-1}(\\mu_i), \\kappa) \\\\\n\\mu_i = \\alpha + \\beta \\cdot x_i \\\\\n\\end{align}\n\\]\nThe logit function is the quantile function associated with the standard logistic distribution. Its inverse maps \\(\\mu_i\\) from the real line into a value within the interval (0, 1).",
-    "crumbs": [
-      "Regression",
-      "Continuous outcome",
-      "Bounded",
-      "Beta model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/beta.html#parameters-needing-priors",
-    "href": "gen_linear_regression/beta.html#parameters-needing-priors",
-    "title": "Beta model",
-    "section": "Parameters needing priors",
-    "text": "Parameters needing priors\n\n\\(\\alpha\\) (intercept)\n\\(\\beta\\) (predictor weights)\n\\(\\kappa\\) (concentration parameter)\n\nThe larger the value of \\(\\kappa\\), the more concentrated the distribution is around the mean. This parameter is also named the precision parameter or the sample size parameter. Greek letters \\(\\nu\\) and \\(\\phi\\) are also commonly used to refer to this parameter.",
-    "crumbs": [
-      "Regression",
-      "Continuous outcome",
-      "Bounded",
-      "Beta model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/beta.html#prior-for-kappa",
-    "href": "gen_linear_regression/beta.html#prior-for-kappa",
-    "title": "Beta model",
-    "section": "Prior for \\(\\kappa\\)",
-    "text": "Prior for \\(\\kappa\\)\nFor weakly informative prior we can use a gamma distribution with low probability mass on very small values of \\(\\kappa\\), such priors disfavor u-shaped beta distributions which are generally less common in real-world data. For instance, we could choose \\(\\text{gamma}(4, 0.1)\\) as discussed by Solomon Kurz, which place most of the prior mass on the double-digit range with long right tail allowing for greater concentrations if needed.",
-    "crumbs": [
-      "Regression",
-      "Continuous outcome",
-      "Bounded",
-      "Beta model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/beta.html#see-also",
-    "href": "gen_linear_regression/beta.html#see-also",
-    "title": "Beta model",
-    "section": "See also",
-    "text": "See also\n\nDistribution explorer\nPreliZ\nStan Functions Reference\nrstanarm manual\nbambi manual\nAndrew Wheiss’ blog",
-    "crumbs": [
-      "Regression",
-      "Continuous outcome",
-      "Bounded",
-      "Beta model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/poisson.html",
-    "href": "gen_linear_regression/poisson.html",
-    "title": "Poisson model",
-    "section": "",
-    "text": "Regression with Poisson model is a simple model used for count data.",
-    "crumbs": [
-      "Regression",
-      "Discrete outcome",
-      "Count",
-      "Poisson model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/poisson.html#description",
-    "href": "gen_linear_regression/poisson.html#description",
-    "title": "Poisson model",
-    "section": "",
-    "text": "Regression with Poisson model is a simple model used for count data.",
-    "crumbs": [
-      "Regression",
-      "Discrete outcome",
-      "Count",
-      "Poisson model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/poisson.html#definition",
-    "href": "gen_linear_regression/poisson.html#definition",
-    "title": "Poisson model",
-    "section": "Definition",
-    "text": "Definition\nFor discrete positive outcome \\(y\\) and predictors \\(x\\), the model is:\n\\[\n\\begin{align}\ny_i &\\sim \\text{Poisson}(\\exp{\\eta_i}) \\\\\n\\eta_i &= \\alpha + \\beta \\cdot x_i\n\\end{align}\n\\]",
-    "crumbs": [
-      "Regression",
-      "Discrete outcome",
-      "Count",
-      "Poisson model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/poisson.html#parameters-needing-priors",
-    "href": "gen_linear_regression/poisson.html#parameters-needing-priors",
-    "title": "Poisson model",
-    "section": "Parameters needing priors",
-    "text": "Parameters needing priors\n\n\\(\\alpha\\) (intercept)\n\\(\\beta\\) (predictor weights)",
-    "crumbs": [
-      "Regression",
-      "Discrete outcome",
-      "Count",
-      "Poisson model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/poisson.html#see-also",
-    "href": "gen_linear_regression/poisson.html#see-also",
-    "title": "Poisson model",
-    "section": "See also",
-    "text": "See also\n\nDistribution explorer\nPreliZ\nStan Functions Reference\nbrms tutorial paper",
-    "crumbs": [
-      "Regression",
-      "Discrete outcome",
-      "Count",
-      "Poisson model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/rhs.html",
-    "href": "gen_linear_regression/rhs.html",
-    "title": "Regularised horse shoe",
-    "section": "",
-    "text": "Global-local shrinkage prior. (Piironen and Vehtari 2017)\n\\[\n\\begin{align}\n     \\beta_i \\;&\\sim \\text{normal}(0, \\tau^2\\tilde{\\lambda}_j^2) \\\\\n     \\tilde{\\lambda}_j^2 \\;&= \\frac{c^2\\lambda_j^2}{c^2 + \\tau^2\\lambda_j^2} \\\\\n     \\lambda_j \\;&\\sim \\text{Cauchy}^+(0,1) \\\\\n\\end{align}\n\\]\n\n\n\n\nReferences\n\nPiironen, Juho, and Aki Vehtari. 2017. “Sparsity Information and Regularization in the Horseshoe and Other Shrinkage Priors.” Electronic Journal of Statistics 11 (2). https://doi.org/10.1214/17-EJS1337SI.",
-    "crumbs": [
-      "Regression",
-      "Sparsity priors",
-      "Regularised horse shoe"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/conway_maxwell_poisson.html",
-    "href": "gen_linear_regression/conway_maxwell_poisson.html",
-    "title": "Conway-Maxwell-Poisson model",
-    "section": "",
-    "text": "The Conway-Maxwell-Poisson distribution is used to model count data."
-  },
-  {
-    "objectID": "gen_linear_regression/conway_maxwell_poisson.html#description",
-    "href": "gen_linear_regression/conway_maxwell_poisson.html#description",
-    "title": "Conway-Maxwell-Poisson model",
-    "section": "",
-    "text": "The Conway-Maxwell-Poisson distribution is used to model count data."
-  },
-  {
-    "objectID": "gen_linear_regression/conway_maxwell_poisson.html#definition",
-    "href": "gen_linear_regression/conway_maxwell_poisson.html#definition",
-    "title": "Conway-Maxwell-Poisson model",
-    "section": "Definition",
-    "text": "Definition\nFor non-negative discrete outcome \\(y\\) and predictors \\(x\\), the model is:\n\\[\nP(X = x) = \\frac{\\lambda^x}{(x!)^\\nu Z(\\lambda, \\nu)}\n\\]"
-  },
-  {
-    "objectID": "gen_linear_regression/conway_maxwell_poisson.html#section",
-    "href": "gen_linear_regression/conway_maxwell_poisson.html#section",
-    "title": "Conway-Maxwell-Poisson model",
-    "section": "",
-    "text": "This is based on (Meyer, Graye, and Sellers 2023)."
-  },
-  {
-    "objectID": "gen_linear_regression/normal.html",
-    "href": "gen_linear_regression/normal.html",
-    "title": "Normal model",
-    "section": "",
-    "text": "Linear regression with normally distributed residuals.",
-    "crumbs": [
-      "Regression",
-      "Continuous outcome",
-      "Unbounded",
-      "Normal model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/normal.html#description",
-    "href": "gen_linear_regression/normal.html#description",
-    "title": "Normal model",
-    "section": "",
-    "text": "Linear regression with normally distributed residuals.",
-    "crumbs": [
-      "Regression",
-      "Continuous outcome",
-      "Unbounded",
-      "Normal model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/normal.html#definition",
-    "href": "gen_linear_regression/normal.html#definition",
-    "title": "Normal model",
-    "section": "Definition",
-    "text": "Definition\nFor continuous unbounded outcome \\(y\\) and predictors \\(x\\), the model is:\n\\[\n\\begin{align}\ny_i \\sim \\text{normal}(\\eta_i, \\sigma) \\\\\n\\eta_i = \\alpha + \\beta \\cdot x_i\n\\end{align}\n\\]",
-    "crumbs": [
-      "Regression",
-      "Continuous outcome",
-      "Unbounded",
-      "Normal model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/normal.html#parameters-needing-priors",
-    "href": "gen_linear_regression/normal.html#parameters-needing-priors",
-    "title": "Normal model",
-    "section": "Parameters needing priors",
-    "text": "Parameters needing priors\n\n\\(\\alpha\\) (intercept)\n\\(\\beta\\) (predictor weights)\n\\(\\sigma\\) (residual standard deviation)",
-    "crumbs": [
-      "Regression",
-      "Continuous outcome",
-      "Unbounded",
-      "Normal model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/normal.html#prior-for-alpha",
-    "href": "gen_linear_regression/normal.html#prior-for-alpha",
-    "title": "Normal model",
-    "section": "Prior for \\(\\alpha\\)",
-    "text": "Prior for \\(\\alpha\\)\n\nWeakly informative data-adaptive prior\nGelman, Hill, and Vehtari (2020) Chapter 9\nCentered intercept (expected value of \\(y\\) when predictors are set to mean values of observed data)\n\\[\n\\begin{align}\n\\alpha_{\\text{centered}} \\sim \\text{normal}(\\text{mean}(y), 2.5 \\text{SD}(y)) \\\\\n\\end{align}\n\\]",
-    "crumbs": [
-      "Regression",
-      "Continuous outcome",
-      "Unbounded",
-      "Normal model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/normal.html#prior-for-beta",
-    "href": "gen_linear_regression/normal.html#prior-for-beta",
-    "title": "Normal model",
-    "section": "Prior for \\(\\beta\\)",
-    "text": "Prior for \\(\\beta\\)\n\nWeakly informative data-adaptive normal prior\nGelman, Hill, and Vehtari (2020) Chapter 9 describes a data-adaptive normal prior\n\\[\n\\begin{align}\n\\beta_k \\sim \\text{normal}(0, 2.5 \\text{SD}(y)/\\text{SD}(x_k)).\n\\end{align}\n\\]",
-    "crumbs": [
-      "Regression",
-      "Continuous outcome",
-      "Unbounded",
-      "Normal model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/normal.html#prior-for-sigma",
-    "href": "gen_linear_regression/normal.html#prior-for-sigma",
-    "title": "Normal model",
-    "section": "Prior for \\(\\sigma\\)",
-    "text": "Prior for \\(\\sigma\\)\n\nWeakly informative data-adaptive exponential prior\nGelman, Hill, and Vehtari (2020) Chapter 9 describes a data-adaptive exponential prior\n\\[\n\\sigma \\sim \\text{exponential}(1/\\text{SD}(y))\n\\]",
-    "crumbs": [
-      "Regression",
-      "Continuous outcome",
-      "Unbounded",
-      "Normal model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/normal.html#see-also",
-    "href": "gen_linear_regression/normal.html#see-also",
-    "title": "Normal model",
-    "section": "See also",
-    "text": "See also\n\nDistribution explorer\nPreliZ\nStan Functions Reference\nbambi example",
-    "crumbs": [
-      "Regression",
-      "Continuous outcome",
-      "Unbounded",
-      "Normal model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/negative_binomial.html",
-    "href": "gen_linear_regression/negative_binomial.html",
-    "title": "Negative-binomial model",
-    "section": "",
-    "text": "The negative-binomial model is a model of counts that allows for overdispersion.",
-    "crumbs": [
-      "Regression",
-      "Discrete outcome",
-      "Count",
-      "Negative-binomial model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/negative_binomial.html#description",
-    "href": "gen_linear_regression/negative_binomial.html#description",
-    "title": "Negative-binomial model",
-    "section": "",
-    "text": "The negative-binomial model is a model of counts that allows for overdispersion.",
-    "crumbs": [
-      "Regression",
-      "Discrete outcome",
-      "Count",
-      "Negative-binomial model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/negative_binomial.html#definition",
-    "href": "gen_linear_regression/negative_binomial.html#definition",
-    "title": "Negative-binomial model",
-    "section": "Definition",
-    "text": "Definition\nFor discrete positive outcome \\(y\\) and predictors \\(x\\), the model is:\n\\[\n\\begin{align}\ny_i \\sim \\text{NegBinomial}(\\exp{(\\eta_i)}, \\phi) \\\\\n\\eta_i = \\alpha + \\beta \\cdot x_i\n\\end{align}\n\\]",
-    "crumbs": [
-      "Regression",
-      "Discrete outcome",
-      "Count",
-      "Negative-binomial model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/negative_binomial.html#parameters-needing-priors",
-    "href": "gen_linear_regression/negative_binomial.html#parameters-needing-priors",
-    "title": "Negative-binomial model",
-    "section": "Parameters needing priors",
-    "text": "Parameters needing priors\n\n\\(\\alpha\\) (intercept)\n\\(\\beta\\) (predictor weights)\n\\(\\phi\\) (overdispersion parameter)",
-    "crumbs": [
-      "Regression",
-      "Discrete outcome",
-      "Count",
-      "Negative-binomial model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/negative_binomial.html#prior-for-phi",
-    "href": "gen_linear_regression/negative_binomial.html#prior-for-phi",
-    "title": "Negative-binomial model",
-    "section": "Prior for \\(\\phi\\)",
-    "text": "Prior for \\(\\phi\\)\n\nWeakly informative inverse gamma prior\nVehtari (2024) suggested an inverse gamma prior as an approximation of the penalized complexity prior:\n\\(\\phi \\sim \\text{InvGamma}(0.4, 0.3)\\)\n\n\nPenalized complexity prior\nSimpson et al. (2017) suggested a penalized complexity prior",
-    "crumbs": [
-      "Regression",
-      "Discrete outcome",
-      "Count",
-      "Negative-binomial model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/negative_binomial.html#see-also",
-    "href": "gen_linear_regression/negative_binomial.html#see-also",
-    "title": "Negative-binomial model",
-    "section": "See also",
-    "text": "See also\n\nDistribution explorer\nPreliZ\nAki Vehtari’s case study\nStan Functions Reference\nbambi example",
-    "crumbs": [
-      "Regression",
-      "Discrete outcome",
-      "Count",
-      "Negative-binomial model"
-    ]
-  },
-  {
-    "objectID": "Stan_prior_choice.html",
-    "href": "Stan_prior_choice.html",
-    "title": "Stan Prior Choice Recommendations",
-    "section": "",
-    "text": "Much of PriorDB is built on the Stan Prior Choice Recommendations.",
-    "crumbs": [
-      "Stan prior guide"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/cumulative.html",
-    "href": "gen_linear_regression/cumulative.html",
-    "title": "Cumulative probit model",
-    "section": "",
-    "text": "The cumulative probit model is a model of ordered discrete data."
-  },
-  {
-    "objectID": "gen_linear_regression/cumulative.html#description",
-    "href": "gen_linear_regression/cumulative.html#description",
-    "title": "Cumulative probit model",
-    "section": "",
-    "text": "The cumulative probit model is a model of ordered discrete data."
-  },
-  {
-    "objectID": "gen_linear_regression/cumulative.html#definition",
-    "href": "gen_linear_regression/cumulative.html#definition",
-    "title": "Cumulative probit model",
-    "section": "Definition",
-    "text": "Definition\nFor discrete ordered outcome \\(y\\) and predictors \\(x\\), the model is:\n\\[\n\\begin{align}\ny_i \\sim \\text{cumulative}(\\eta_i, c) \\\\\n\\eta_i = \\alpha + \\beta \\cdot x_i\n\\end{align}\n\\]"
-  },
-  {
-    "objectID": "gen_linear_regression/cumulative.html#parameters-needing-priors",
-    "href": "gen_linear_regression/cumulative.html#parameters-needing-priors",
-    "title": "Cumulative probit model",
-    "section": "Parameters needing priors",
-    "text": "Parameters needing priors"
-  },
-  {
-    "objectID": "gen_linear_regression/gen_linear_regression_overview.html",
-    "href": "gen_linear_regression/gen_linear_regression_overview.html",
-    "title": "Regression Overview",
-    "section": "",
-    "text": "Regression models can be used to predict outcomes from predictors. A linear predictor term \\(\\eta\\) based on the predictors is passed through an inverse link function, \\(g^{-1}\\), and then used in the observation model, \\(f\\). The observation model may have other parameters \\(\\theta\\) which are not necessarily determined through the predictors.\n\\[\n\\begin{align}\ny_i &\\sim f(g^{-1}(\\eta), \\theta) \\\\\n\\eta_i &= \\alpha + \\beta x_i\n\\end{align}\n\\]\nDepending on the choice of \\(f\\), different link functions \\(g\\) are used. For example, if \\(f\\) is the \\(\\text{normal}\\) distribution, \\(g\\) is the identity function. If \\(f\\) is the \\(\\text{Bernoulli}\\) distribution, \\(g\\) is most commonly the logit function.",
-    "crumbs": [
-      "Regression",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/gen_linear_regression_overview.html#notation",
-    "href": "gen_linear_regression/gen_linear_regression_overview.html#notation",
-    "title": "Regression Overview",
-    "section": "Notation",
-    "text": "Notation\n\n\n\nSymbol\nExplanation\n\n\n\n\n\\(y_i\\)\nObserved outcome\n\n\n\\(x_i\\)\nObserved predictors\n\n\n\\(\\alpha\\)\nIntercept\n\n\n\\(\\beta\\)\nRegression coefficients (predictor weights)",
-    "crumbs": [
-      "Regression",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/student_t.html",
-    "href": "gen_linear_regression/student_t.html",
-    "title": "Student-t model",
-    "section": "",
-    "text": "Linear regression with Student-t distributed residuals is also called robust regression.",
-    "crumbs": [
-      "Regression",
-      "Continuous outcome",
-      "Unbounded",
-      "Student-t model"
-    ]
-  },
-  {
     "objectID": "gen_linear_regression/student_t.html#description",
     "href": "gen_linear_regression/student_t.html#description",
     "title": "Student-t model",
-    "section": "",
-    "text": "Linear regression with Student-t distributed residuals is also called robust regression.",
+    "section": "Description",
+    "text": "Description\nLinear regression with Student-t distributed residuals is also called robust regression.",
     "crumbs": [
       "Regression",
       "Continuous outcome",
@@ -703,50 +119,237 @@
     ]
   },
   {
-    "objectID": "gen_linear_regression/scaled_default.html",
-    "href": "gen_linear_regression/scaled_default.html",
-    "title": "Data-scaled independent priors",
-    "section": "",
-    "text": "Used by rstanarm"
-  },
-  {
-    "objectID": "gen_linear_regression/scaled_default.html#description",
-    "href": "gen_linear_regression/scaled_default.html#description",
-    "title": "Data-scaled independent priors",
-    "section": "",
-    "text": "Used by rstanarm"
-  },
-  {
-    "objectID": "gen_linear_regression/scaled_default.html#definition",
-    "href": "gen_linear_regression/scaled_default.html#definition",
-    "title": "Data-scaled independent priors",
-    "section": "Definition",
-    "text": "Definition\n\\[\n\\alpha_c \\sim \\text{normal}(m_y, 2.5 \\cdot s_y)\n\\]\n\\[\n\\beta_k \\sim \\text{normal}(0, 2.5 \\cdot s_y / s_{x_k})\n\\]\n\\[\n\\sigma \\sim \\text{exponential}(1 / s_y)\n\\]\n\\[ s_y = \\text{sd}(y)\\]\n\\[ s_{x_k} = \\text{sd}(x_k)\\]"
-  },
-  {
-    "objectID": "gen_linear_regression/scaled_default.html#things-to-specify",
-    "href": "gen_linear_regression/scaled_default.html#things-to-specify",
-    "title": "Data-scaled independent priors",
-    "section": "Things to specify",
-    "text": "Things to specify\nNothing"
-  },
-  {
-    "objectID": "gen_linear_regression/scaled_default.html#stan-code",
-    "href": "gen_linear_regression/scaled_default.html#stan-code",
-    "title": "Data-scaled independent priors",
-    "section": "Stan code",
-    "text": "Stan code"
-  },
-  {
-    "objectID": "gen_linear_regression/r2d2.html",
-    "href": "gen_linear_regression/r2d2.html",
-    "title": "R2-D2",
-    "section": "",
-    "text": "Description\nThe R2-D2 prior (Zhang et al. 2022) is a global-local shrinkage prior. This has been expanded for generalised linear models (Yanchenko, Bondell, and Reich 2024).\n\n\nDefinition\nFor a linear model:\n\\[\n\\begin{align}\ny_i &\\sim \\text{normal} (\\mu_i,\\sigma^2) \\\\\n\\mu_i &= \\alpha + \\beta \\cdot x_i\n\\end{align}\n\\]\nThe prior is:\n\\[\n\\begin{align}\n\\beta_i &\\sim \\text{normal}\\left(0, \\frac{\\sigma^2}{\\sigma_{y_{t}\\mid \\theta}^2}\\tau^2\\psi_i\\right) \\\\\n\\tau^2 &= \\frac{R^2}{1 - R^2} \\\\\nR^2 &\\sim \\text{beta}(\\mu_{R^2},\\phi_{R^2}) \\\\\n\\psi &\\sim \\text{Dirichlet}(\\xi_1,\\dotsc,\\xi_p) \\\\\n\\sigma^2 &\\sim p(\\sigma^2) \\\\\n\\alpha &\\sim p(\\alpha)\n\\end{align}\n\\]\n\n\nThings to specify\nPriors on \\(\\alpha\\) and \\(\\sigma\\). Hyperparameters \\(\\xi\\), \\(\\mu_{R^2}\\), \\(\\phi_{R^2}\\).\n\n\nStan code\nfunctions {\n  /* Efficient computation of the R2D2 prior\n   * Args:\n   *   z: standardized population-level coefficients\n   *   phi: local weight parameters\n   *   tau2: global scale parameter\n   * Returns:\n   *   population-level coefficients following the R2D2 prior\n   */\n  vector R2D2(vector z, vector phi, real tau2) {\n    return z .* sqrt(phi * tau2);\n  }\n}\n\ndata {\n  int&lt;lower=0&gt; N;\n  int&lt;lower=0&gt; K;\n  matrix[N, K] X;\n  vector[N] Y;\n  int prior_only;  // should the likelihood be ignored?\n  // concentration vector of the D2 prior\n  vector&lt;lower=0&gt;[K-1] R2D2_cons_D2;\n  // data for the R2D2 prior\n  real&lt;lower=0&gt; R2D2_mean_R2;  // mean of the R2 prior\n  real&lt;lower=0&gt; R2D2_prec_R2;  // precision of the R2 prior\n}\ntransformed data {\n  int Kc = K - 1;\n  matrix[N, Kc] Xc; // centered version of X without an intercept\n  vector[Kc] means_X; // column means of X before centering\n  real sd_Y = sd(Y);\n  for (i in 2 : K) {\n    means_X[i - 1] = mean(X[ : , i]);\n    Xc[ : , i - 1] = X[ : , i] - means_X[i - 1];\n  }\n}\nparameters {\n  // local parameters for the R2D2 prior\n  vector[Kc] zb;\n  simplex[Kc] R2D2_phi;\n  // R2D2 shrinkage parameters\n  real&lt;lower=0,upper=1&gt; R2D2_R2;  // R2 parameter\n  real&lt;lower=0&gt; sigma;  // dispersion parameter\n  real a_c;\n}\n\ntransformed parameters {\n  vector[Kc] b;  // population-level effects\n  real R2D2_tau2;  // global R2D2 scale parameter\n  array[Kc+4] real lprior;\n  R2D2_tau2 = sigma^2 * R2D2_R2 / (1 - R2D2_R2);\n  // compute actual regression coefficients\n  b = R2D2(zb, R2D2_phi, R2D2_tau2);\n  lprior[1] = student_t_lpdf(a_c | 4, 0, sd_Y);\n  for (k in 1:Kc) {\n    lprior[k+1] = std_normal_lpdf(zb[k]);\n  }\n  lprior[Kc+2] = beta_lpdf(R2D2_R2 | R2D2_mean_R2 * R2D2_prec_R2, (1 - R2D2_mean_R2) * R2D2_prec_R2);\n  lprior[Kc+3] = dirichlet_lpdf(R2D2_phi | R2D2_cons_D2);\n  lprior[Kc+4] = student_t_lpdf(sigma | 3, 0, sd_Y);\n  \n}\n\nmodel {\n  // likelihood including constants\n  if (!prior_only) {\n    target += normal_id_glm_lpdf(Y | Xc, a_c, b, sigma);\n  }\n  // priors including constants\n  target += sum(lprior);\n}\n\n\n\n\n\n\nReferences\n\nYanchenko, Eric, Howard D. Bondell, and Brian J. Reich. 2024. “The R2D2 Prior for Generalized Linear Mixed Models.” arXiv. https://doi.org/10.48550/arXiv.2111.10718.\n\n\nZhang, Yan Dora, Brian P. Naughton, Howard D. Bondell, and Brian J. Reich. 2022. “Bayesian Regression Using a Prior on the Model Fit: The R2-D2 Shrinkage Prior.” Journal of the American Statistical Association 117 (538): 862–74. https://doi.org/10.1080/01621459.2020.1825449.",
+    "objectID": "gen_linear_regression/normal.html#description",
+    "href": "gen_linear_regression/normal.html#description",
+    "title": "Normal model",
+    "section": "Description",
+    "text": "Description\nLinear regression with normally distributed residuals.",
     "crumbs": [
       "Regression",
-      "Sparsity priors",
-      "R2-D2"
+      "Continuous outcome",
+      "Unbounded",
+      "Normal model"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/normal.html#definition",
+    "href": "gen_linear_regression/normal.html#definition",
+    "title": "Normal model",
+    "section": "Definition",
+    "text": "Definition\nFor continuous unbounded outcome \\(y\\) and predictors \\(x\\), the model is:\n\\[\n\\begin{align}\ny_i \\sim \\text{normal}(\\eta_i, \\sigma) \\\\\n\\eta_i = \\alpha + \\beta \\cdot x_i\n\\end{align}\n\\]",
+    "crumbs": [
+      "Regression",
+      "Continuous outcome",
+      "Unbounded",
+      "Normal model"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/normal.html#parameters-needing-priors",
+    "href": "gen_linear_regression/normal.html#parameters-needing-priors",
+    "title": "Normal model",
+    "section": "Parameters needing priors",
+    "text": "Parameters needing priors\n\n\\(\\alpha\\) (intercept)\n\\(\\beta\\) (predictor weights)\n\\(\\sigma\\) (residual standard deviation)",
+    "crumbs": [
+      "Regression",
+      "Continuous outcome",
+      "Unbounded",
+      "Normal model"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/normal.html#prior-for-alpha",
+    "href": "gen_linear_regression/normal.html#prior-for-alpha",
+    "title": "Normal model",
+    "section": "Prior for \\(\\alpha\\)",
+    "text": "Prior for \\(\\alpha\\)\n\nWeakly informative data-adaptive prior\nGelman, Hill, and Vehtari (2020) Chapter 9\nCentered intercept (expected value of \\(y\\) when predictors are set to mean values of observed data)\n\\[\n\\begin{align}\n\\alpha_{\\text{centered}} \\sim \\text{normal}(\\text{mean}(y), 2.5 \\text{SD}(y)) \\\\\n\\end{align}\n\\]",
+    "crumbs": [
+      "Regression",
+      "Continuous outcome",
+      "Unbounded",
+      "Normal model"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/normal.html#prior-for-beta",
+    "href": "gen_linear_regression/normal.html#prior-for-beta",
+    "title": "Normal model",
+    "section": "Prior for \\(\\beta\\)",
+    "text": "Prior for \\(\\beta\\)\n\nWeakly informative data-adaptive normal prior\nGelman, Hill, and Vehtari (2020) Chapter 9 describes a data-adaptive normal prior\n\\[\n\\begin{align}\n\\beta_k \\sim \\text{normal}(0, 2.5 \\text{SD}(y)/\\text{SD}(x_k)).\n\\end{align}\n\\]",
+    "crumbs": [
+      "Regression",
+      "Continuous outcome",
+      "Unbounded",
+      "Normal model"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/normal.html#prior-for-sigma",
+    "href": "gen_linear_regression/normal.html#prior-for-sigma",
+    "title": "Normal model",
+    "section": "Prior for \\(\\sigma\\)",
+    "text": "Prior for \\(\\sigma\\)\n\nWeakly informative data-adaptive exponential prior\nGelman, Hill, and Vehtari (2020) Chapter 9 describes a data-adaptive exponential prior\n\\[\n\\sigma \\sim \\text{exponential}(1/\\text{SD}(y))\n\\]",
+    "crumbs": [
+      "Regression",
+      "Continuous outcome",
+      "Unbounded",
+      "Normal model"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/normal.html#see-also",
+    "href": "gen_linear_regression/normal.html#see-also",
+    "title": "Normal model",
+    "section": "See also",
+    "text": "See also\n\nDistribution explorer\nPreliZ\nStan Functions Reference\nbambi example",
+    "crumbs": [
+      "Regression",
+      "Continuous outcome",
+      "Unbounded",
+      "Normal model"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/bernoulli_logit.html#description",
+    "href": "gen_linear_regression/bernoulli_logit.html#description",
+    "title": "Bernoulli model",
+    "section": "Description",
+    "text": "Description\nThe Bernoulli model is a model of binary data.",
+    "crumbs": [
+      "Regression",
+      "Discrete outcome",
+      "Binary",
+      "Bernoulli model"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/bernoulli_logit.html#definition",
+    "href": "gen_linear_regression/bernoulli_logit.html#definition",
+    "title": "Bernoulli model",
+    "section": "Definition",
+    "text": "Definition\nFor binary outcome \\(y\\) and predictors \\(x\\), the model is:\n\\[\n\\begin{align}\ny_i &\\sim \\text{Bernoulli}(\\text{logit}^{-1}(\\eta_i)) \\\\\n\\eta_i &= \\alpha + \\beta \\cdot x_i\n\\end{align}\n\\]",
+    "crumbs": [
+      "Regression",
+      "Discrete outcome",
+      "Binary",
+      "Bernoulli model"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/bernoulli_logit.html#parameters-needing-priors",
+    "href": "gen_linear_regression/bernoulli_logit.html#parameters-needing-priors",
+    "title": "Bernoulli model",
+    "section": "Parameters needing priors",
+    "text": "Parameters needing priors\n\n\\(\\alpha\\) (intercept)\n\\(\\beta\\) (predictor weights)",
+    "crumbs": [
+      "Regression",
+      "Discrete outcome",
+      "Binary",
+      "Bernoulli model"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/bernoulli_logit.html#prior-on-alpha",
+    "href": "gen_linear_regression/bernoulli_logit.html#prior-on-alpha",
+    "title": "Bernoulli model",
+    "section": "Prior on \\(\\alpha\\)",
+    "text": "Prior on \\(\\alpha\\)\n\nWeakly informative logistic prior\nGreenland and Mansournia (2015) found that a logistic function prior provided a good default.\n\\(\\alpha \\sim \\text{logistic}(\\sigma)\\)\nBoonstra, Barbaro, and Sen (2019) suggests that \\(\\sigma\\) should be chosen by:\n\nchoose constant \\(0 \\lt q \\lt 1\\) which is prior mass outside extreme boundaries. e.g. 0.01\ncalculate \\(s_n = \\exp{-1 / (2n)}\\), where \\(n\\) is number of observations\nselect \\(\\sigma = \\sigma_n\\) such that \\(P(1 - s_n &lt;\n\\text{logit}^{-1}(\\alpha) &lt; s_n | \\sigma = \\sigma_n) = 1 - q\\).\n\nlogis_sigma &lt;- function(n, q) {\n\n  s_n &lt;- exp(-1 / (2 * n))\n\n  root &lt;- uniroot(\n    \\(sigma) plogis(q = qlogis(s_n), scale = sigma,\n                    lower.tail = FALSE) - q/2,\n    interval = c(0.1, 10))\n\n  root$root\n}\n\n\nWeakly informative exponential power prior\nBoonstra, Barbaro, and Sen (2019) suggested an exponential power prior:\n\\(p(\\alpha) \\propto \\exp{(-\\text{abs}({\\alpha / \\sqrt(2) \\sigma})^\\gamma)}\\)\ntarget += -abs((alpha) / (sqrt(2.0) * alpha_scale))^(alpha_power);\nSimilar to the method for the logistic prior, choosing \\(\\sigma\\) can be done with the following function:\nep_sigma &lt;- function(gamma, n, q) {\n\n  s_n &lt;- exp(-1 / (2 * n))\n\n  root &lt;- uniroot(\n    \\(sigma) pgamma(q = (qlogis(s_n) / (sqrt(2) * sigma))^gamma,\n      shape = 1 / gamma, lower.tail = FALSE) - q,\n    interval = c(0, 10))\n\n  root$root\n}",
+    "crumbs": [
+      "Regression",
+      "Discrete outcome",
+      "Binary",
+      "Bernoulli model"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/bernoulli_logit.html#prior-on-beta",
+    "href": "gen_linear_regression/bernoulli_logit.html#prior-on-beta",
+    "title": "Bernoulli model",
+    "section": "Prior on \\(\\beta\\)",
+    "text": "Prior on \\(\\beta\\)\n\nWeakly informative Student-t prior\nGhosh, Li, and Mitra (2018) suggested a Student-t prior on scaled predictors.\n\\(\\beta \\sim \\text{StudentT}(\\nu, 0, \\sigma)\\)\nWith \\(\\nu\\) between 3 and 7, and \\(\\nu = 7\\), \\(\\sigma\\) = 2.5 sensible defaults.",
+    "crumbs": [
+      "Regression",
+      "Discrete outcome",
+      "Binary",
+      "Bernoulli model"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/bernoulli_logit.html#see-also",
+    "href": "gen_linear_regression/bernoulli_logit.html#see-also",
+    "title": "Bernoulli model",
+    "section": "See also",
+    "text": "See also\n\nDistribution explorer\nPreliZ\nStan Functions Reference\nJörn Alexander Quent’s notebook",
+    "crumbs": [
+      "Regression",
+      "Discrete outcome",
+      "Binary",
+      "Bernoulli model"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/binomial.html#description",
+    "href": "gen_linear_regression/binomial.html#description",
+    "title": "Binomial model",
+    "section": "Description",
+    "text": "Description\nThe binomial model is a model of counts of binary outcomes in sets of trials.",
+    "crumbs": [
+      "Regression",
+      "Discrete outcome",
+      "Count",
+      "Binomial model"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/binomial.html#definition",
+    "href": "gen_linear_regression/binomial.html#definition",
+    "title": "Binomial model",
+    "section": "Definition",
+    "text": "Definition\nFor counts of successes \\(y\\), number of trials \\(N\\) and predictors \\(x\\), the model is:\n\\[\n\\begin{align}\ny_i \\sim \\text{Binomial}(N_i, \\exp{(\\eta_i)}) \\\\\n\\eta_i = \\alpha + \\beta \\cdot x_i\n\\end{align}\n\\]\nWhere \\(y_i\\) is the number of successes and \\(N_i\\) is the number of trials for observation \\(i\\).",
+    "crumbs": [
+      "Regression",
+      "Discrete outcome",
+      "Count",
+      "Binomial model"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/binomial.html#parameters-needing-priors",
+    "href": "gen_linear_regression/binomial.html#parameters-needing-priors",
+    "title": "Binomial model",
+    "section": "Parameters needing priors",
+    "text": "Parameters needing priors\n\n\\(\\alpha\\) (intercept)\n\\(\\beta\\) (predictor weights)",
+    "crumbs": [
+      "Regression",
+      "Discrete outcome",
+      "Count",
+      "Binomial model"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/binomial.html#see-also",
+    "href": "gen_linear_regression/binomial.html#see-also",
+    "title": "Binomial model",
+    "section": "See also",
+    "text": "See also\n\nDistribution explorer\nStan Functions Reference",
+    "crumbs": [
+      "Regression",
+      "Discrete outcome",
+      "Count",
+      "Binomial model"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/categorical.html#description",
+    "href": "gen_linear_regression/categorical.html#description",
+    "title": "Categorical model",
+    "section": "Description",
+    "text": "Description",
+    "crumbs": [
+      "Regression",
+      "Discrete outcome",
+      "Categorical",
+      "Categorical model"
     ]
   },
   {
@@ -789,24 +392,482 @@
     ]
   },
   {
-    "objectID": "gen_linear_regression/ordinal.html",
-    "href": "gen_linear_regression/ordinal.html",
-    "title": "Ordered logistic model",
+    "objectID": "gen_linear_regression/l1_ball.html",
+    "href": "gen_linear_regression/l1_ball.html",
+    "title": "L1 Ball",
     "section": "",
-    "text": "The ordinal model is a model of ordered discrete data.",
+    "text": "Description\nThe L1 Ball prior (Xu and Duan 2024) is a spike-and-slab type prior.\n\n\nDefinition\n\\[\n\\begin{align}\n\\beta &= \\text{argmin}_{\\|x\\|_1 \\leq r} \\|\\beta_{\\text{unprojected}} - x\\|^2_2 \\\\\n\\beta_{\\text{unprojected}} &\\sim p(\\beta_{\\text{unprojected}}) \\\\\nr &\\sim p(r)\n\\end{align}\n\\]\n\n\nThings to specify\nPrior on the radius of the ball \\(r\\). Prior on the unprojected \\(\\beta\\) coefficients.\n\n\nStan code\nfunctions {\n  real signum(real x) {\n    return (x &gt;= 0) ? 1 : -1;\n  }\n\n  vector L1ball_project(vector beta, real r, int K) {\n    /* Projection on to L1-ball\n     * Args:\n     * beta: weight parameters\n     * r: radius\n     * K: number of weights\n     */\n    vector[K] beta_abs;\n    vector[K] theta;\n    vector[K] sorted_beta_abs;\n    vector[K] mu;\n    vector[K] mu_tilde;\n    int c = 0;\n\n    // if norm of beta is within radius, keep as is\n    if (norm1(beta) &lt;= r) {\n      theta = beta;\n    } else {\n      // sort beta by descending absolute values\n      beta_abs = abs(beta);\n      sorted_beta_abs = sort_desc(beta_abs);\n\n      // calculate cumulative sum for thresholding\n      mu = fdim(cumulative_sum(sorted_beta_abs), r);\n      // calculate thresholds\n      for (i in 1:K) {\n\tmu_tilde[i] = mu[i] / i;\n      }\n      \n      // get the index corresponding to the smallest abs beta above\n      // the corresponding threshold\n      for (i in 1:K) {\n        if (sorted_beta_abs[i] &lt;= mu_tilde[i]) {\n\t  c = i - 1;\n          break;\n        }\n      }\n      \n      // do the projection and keep track of the sign\n      for (i in 1:K) {\n\tif (c != 0) { \n\t  theta[i] = signum(beta[i]) * fdim(beta_abs[i], (mu_tilde[c]));\n\t} else { // handle no betas being above the threshold\n\t   theta[i] = 0;\n\t}\n      }\n    }\n    return theta;\n  }\n}\ndata {\n\n  int&lt;lower=1&gt; N; // number of observations\n  vector[N] Y; // response variable\n  int&lt;lower=0&gt; K; // number of covariates\n  matrix[N, K] X; // design matrix\n\n  // sigma prior sd\n  real&lt;lower=0&gt; sigma_sd; // sd of sigma prior\n\n  // phi prior sd\n  real&lt;lower=0&gt; beta_sd; // sd of beta prior\n\n  // intercept prior\n  real alpha_mean;\n  real&lt;lower=0&gt; alpha_sd;\n\n  // l1 ball radius alpha\n  real&lt;lower=0&gt; r_alpha;\n}\n\nparameters {\n  real&lt;lower=0&gt; r; // radius\n  vector[K] beta_o; // original beta\n  real alpha; // intercept\n  real&lt;lower=0&gt; sigma; // residual sd\n}\n\ntransformed parameters {\n  vector[K] beta; // projected beta\n  beta = L1ball_project(beta_o, r, K);\n}\n\nmodel {\n  // priors\n  alpha ~ normal(alpha_mean, alpha_sd);\n  beta_o ~ normal(0, beta_sd);\n  sigma ~ normal(0, sigma_sd);\n  r ~ exponential(r_alpha);\n\n  // likelihood\n  Y ~ normal_id_glm(X, alpha, beta, sigma);\n}\n\n\n\n\n\nReferences\n\nXu, Maoran, and Leo L Duan. 2024. “Bayesian Inference with the l 1-Ball Prior: Solving Combinatorial Problems with Exact Zeros.” Journal of the Royal Statistical Society Series B: Statistical Methodology 85 (5): 1538–60. https://doi.org/10.1093/jrsssb/qkad076.",
+    "crumbs": [
+      "Regression",
+      "Sparsity priors",
+      "L1 Ball"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/negative_binomial.html#description",
+    "href": "gen_linear_regression/negative_binomial.html#description",
+    "title": "Negative-binomial model",
+    "section": "Description",
+    "text": "Description\nThe negative-binomial model is a model of counts that allows for overdispersion.",
     "crumbs": [
       "Regression",
       "Discrete outcome",
-      "Ordered",
-      "Ordered logistic model"
+      "Count",
+      "Negative-binomial model"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/negative_binomial.html#definition",
+    "href": "gen_linear_regression/negative_binomial.html#definition",
+    "title": "Negative-binomial model",
+    "section": "Definition",
+    "text": "Definition\nFor discrete positive outcome \\(y\\) and predictors \\(x\\), the model is:\n\\[\n\\begin{align}\ny_i \\sim \\text{NegBinomial}(\\exp{(\\eta_i)}, \\phi) \\\\\n\\eta_i = \\alpha + \\beta \\cdot x_i\n\\end{align}\n\\]",
+    "crumbs": [
+      "Regression",
+      "Discrete outcome",
+      "Count",
+      "Negative-binomial model"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/negative_binomial.html#parameters-needing-priors",
+    "href": "gen_linear_regression/negative_binomial.html#parameters-needing-priors",
+    "title": "Negative-binomial model",
+    "section": "Parameters needing priors",
+    "text": "Parameters needing priors\n\n\\(\\alpha\\) (intercept)\n\\(\\beta\\) (predictor weights)\n\\(\\phi\\) (overdispersion parameter)",
+    "crumbs": [
+      "Regression",
+      "Discrete outcome",
+      "Count",
+      "Negative-binomial model"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/negative_binomial.html#prior-for-phi",
+    "href": "gen_linear_regression/negative_binomial.html#prior-for-phi",
+    "title": "Negative-binomial model",
+    "section": "Prior for \\(\\phi\\)",
+    "text": "Prior for \\(\\phi\\)\n\nWeakly informative inverse gamma prior\nVehtari (2024) suggested an inverse gamma prior as an approximation of the penalized complexity prior:\n\\(\\phi \\sim \\text{InvGamma}(0.4, 0.3)\\)\n\n\nPenalized complexity prior\nSimpson et al. (2017) suggested a penalized complexity prior",
+    "crumbs": [
+      "Regression",
+      "Discrete outcome",
+      "Count",
+      "Negative-binomial model"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/negative_binomial.html#see-also",
+    "href": "gen_linear_regression/negative_binomial.html#see-also",
+    "title": "Negative-binomial model",
+    "section": "See also",
+    "text": "See also\n\nDistribution explorer\nPreliZ\nAki Vehtari’s case study\nStan Functions Reference\nbambi example",
+    "crumbs": [
+      "Regression",
+      "Discrete outcome",
+      "Count",
+      "Negative-binomial model"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/scaled_default.html#description",
+    "href": "gen_linear_regression/scaled_default.html#description",
+    "title": "Data-scaled independent priors",
+    "section": "Description",
+    "text": "Description\nUsed by rstanarm"
+  },
+  {
+    "objectID": "gen_linear_regression/scaled_default.html#definition",
+    "href": "gen_linear_regression/scaled_default.html#definition",
+    "title": "Data-scaled independent priors",
+    "section": "Definition",
+    "text": "Definition\n\\[\n\\alpha_c \\sim \\text{normal}(m_y, 2.5 \\cdot s_y)\n\\]\n\\[\n\\beta_k \\sim \\text{normal}(0, 2.5 \\cdot s_y / s_{x_k})\n\\]\n\\[\n\\sigma \\sim \\text{exponential}(1 / s_y)\n\\]\n\\[ s_y = \\text{sd}(y)\\]\n\\[ s_{x_k} = \\text{sd}(x_k)\\]"
+  },
+  {
+    "objectID": "gen_linear_regression/scaled_default.html#things-to-specify",
+    "href": "gen_linear_regression/scaled_default.html#things-to-specify",
+    "title": "Data-scaled independent priors",
+    "section": "Things to specify",
+    "text": "Things to specify\nNothing"
+  },
+  {
+    "objectID": "gen_linear_regression/scaled_default.html#stan-code",
+    "href": "gen_linear_regression/scaled_default.html#stan-code",
+    "title": "Data-scaled independent priors",
+    "section": "Stan code",
+    "text": "Stan code"
+  },
+  {
+    "objectID": "Stan_prior_choice.html",
+    "href": "Stan_prior_choice.html",
+    "title": "Stan Prior Choice Recommendations",
+    "section": "",
+    "text": "Much of PriorDB is built on the Stan Prior Choice Recommendations.",
+    "crumbs": [
+      "Stan prior guide"
+    ]
+  },
+  {
+    "objectID": "CONTRIBUTING.html#reporting-issues",
+    "href": "CONTRIBUTING.html#reporting-issues",
+    "title": "Contributing to PriorDB",
+    "section": "Reporting issues",
+    "text": "Reporting issues\nIf you encounter any error or typo in PriorDB, please report an issue to our issue tracker. Please check if the issue has already been reported before creating a new one."
+  },
+  {
+    "objectID": "CONTRIBUTING.html#fixing-issues-and-contributing-new-content",
+    "href": "CONTRIBUTING.html#fixing-issues-and-contributing-new-content",
+    "title": "Contributing to PriorDB",
+    "section": "Fixing issues and contributing new content",
+    "text": "Fixing issues and contributing new content\nPull requests are welcome for all types of contributions to PriorDB. In particular, we are looking for contributions in the following areas:\n\nAdding new priors: Please make sure to include a citation for the prior.\nImproving existing priors: Including errors you want to fix or additional information to complement the existing content.\nAdding example code: We are looking to include example code for each prior in different languages, code in Stan, PyMC and other probabilistic programming languages is welcome.\n\n\nRecommended steps for contributing\nIf you would like to contribute to PriorDB with a pull request (PR), please follow these steps:\n\nCheck that there is not an open PR for the issue you would like to work on.\nCheck that there is not an open issue for the issue you would like to work on. If there is an open issue, please comment on it to let us know you would like to work on it.\nIf the change is a small one, you can directly do a PR. If the change is a large one, please first submit an issue describing what you want to change and how you plan to do it.\nWhen opening the PR, please make sure to include a detailed description of the changes you made and the issue you are addressing. If you are unsure about how to do a PR, please refer to the GitHub documentation."
+  },
+  {
+    "objectID": "autoregression/arr2.html#description",
+    "href": "autoregression/arr2.html#description",
+    "title": "ARR2",
+    "section": "Description",
+    "text": "Description\nDeveloped by (Kohns et al. 2024), it is similar to the R2-D2 prior (Zhang et al. 2022) but for autoregression.",
+    "crumbs": [
+      "Autoregression",
+      "ARR2"
+    ]
+  },
+  {
+    "objectID": "autoregression/arr2.html#definition",
+    "href": "autoregression/arr2.html#definition",
+    "title": "ARR2",
+    "section": "Definition",
+    "text": "Definition\n\\[\n\\begin{align*}\n\\phi_i &\\sim \\text{normal}\\left(0, \\frac{\\sigma^2}{\\sigma_{y}^2}\\tau^2\\psi_i\\right) \\\\\n\\tau^2 &= \\frac{R^2}{1 - R^2} \\\\\nR^2 &\\sim \\text{beta}(\\mu_R,\\sigma_R) \\\\\n\\psi &\\sim \\text{Dirichlet}(\\xi_1,\\dotsc,\\xi_p) \\\\\n\\sigma^2 &\\sim p(\\sigma^2) \\\\\n\\end{align*}\n\\]",
+    "crumbs": [
+      "Autoregression",
+      "ARR2"
+    ]
+  },
+  {
+    "objectID": "autoregression/arr2.html#things-to-specify",
+    "href": "autoregression/arr2.html#things-to-specify",
+    "title": "ARR2",
+    "section": "Things to specify",
+    "text": "Things to specify\n\nPrior on \\(\\sigma^2\\)\n\\(\\xi_1 \\dotsc \\xi_p\\) (concentration parameters corresponding to lag coefficients)\n\\(\\mu_R\\) and \\(\\sigma_R\\) (location and precision of \\(R^2\\) prior",
+    "crumbs": [
+      "Autoregression",
+      "ARR2"
+    ]
+  },
+  {
+    "objectID": "autoregression/arr2.html#stan-code",
+    "href": "autoregression/arr2.html#stan-code",
+    "title": "ARR2",
+    "section": "Stan code",
+    "text": "Stan code\ndata {\n  int&lt;lower=1&gt; T; // number of time points\n  vector[T] Y; // observations\n  int&lt;lower=0&gt; p; // AR order\n  // concentration vector of the Dirichlet prior\n  vector&lt;lower=0&gt;[p] cons;\n  // data for the R2D2 prior\n  real&lt;lower=0&gt; mean_R2;  // mean of the R2 prior\n  real&lt;lower=0&gt; prec_R2;  // precision of the R2 prior\n  real&lt;lower=0&gt; sigma_sd; // sd of sigma prior\n  // variance estimates of y\n  real&lt;lower=0&gt; var_y;\n}\n\nparameters {\n  vector[p] phi; // AR coefficients\n  simplex[p] psi; // decomposition simplex\n  real&lt;lower=0, upper=1&gt; R2; // coefficient of determination\n  real&lt;lower=0&gt; sigma; // observation model sd\n}\n\ntransformed parameters {\n  real&lt;lower=0&gt; tau2 = R2 / (1 - R2); // Equation 18\n  vector[T] mu = rep_vector(0.0, T);\n  for (t in (p+1):T) {\n    for (i in 1:p) {\n      mu[t] += phi[i] * Y[t-i]; // Equation 16\n    }\n  }\n}\n\nmodel {\n  // priors\n  phi ~ normal(0, sqrt(sigma^2/var_y * tau2 * psi));  // Equation 17\n  R2 ~ beta(mean_R2 * prec_R2, (1 - mean_R2) * prec_R2);  // Equation 19\n  sigma ~ normal(0, sigma_sd);  // Equation 20\n  psi ~ dirichlet(cons);        // Equation 21\n  // likelihood\n  Y ~ normal_lpdf(mu, sigma);   // Equation 15\n}",
+    "crumbs": [
+      "Autoregression",
+      "ARR2"
+    ]
+  },
+  {
+    "objectID": "autoregression/minnesota.html",
+    "href": "autoregression/minnesota.html",
+    "title": "Minnesota",
+    "section": "",
+    "text": "Description\nDiscount previous time points exponentially\n\n\nDefinition\n\\[\n\\begin{align}\ny_t &\\sim \\text{normal}(\\mu_t,\\sigma^2),\\quad t=p+1,\\dotsc,T \\\\\n    \\mu_t &= \\sum_{i=1}^p\\phi_iy_{t-i} + x_t^{\\prime}\\beta  \\\\\n    \\phi_i &\\sim \\text{normal}(0, \\kappa_1 / i^2), \\quad \\beta_j \\sim N(0,\\frac{\\sigma_y^2}{\\sigma_{x_j}^2}\\kappa_2),\\quad j=1,\\dotsc,m \\\\\n    \\kappa_1 & \\sim \\text{gamma}(1,1/0.04), \\quad \\kappa_2\\sim \\text{gamma}(1,1/0.04^2), \\quad \\sigma^2\\sim p(\\sigma^2)\n\\end{align}\n\\]\n\n\nStan code",
+    "crumbs": [
+      "Autoregression",
+      "Minnesota"
+    ]
+  },
+  {
+    "objectID": "contributors.html#contributors",
+    "href": "contributors.html#contributors",
+    "title": "priorDB",
+    "section": "Contributors",
+    "text": "Contributors\n\n\n\n\n\n   Noa Kallioinen \n\n\n   Osvaldo A Martin \n\n\n   Andrew Johnson",
+    "crumbs": [
+      "Contributors"
+    ]
+  },
+  {
+    "objectID": "autoregression/pc_ar.html",
+    "href": "autoregression/pc_ar.html",
+    "title": "Penalized complexity for autoregression",
+    "section": "",
+    "text": "Description\nDefined in (pc_autoregression?).\n\n\nDefinition"
+  },
+  {
+    "objectID": "autoregression/autoregression_overview.html",
+    "href": "autoregression/autoregression_overview.html",
+    "title": "Autoregression overview",
+    "section": "",
+    "text": "Model:\n\\[\ny_t \\sim \\text{normal}(\\mu_t, \\sigma)\n\\]\n\\[\n\\mu_t = \\phi \\cdot y_{t-p, \\dots, t-1}\n\\]\nParameters needing priors:\n\n\\(\\phi\\) (lag weights)\n\\(\\sigma\\) (observation model standard deviation)\n\nData:\n\n\\(y\\) (continuous outcome)\n\\(X\\) (predictors)",
+    "crumbs": [
+      "Autoregression",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "autoregression/autoregression_comparison.html#lfo-cv-comparison",
+    "href": "autoregression/autoregression_comparison.html#lfo-cv-comparison",
+    "title": "Autoregression prior comparison",
+    "section": "LFO-CV comparison",
+    "text": "LFO-CV comparison"
+  },
+  {
+    "objectID": "prior_template.html#description",
+    "href": "prior_template.html#description",
+    "title": "priorDB",
+    "section": "Description",
+    "text": "Description"
+  },
+  {
+    "objectID": "prior_template.html#definition",
+    "href": "prior_template.html#definition",
+    "title": "priorDB",
+    "section": "Definition",
+    "text": "Definition\nFor outcome \\(y\\) and predictors \\(x\\), the model is:"
+  },
+  {
+    "objectID": "prior_template.html#parameters-needing-priors",
+    "href": "prior_template.html#parameters-needing-priors",
+    "title": "priorDB",
+    "section": "Parameters needing priors",
+    "text": "Parameters needing priors"
+  },
+  {
+    "objectID": "prior_template.html#prior-on-theta",
+    "href": "prior_template.html#prior-on-theta",
+    "title": "priorDB",
+    "section": "Prior on \\(\\theta\\)",
+    "text": "Prior on \\(\\theta\\)\n\nFirst prior on \\(\\theta\\)"
+  },
+  {
+    "objectID": "prior_template.html#see-also",
+    "href": "prior_template.html#see-also",
+    "title": "priorDB",
+    "section": "See also",
+    "text": "See also"
+  },
+  {
+    "objectID": "gen_linear_regression/cumulative.html#description",
+    "href": "gen_linear_regression/cumulative.html#description",
+    "title": "Cumulative probit model",
+    "section": "Description",
+    "text": "Description\nThe cumulative probit model is a model of ordered discrete data."
+  },
+  {
+    "objectID": "gen_linear_regression/cumulative.html#definition",
+    "href": "gen_linear_regression/cumulative.html#definition",
+    "title": "Cumulative probit model",
+    "section": "Definition",
+    "text": "Definition\nFor discrete ordered outcome \\(y\\) and predictors \\(x\\), the model is:\n\\[\n\\begin{align}\ny_i \\sim \\text{cumulative}(\\eta_i, c) \\\\\n\\eta_i = \\alpha + \\beta \\cdot x_i\n\\end{align}\n\\]"
+  },
+  {
+    "objectID": "gen_linear_regression/cumulative.html#parameters-needing-priors",
+    "href": "gen_linear_regression/cumulative.html#parameters-needing-priors",
+    "title": "Cumulative probit model",
+    "section": "Parameters needing priors",
+    "text": "Parameters needing priors"
+  },
+  {
+    "objectID": "gen_linear_regression/poisson.html#description",
+    "href": "gen_linear_regression/poisson.html#description",
+    "title": "Poisson model",
+    "section": "Description",
+    "text": "Description\nRegression with Poisson model is a simple model used for count data.",
+    "crumbs": [
+      "Regression",
+      "Discrete outcome",
+      "Count",
+      "Poisson model"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/poisson.html#definition",
+    "href": "gen_linear_regression/poisson.html#definition",
+    "title": "Poisson model",
+    "section": "Definition",
+    "text": "Definition\nFor discrete positive outcome \\(y\\) and predictors \\(x\\), the model is:\n\\[\n\\begin{align}\ny_i &\\sim \\text{Poisson}(\\exp{\\eta_i}) \\\\\n\\eta_i &= \\alpha + \\beta \\cdot x_i\n\\end{align}\n\\]",
+    "crumbs": [
+      "Regression",
+      "Discrete outcome",
+      "Count",
+      "Poisson model"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/poisson.html#parameters-needing-priors",
+    "href": "gen_linear_regression/poisson.html#parameters-needing-priors",
+    "title": "Poisson model",
+    "section": "Parameters needing priors",
+    "text": "Parameters needing priors\n\n\\(\\alpha\\) (intercept)\n\\(\\beta\\) (predictor weights)",
+    "crumbs": [
+      "Regression",
+      "Discrete outcome",
+      "Count",
+      "Poisson model"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/poisson.html#see-also",
+    "href": "gen_linear_regression/poisson.html#see-also",
+    "title": "Poisson model",
+    "section": "See also",
+    "text": "See also\n\nDistribution explorer\nPreliZ\nStan Functions Reference\nbrms tutorial paper",
+    "crumbs": [
+      "Regression",
+      "Discrete outcome",
+      "Count",
+      "Poisson model"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/conway_maxwell_poisson.html#description",
+    "href": "gen_linear_regression/conway_maxwell_poisson.html#description",
+    "title": "Conway-Maxwell-Poisson model",
+    "section": "Description",
+    "text": "Description\nThe Conway-Maxwell-Poisson distribution is used to model count data."
+  },
+  {
+    "objectID": "gen_linear_regression/conway_maxwell_poisson.html#definition",
+    "href": "gen_linear_regression/conway_maxwell_poisson.html#definition",
+    "title": "Conway-Maxwell-Poisson model",
+    "section": "Definition",
+    "text": "Definition\nFor non-negative discrete outcome \\(y\\) and predictors \\(x\\), the model is:\n\\[\nP(X = x) = \\frac{\\lambda^x}{(x!)^\\nu Z(\\lambda, \\nu)}\n\\]"
+  },
+  {
+    "objectID": "gen_linear_regression/conway_maxwell_poisson.html#section",
+    "href": "gen_linear_regression/conway_maxwell_poisson.html#section",
+    "title": "Conway-Maxwell-Poisson model",
+    "section": "",
+    "text": "This is based on (Meyer, Graye, and Sellers 2023)."
+  },
+  {
+    "objectID": "gen_linear_regression/beta.html#description",
+    "href": "gen_linear_regression/beta.html#description",
+    "title": "Beta model",
+    "section": "Description",
+    "text": "Description\nBeta regression is used for outcomes on the [0, 1] interval.",
+    "crumbs": [
+      "Regression",
+      "Continuous outcome",
+      "Bounded",
+      "Beta model"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/beta.html#definition",
+    "href": "gen_linear_regression/beta.html#definition",
+    "title": "Beta model",
+    "section": "Definition",
+    "text": "Definition\nFor continuous outcome \\(y\\) bounded [0, 1] and predictors \\(x\\), the model is:\n\\[\n\\begin{align}\ny_i \\sim \\text{beta}(\\text{logit}^{-1}(\\mu_i), \\kappa) \\\\\n\\mu_i = \\alpha + \\beta \\cdot x_i \\\\\n\\end{align}\n\\]\nThe logit function is the quantile function associated with the standard logistic distribution. Its inverse maps \\(\\mu_i\\) from the real line into a value within the interval (0, 1).",
+    "crumbs": [
+      "Regression",
+      "Continuous outcome",
+      "Bounded",
+      "Beta model"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/beta.html#parameters-needing-priors",
+    "href": "gen_linear_regression/beta.html#parameters-needing-priors",
+    "title": "Beta model",
+    "section": "Parameters needing priors",
+    "text": "Parameters needing priors\n\n\\(\\alpha\\) (intercept)\n\\(\\beta\\) (predictor weights)\n\\(\\kappa\\) (concentration parameter)\n\nThe larger the value of \\(\\kappa\\), the more concentrated the distribution is around the mean. This parameter is also named the precision parameter or the sample size parameter. Greek letters \\(\\nu\\) and \\(\\phi\\) are also commonly used to refer to this parameter.",
+    "crumbs": [
+      "Regression",
+      "Continuous outcome",
+      "Bounded",
+      "Beta model"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/beta.html#prior-for-kappa",
+    "href": "gen_linear_regression/beta.html#prior-for-kappa",
+    "title": "Beta model",
+    "section": "Prior for \\(\\kappa\\)",
+    "text": "Prior for \\(\\kappa\\)\nFor weakly informative prior we can use a gamma distribution with low probability mass on very small values of \\(\\kappa\\), such priors disfavor u-shaped beta distributions which are generally less common in real-world data. For instance, we could choose \\(\\text{gamma}(4, 0.1)\\) as discussed by Solomon Kurz, which place most of the prior mass on the double-digit range with long right tail allowing for greater concentrations if needed.",
+    "crumbs": [
+      "Regression",
+      "Continuous outcome",
+      "Bounded",
+      "Beta model"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/beta.html#see-also",
+    "href": "gen_linear_regression/beta.html#see-also",
+    "title": "Beta model",
+    "section": "See also",
+    "text": "See also\n\nDistribution explorer\nPreliZ\nStan Functions Reference\nrstanarm manual\nbambi manual\nAndrew Wheiss’ blog",
+    "crumbs": [
+      "Regression",
+      "Continuous outcome",
+      "Bounded",
+      "Beta model"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/becca.html",
+    "href": "gen_linear_regression/becca.html",
+    "title": "Beta Cauchy-Cauchy (BECCA)",
+    "section": "",
+    "text": "Global-local shrinkage prior. (Rodrigo et al. 2025)\n\\[\n\\begin{align}\n     \\beta_j \\;&\\sim \\text{normal}(0, g \\sigma^2 \\gamma_j^2) \\\\\n     \\gamma_j \\;&\\sim \\text{Beta}(u, v) \\\\\n     g \\;&\\sim \\text{Cauchy}^+(0, 1) \\\\\n     u \\;&\\sim \\text{Cauchy}^+(0, 1) \\\\\n     v \\;&\\sim \\text{Cauchy}^+(0, 1) \\\\\n     \\sigma^2 \\;&\\sim p(\\sigma^2)\n\\end{align}\n\\]\n\n\n\n\nReferences\n\nRodrigo, Linduni M., Robert Kohn, Hadi M. Afshar, and Sally Cripps. 2025. “A Beta Cauchy-Cauchy (BECCA) Shrinkage Prior for Bayesian Variable Selection.” January 13, 2025. https://doi.org/10.48550/arXiv.2501.07061.",
+    "crumbs": [
+      "Regression",
+      "Sparsity priors",
+      "Beta Cauchy-Cauchy (BECCA)"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/r2d2.html",
+    "href": "gen_linear_regression/r2d2.html",
+    "title": "R2-D2",
+    "section": "",
+    "text": "Description\nThe R2-D2 prior (Zhang et al. 2022) is a global-local shrinkage prior. This has been expanded for generalised linear models (Yanchenko, Bondell, and Reich 2024).\n\n\nDefinition\nFor a linear model:\n\\[\n\\begin{align}\ny_i &\\sim \\text{normal} (\\mu_i,\\sigma^2) \\\\\n\\mu_i &= \\alpha + \\beta \\cdot x_i\n\\end{align}\n\\]\nThe prior is:\n\\[\n\\begin{align}\n\\beta_i &\\sim \\text{normal}\\left(0, \\frac{\\sigma^2}{\\sigma_{y_{t}\\mid \\theta}^2}\\tau^2\\psi_i\\right) \\\\\n\\tau^2 &= \\frac{R^2}{1 - R^2} \\\\\nR^2 &\\sim \\text{beta}(\\mu_{R^2},\\phi_{R^2}) \\\\\n\\psi &\\sim \\text{Dirichlet}(\\xi_1,\\dotsc,\\xi_p) \\\\\n\\sigma^2 &\\sim p(\\sigma^2) \\\\\n\\alpha &\\sim p(\\alpha)\n\\end{align}\n\\]\n\n\nThings to specify\nPriors on \\(\\alpha\\) and \\(\\sigma\\). Hyperparameters \\(\\xi\\), \\(\\mu_{R^2}\\), \\(\\phi_{R^2}\\).\n\n\nStan code\nfunctions {\n  /* Efficient computation of the R2D2 prior\n   * Args:\n   *   z: standardized population-level coefficients\n   *   phi: local weight parameters\n   *   tau2: global scale parameter\n   * Returns:\n   *   population-level coefficients following the R2D2 prior\n   */\n  vector R2D2(vector z, vector phi, real tau2) {\n    return z .* sqrt(phi * tau2);\n  }\n}\n\ndata {\n  int&lt;lower=0&gt; N;\n  int&lt;lower=0&gt; K;\n  matrix[N, K] X;\n  vector[N] Y;\n  int prior_only;  // should the likelihood be ignored?\n  // concentration vector of the D2 prior\n  vector&lt;lower=0&gt;[K-1] R2D2_cons_D2;\n  // data for the R2D2 prior\n  real&lt;lower=0&gt; R2D2_mean_R2;  // mean of the R2 prior\n  real&lt;lower=0&gt; R2D2_prec_R2;  // precision of the R2 prior\n}\ntransformed data {\n  int Kc = K - 1;\n  matrix[N, Kc] Xc; // centered version of X without an intercept\n  vector[Kc] means_X; // column means of X before centering\n  real sd_Y = sd(Y);\n  for (i in 2 : K) {\n    means_X[i - 1] = mean(X[ : , i]);\n    Xc[ : , i - 1] = X[ : , i] - means_X[i - 1];\n  }\n}\nparameters {\n  // local parameters for the R2D2 prior\n  vector[Kc] zb;\n  simplex[Kc] R2D2_phi;\n  // R2D2 shrinkage parameters\n  real&lt;lower=0,upper=1&gt; R2D2_R2;  // R2 parameter\n  real&lt;lower=0&gt; sigma;  // dispersion parameter\n  real a_c;\n}\n\ntransformed parameters {\n  vector[Kc] b;  // population-level effects\n  real R2D2_tau2;  // global R2D2 scale parameter\n  array[Kc+4] real lprior;\n  R2D2_tau2 = sigma^2 * R2D2_R2 / (1 - R2D2_R2);\n  // compute actual regression coefficients\n  b = R2D2(zb, R2D2_phi, R2D2_tau2);\n  lprior[1] = student_t_lpdf(a_c | 4, 0, sd_Y);\n  for (k in 1:Kc) {\n    lprior[k+1] = std_normal_lpdf(zb[k]);\n  }\n  lprior[Kc+2] = beta_lpdf(R2D2_R2 | R2D2_mean_R2 * R2D2_prec_R2, (1 - R2D2_mean_R2) * R2D2_prec_R2);\n  lprior[Kc+3] = dirichlet_lpdf(R2D2_phi | R2D2_cons_D2);\n  lprior[Kc+4] = student_t_lpdf(sigma | 3, 0, sd_Y);\n  \n}\n\nmodel {\n  // likelihood including constants\n  if (!prior_only) {\n    target += normal_id_glm_lpdf(Y | Xc, a_c, b, sigma);\n  }\n  // priors including constants\n  target += sum(lprior);\n}\n\n\n\n\n\n\nReferences\n\nYanchenko, Eric, Howard D. Bondell, and Brian J. Reich. 2024. “The R2D2 Prior for Generalized Linear Mixed Models.” arXiv. https://doi.org/10.48550/arXiv.2111.10718.\n\n\nZhang, Yan Dora, Brian P. Naughton, Howard D. Bondell, and Brian J. Reich. 2022. “Bayesian Regression Using a Prior on the Model Fit: The R2-D2 Shrinkage Prior.” Journal of the American Statistical Association 117 (538): 862–74. https://doi.org/10.1080/01621459.2020.1825449.",
+    "crumbs": [
+      "Regression",
+      "Sparsity priors",
+      "R2-D2"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/gen_linear_regression_overview.html",
+    "href": "gen_linear_regression/gen_linear_regression_overview.html",
+    "title": "Regression Overview",
+    "section": "",
+    "text": "Regression models can be used to predict outcomes from predictors. A linear predictor term \\(\\eta\\) based on the predictors is passed through an inverse link function, \\(g^{-1}\\), and then used in the observation model, \\(f\\). The observation model may have other parameters \\(\\theta\\) which are not necessarily determined through the predictors.\n\\[\n\\begin{align}\ny_i &\\sim f(g^{-1}(\\eta), \\theta) \\\\\n\\eta_i &= \\alpha + \\beta x_i\n\\end{align}\n\\]\nDepending on the choice of \\(f\\), different link functions \\(g\\) are used. For example, if \\(f\\) is the \\(\\text{normal}\\) distribution, \\(g\\) is the identity function. If \\(f\\) is the \\(\\text{Bernoulli}\\) distribution, \\(g\\) is most commonly the logit function.",
+    "crumbs": [
+      "Regression",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/gen_linear_regression_overview.html#notation",
+    "href": "gen_linear_regression/gen_linear_regression_overview.html#notation",
+    "title": "Regression Overview",
+    "section": "Notation",
+    "text": "Notation\n\n\n\nSymbol\nExplanation\n\n\n\n\n\\(y_i\\)\nObserved outcome\n\n\n\\(x_i\\)\nObserved predictors\n\n\n\\(\\alpha\\)\nIntercept\n\n\n\\(\\beta\\)\nRegression coefficients (predictor weights)",
+    "crumbs": [
+      "Regression",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "gen_linear_regression/gr2.html",
+    "href": "gen_linear_regression/gr2.html",
+    "title": "Generalised R2",
+    "section": "",
+    "text": "Description\nThe GR2 prior (Aguilar and Bürkner 2024) is a global-local shrinkage prior. It is a generalisation of the R2-D2.\n\n\nDefinition\nFor a linear model:\n\\[\n\\begin{align}\ny_i &\\sim \\text{normal} (\\mu_i,\\sigma^2) \\\\\n\\mu_i &= \\alpha + \\beta \\cdot x_i\n\\end{align}\n\\]\nThe prior is:\n\\[\n\\begin{align}\n\\beta_k &\\sim \\text{normal}\\left(0, \\sigma^2 \\phi_k \\tau^2\\right) \\\\\n\\tau^2 &= \\frac{R^2}{1 - R^2} \\\\\nR^2 &\\sim \\text{beta}(\\mu_{R^2},\\varphi_{R^2}) \\\\\n\\phi \\sim p(\\nu_\\phi) \\\\\n\\sigma &\\sim p(\\sigma) \\\\\n\\alpha &\\sim p(\\alpha)\n\\end{align}\n\\]\n\n\nThings to specify\nPriors on \\(\\alpha\\) and \\(\\sigma\\). Hyperparameters \\(\\xi\\), \\(\\mu_{R^2}\\), \\(\\phi_{R^2}\\).\nPrior on simplex \\(\\phi\\).\n\n\nStan code\nfunctions {\n  /* Efficient computation of the R2D2 prior\n   * Args:\n   *   z: standardized population-level coefficients\n   *   phi: local weight parameters\n   *   tau2: global scale parameter\n   * Returns:\n   *   population-level coefficients following the R2D2 prior\n   */\n  vector R2D2(vector z, vector phi, real tau2) {\n    return z .* sqrt(phi * tau2);\n  }\n}\n\ndata {\n  int&lt;lower=0&gt; N;\n  int&lt;lower=0&gt; K;\n  matrix[N, K] X;\n  vector[N] Y;\n  int prior_only;  // should the likelihood be ignored?\n  // concentration vector of the D2 prior\n  vector&lt;lower=0&gt;[K-1] R2D2_cons_D2;\n  // data for the R2D2 prior\n  real&lt;lower=0&gt; R2D2_mean_R2;  // mean of the R2 prior\n  real&lt;lower=0&gt; R2D2_prec_R2;  // precision of the R2 prior\n}\ntransformed data {\n  int Kc = K - 1;\n  matrix[N, Kc] Xc; // centered version of X without an intercept\n  vector[Kc] means_X; // column means of X before centering\n  real sd_Y = sd(Y);\n  for (i in 2 : K) {\n    means_X[i - 1] = mean(X[ : , i]);\n    Xc[ : , i - 1] = X[ : , i] - means_X[i - 1];\n  }\n}\nparameters {\n  // local parameters for the R2D2 prior\n  vector[Kc] zb;\n  simplex[Kc] R2D2_phi;\n  // R2D2 shrinkage parameters\n  real&lt;lower=0,upper=1&gt; R2D2_R2;  // R2 parameter\n  real&lt;lower=0&gt; sigma;  // dispersion parameter\n  real a_c;\n}\n\ntransformed parameters {\n  vector[Kc] b;  // population-level effects\n  real R2D2_tau2;  // global R2D2 scale parameter\n  array[Kc+4] real lprior;\n  R2D2_tau2 = sigma^2 * R2D2_R2 / (1 - R2D2_R2);\n  // compute actual regression coefficients\n  b = R2D2(zb, R2D2_phi, R2D2_tau2);\n  lprior[1] = student_t_lpdf(a_c | 4, 0, sd_Y);\n  for (k in 1:Kc) {\n    lprior[k+1] = std_normal_lpdf(zb[k]);\n  }\n  lprior[Kc+2] = beta_lpdf(R2D2_R2 | R2D2_mean_R2 * R2D2_prec_R2, (1 - R2D2_mean_R2) * R2D2_prec_R2);\n  lprior[Kc+3] = dirichlet_lpdf(R2D2_phi | R2D2_cons_D2);\n  lprior[Kc+4] = student_t_lpdf(sigma | 3, 0, sd_Y);\n  \n}\n\nmodel {\n  // likelihood including constants\n  if (!prior_only) {\n    target += normal_id_glm_lpdf(Y | Xc, a_c, b, sigma);\n  }\n  // priors including constants\n  target += sum(lprior);\n}\n\n\n\n\n\n\nReferences\n\nAguilar, Javier Enrique, and Paul-Christian Bürkner. 2024. “Generalized Decomposition Priors on R2.” arXiv. https://arxiv.org/abs/2401.10180.",
+    "crumbs": [
+      "Regression",
+      "Sparsity priors",
+      "Generalised R2"
     ]
   },
   {
     "objectID": "gen_linear_regression/ordinal.html#description",
     "href": "gen_linear_regression/ordinal.html#description",
     "title": "Ordered logistic model",
-    "section": "",
-    "text": "The ordinal model is a model of ordered discrete data.",
+    "section": "Description",
+    "text": "Description\nThe ordinal model is a model of ordered discrete data.",
     "crumbs": [
       "Regression",
       "Discrete outcome",
@@ -893,116 +954,16 @@
     ]
   },
   {
-    "objectID": "gen_linear_regression/bernoulli_logit.html",
-    "href": "gen_linear_regression/bernoulli_logit.html",
-    "title": "Bernoulli model",
+    "objectID": "gen_linear_regression/rhs.html",
+    "href": "gen_linear_regression/rhs.html",
+    "title": "Regularised horse shoe",
     "section": "",
-    "text": "The Bernoulli model is a model of binary data.",
+    "text": "Global-local shrinkage prior. (Piironen and Vehtari 2017)\n\\[\n\\begin{align}\n     \\beta_i \\;&\\sim \\text{normal}(0, \\tau^2\\tilde{\\lambda}_j^2) \\\\\n     \\tilde{\\lambda}_j^2 \\;&= \\frac{c^2\\lambda_j^2}{c^2 + \\tau^2\\lambda_j^2} \\\\\n     \\lambda_j \\;&\\sim \\text{Cauchy}^+(0,1) \\\\\n\\end{align}\n\\]\n\n\n\n\nReferences\n\nPiironen, Juho, and Aki Vehtari. 2017. “Sparsity Information and Regularization in the Horseshoe and Other Shrinkage Priors.” Electronic Journal of Statistics 11 (2). https://doi.org/10.1214/17-EJS1337SI.",
     "crumbs": [
       "Regression",
-      "Discrete outcome",
-      "Binary",
-      "Bernoulli model"
+      "Sparsity priors",
+      "Regularised horse shoe"
     ]
-  },
-  {
-    "objectID": "gen_linear_regression/bernoulli_logit.html#description",
-    "href": "gen_linear_regression/bernoulli_logit.html#description",
-    "title": "Bernoulli model",
-    "section": "",
-    "text": "The Bernoulli model is a model of binary data.",
-    "crumbs": [
-      "Regression",
-      "Discrete outcome",
-      "Binary",
-      "Bernoulli model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/bernoulli_logit.html#definition",
-    "href": "gen_linear_regression/bernoulli_logit.html#definition",
-    "title": "Bernoulli model",
-    "section": "Definition",
-    "text": "Definition\nFor binary outcome \\(y\\) and predictors \\(x\\), the model is:\n\\[\n\\begin{align}\ny_i &\\sim \\text{Bernoulli}(\\text{logit}^{-1}(\\eta_i)) \\\\\n\\eta_i &= \\alpha + \\beta \\cdot x_i\n\\end{align}\n\\]",
-    "crumbs": [
-      "Regression",
-      "Discrete outcome",
-      "Binary",
-      "Bernoulli model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/bernoulli_logit.html#parameters-needing-priors",
-    "href": "gen_linear_regression/bernoulli_logit.html#parameters-needing-priors",
-    "title": "Bernoulli model",
-    "section": "Parameters needing priors",
-    "text": "Parameters needing priors\n\n\\(\\alpha\\) (intercept)\n\\(\\beta\\) (predictor weights)",
-    "crumbs": [
-      "Regression",
-      "Discrete outcome",
-      "Binary",
-      "Bernoulli model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/bernoulli_logit.html#prior-on-alpha",
-    "href": "gen_linear_regression/bernoulli_logit.html#prior-on-alpha",
-    "title": "Bernoulli model",
-    "section": "Prior on \\(\\alpha\\)",
-    "text": "Prior on \\(\\alpha\\)\n\nWeakly informative logistic prior\nGreenland and Mansournia (2015) found that a logistic function prior provided a good default.\n\\(\\alpha \\sim \\text{logistic}(\\sigma)\\)\nBoonstra, Barbaro, and Sen (2019) suggests that \\(\\sigma\\) should be chosen by:\n\nchoose constant \\(0 \\lt q \\lt 1\\) which is prior mass outside extreme boundaries. e.g. 0.01\ncalculate \\(s_n = \\exp{-1 / (2n)}\\), where \\(n\\) is number of observations\nselect \\(\\sigma = \\sigma_n\\) such that \\(P(1 - s_n &lt;\n\\text{logit}^{-1}(\\alpha) &lt; s_n | \\sigma = \\sigma_n) = 1 - q\\).\n\nlogis_sigma &lt;- function(n, q) {\n\n  s_n &lt;- exp(-1 / (2 * n))\n\n  root &lt;- uniroot(\n    \\(sigma) plogis(q = qlogis(s_n), scale = sigma,\n                    lower.tail = FALSE) - q/2,\n    interval = c(0.1, 10))\n\n  root$root\n}\n\n\nWeakly informative exponential power prior\nBoonstra, Barbaro, and Sen (2019) suggested an exponential power prior:\n\\(p(\\alpha) \\propto \\exp{(-\\text{abs}({\\alpha / \\sqrt(2) \\sigma})^\\gamma)}\\)\ntarget += -abs((alpha) / (sqrt(2.0) * alpha_scale))^(alpha_power);\nSimilar to the method for the logistic prior, choosing \\(\\sigma\\) can be done with the following function:\nep_sigma &lt;- function(gamma, n, q) {\n\n  s_n &lt;- exp(-1 / (2 * n))\n\n  root &lt;- uniroot(\n    \\(sigma) pgamma(q = (qlogis(s_n) / (sqrt(2) * sigma))^gamma,\n      shape = 1 / gamma, lower.tail = FALSE) - q,\n    interval = c(0, 10))\n\n  root$root\n}",
-    "crumbs": [
-      "Regression",
-      "Discrete outcome",
-      "Binary",
-      "Bernoulli model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/bernoulli_logit.html#prior-on-beta",
-    "href": "gen_linear_regression/bernoulli_logit.html#prior-on-beta",
-    "title": "Bernoulli model",
-    "section": "Prior on \\(\\beta\\)",
-    "text": "Prior on \\(\\beta\\)\n\nWeakly informative Student-t prior\nGhosh, Li, and Mitra (2018) suggested a Student-t prior on scaled predictors.\n\\(\\beta \\sim \\text{StudentT}(\\nu, 0, \\sigma)\\)\nWith \\(\\nu\\) between 3 and 7, and \\(\\nu = 7\\), \\(\\sigma\\) = 2.5 sensible defaults.",
-    "crumbs": [
-      "Regression",
-      "Discrete outcome",
-      "Binary",
-      "Bernoulli model"
-    ]
-  },
-  {
-    "objectID": "gen_linear_regression/bernoulli_logit.html#see-also",
-    "href": "gen_linear_regression/bernoulli_logit.html#see-also",
-    "title": "Bernoulli model",
-    "section": "See also",
-    "text": "See also\n\nDistribution explorer\nPreliZ\nStan Functions Reference\nJörn Alexander Quent’s notebook",
-    "crumbs": [
-      "Regression",
-      "Discrete outcome",
-      "Binary",
-      "Bernoulli model"
-    ]
-  },
-  {
-    "objectID": "CONTRIBUTING.html",
-    "href": "CONTRIBUTING.html",
-    "title": "Contributing to PriorDB",
-    "section": "",
-    "text": "We welcome contributions to PriorDB, we rely on contributions from the community to keep the database up-to-date and accurate.\n\n\nIf you encounter any error or typo in PriorDB, please report an issue to our issue tracker. Please check if the issue has already been reported before creating a new one.\n\n\n\nPull requests are welcome for all types of contributions to PriorDB. In particular, we are looking for contributions in the following areas:\n\nAdding new priors: Please make sure to include a citation for the prior.\nImproving existing priors: Including errors you want to fix or additional information to complement the existing content.\nAdding example code: We are looking to include example code for each prior in different languages, code in Stan, PyMC and other probabilistic programming languages is welcome.\n\n\n\nIf you would like to contribute to PriorDB with a pull request (PR), please follow these steps:\n\nCheck that there is not an open PR for the issue you would like to work on.\nCheck that there is not an open issue for the issue you would like to work on. If there is an open issue, please comment on it to let us know you would like to work on it.\nIf the change is a small one, you can directly do a PR. If the change is a large one, please first submit an issue describing what you want to change and how you plan to do it.\nWhen opening the PR, please make sure to include a detailed description of the changes you made and the issue you are addressing. If you are unsure about how to do a PR, please refer to the GitHub documentation."
-  },
-  {
-    "objectID": "CONTRIBUTING.html#reporting-issues",
-    "href": "CONTRIBUTING.html#reporting-issues",
-    "title": "Contributing to PriorDB",
-    "section": "",
-    "text": "If you encounter any error or typo in PriorDB, please report an issue to our issue tracker. Please check if the issue has already been reported before creating a new one."
-  },
-  {
-    "objectID": "CONTRIBUTING.html#fixing-issues-and-contributing-new-content",
-    "href": "CONTRIBUTING.html#fixing-issues-and-contributing-new-content",
-    "title": "Contributing to PriorDB",
-    "section": "",
-    "text": "Pull requests are welcome for all types of contributions to PriorDB. In particular, we are looking for contributions in the following areas:\n\nAdding new priors: Please make sure to include a citation for the prior.\nImproving existing priors: Including errors you want to fix or additional information to complement the existing content.\nAdding example code: We are looking to include example code for each prior in different languages, code in Stan, PyMC and other probabilistic programming languages is welcome.\n\n\n\nIf you would like to contribute to PriorDB with a pull request (PR), please follow these steps:\n\nCheck that there is not an open PR for the issue you would like to work on.\nCheck that there is not an open issue for the issue you would like to work on. If there is an open issue, please comment on it to let us know you would like to work on it.\nIf the change is a small one, you can directly do a PR. If the change is a large one, please first submit an issue describing what you want to change and how you plan to do it.\nWhen opening the PR, please make sure to include a detailed description of the changes you made and the issue you are addressing. If you are unsure about how to do a PR, please refer to the GitHub documentation."
   },
   {
     "objectID": "index.html",
@@ -1017,88 +978,6 @@
     "title": "PriorDB",
     "section": "Contributing",
     "text": "Contributing\nWe welcome contributions to PriorDB, we rely on contributions from the community to keep the database up-to-date and accurate. For more information on how to contribute, please see the contribution guidelines. This is the list of the current contributors."
-  },
-  {
-    "objectID": "autoregression/arr2.html",
-    "href": "autoregression/arr2.html",
-    "title": "ARR2",
-    "section": "",
-    "text": "Developed by (Kohns et al. 2024), it is similar to the R2-D2 prior (Zhang et al. 2022) but for autoregression.",
-    "crumbs": [
-      "Autoregression",
-      "ARR2"
-    ]
-  },
-  {
-    "objectID": "autoregression/arr2.html#description",
-    "href": "autoregression/arr2.html#description",
-    "title": "ARR2",
-    "section": "",
-    "text": "Developed by (Kohns et al. 2024), it is similar to the R2-D2 prior (Zhang et al. 2022) but for autoregression.",
-    "crumbs": [
-      "Autoregression",
-      "ARR2"
-    ]
-  },
-  {
-    "objectID": "autoregression/arr2.html#definition",
-    "href": "autoregression/arr2.html#definition",
-    "title": "ARR2",
-    "section": "Definition",
-    "text": "Definition\n\\[\n\\begin{align*}\n\\phi_i &\\sim \\text{normal}\\left(0, \\frac{\\sigma^2}{\\sigma_{y}^2}\\tau^2\\psi_i\\right) \\\\\n\\tau^2 &= \\frac{R^2}{1 - R^2} \\\\\nR^2 &\\sim \\text{beta}(\\mu_R,\\sigma_R) \\\\\n\\psi &\\sim \\text{Dirichlet}(\\xi_1,\\dotsc,\\xi_p) \\\\\n\\sigma^2 &\\sim p(\\sigma^2) \\\\\n\\end{align*}\n\\]",
-    "crumbs": [
-      "Autoregression",
-      "ARR2"
-    ]
-  },
-  {
-    "objectID": "autoregression/arr2.html#things-to-specify",
-    "href": "autoregression/arr2.html#things-to-specify",
-    "title": "ARR2",
-    "section": "Things to specify",
-    "text": "Things to specify\n\nPrior on \\(\\sigma^2\\)\n\\(\\xi_1 \\dotsc \\xi_p\\) (concentration parameters corresponding to lag coefficients)\n\\(\\mu_R\\) and \\(\\sigma_R\\) (location and precision of \\(R^2\\) prior",
-    "crumbs": [
-      "Autoregression",
-      "ARR2"
-    ]
-  },
-  {
-    "objectID": "autoregression/arr2.html#stan-code",
-    "href": "autoregression/arr2.html#stan-code",
-    "title": "ARR2",
-    "section": "Stan code",
-    "text": "Stan code\ndata {\n  int&lt;lower=1&gt; T; // number of time points\n  vector[T] Y; // observations\n  int&lt;lower=0&gt; p; // AR order\n  // concentration vector of the Dirichlet prior\n  vector&lt;lower=0&gt;[p] cons;\n  // data for the R2D2 prior\n  real&lt;lower=0&gt; mean_R2;  // mean of the R2 prior\n  real&lt;lower=0&gt; prec_R2;  // precision of the R2 prior\n  real&lt;lower=0&gt; sigma_sd; // sd of sigma prior\n  // variance estimates of y\n  real&lt;lower=0&gt; var_y;\n}\n\nparameters {\n  vector[p] phi; // AR coefficients\n  simplex[p] psi; // decomposition simplex\n  real&lt;lower=0, upper=1&gt; R2; // coefficient of determination\n  real&lt;lower=0&gt; sigma; // observation model sd\n}\n\ntransformed parameters {\n  real&lt;lower=0&gt; tau2 = R2 / (1 - R2); // Equation 18\n  vector[T] mu = rep_vector(0.0, T);\n  for (t in (p+1):T) {\n    for (i in 1:p) {\n      mu[t] += phi[i] * Y[t-i]; // Equation 16\n    }\n  }\n}\n\nmodel {\n  // priors\n  phi ~ normal(0, sqrt(sigma^2/var_y * tau2 * psi));  // Equation 17\n  R2 ~ beta(mean_R2 * prec_R2, (1 - mean_R2) * prec_R2);  // Equation 19\n  sigma ~ normal(0, sigma_sd);  // Equation 20\n  psi ~ dirichlet(cons);        // Equation 21\n  // likelihood\n  Y ~ normal_lpdf(mu, sigma);   // Equation 15\n}",
-    "crumbs": [
-      "Autoregression",
-      "ARR2"
-    ]
-  },
-  {
-    "objectID": "autoregression/autoregression_comparison.html",
-    "href": "autoregression/autoregression_comparison.html",
-    "title": "Autoregression prior comparison",
-    "section": "",
-    "text": "#| output: false\n#| warning: false\n#| eval: false\nlibrary(MASS)\nlibrary(brms)\n\ndata(LakeHuron)"
-  },
-  {
-    "objectID": "contributors.html",
-    "href": "contributors.html",
-    "title": "priorDB",
-    "section": "",
-    "text": "Noa Kallioinen \n\n\n   Osvaldo A Martin \n\n\n   Andrew Johnson",
-    "crumbs": [
-      "Contributors"
-    ]
-  },
-  {
-    "objectID": "contributors.html#contributors",
-    "href": "contributors.html#contributors",
-    "title": "priorDB",
-    "section": "",
-    "text": "Noa Kallioinen \n\n\n   Osvaldo A Martin \n\n\n   Andrew Johnson",
-    "crumbs": [
-      "Contributors"
-    ]
   },
   {
     "objectID": "hierarchical_regression/r2d2m2.html",

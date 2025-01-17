@@ -8,7 +8,7 @@
 
 <meta name="author" content="Noa Kallioinen">
 
-<title>Conway-Maxwell-Poisson model – priorDB</title>
+<title>Beta Cauchy-Cauchy (BECCA) – priorDB</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 /* CSS for citations */
 div.csl-bib-body { }
@@ -85,6 +51,8 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../autoregression/autoregression_overview.html" rel="next">
+<link href="../gen_linear_regression/l1_ball.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -157,9 +125,9 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../styles.css">
-<meta name="citation_title" content="Conway-Maxwell-Poisson model">
+<meta name="citation_title" content="Beta Cauchy-Cauchy (BECCA)">
 <meta name="citation_author" content="Noa Kallioinen">
-<meta name="citation_fulltext_html_url" content="https://n-kall.github.io/priorDB/gen_linear_regression/conway_maxwell_poisson.html">
+<meta name="citation_fulltext_html_url" content="https://n-kall.github.io/priorDB/gen_linear_regression/becca.html">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=A Beta Cauchy-Cauchy (BECCA) shrinkage prior for Bayesian variable selection;,citation_author=Linduni M. Rodrigo;,citation_author=Robert Kohn;,citation_author=Hadi M. Afshar;,citation_author=Sally Cripps;,citation_publication_date=2025-01-13;,citation_cover_date=2025-01-13;,citation_year=2025;,citation_fulltext_html_url=http://arxiv.org/abs/2501.07061;,citation_doi=10.48550/arXiv.2501.07061;">
 <meta name="citation_reference" content="citation_title=The ARR2 prior: Flexible predictive prior definition for Bayesian auto-regressions;,citation_abstract=We present the ARR2 prior, a joint prior over the auto-regressive components in Bayesian time-series models and their induced $R^2$. Compared to other priors designed for times-series models, the ARR2 prior allows for flexible and intuitive shrinkage. We derive the prior for pure auto-regressive models, and extend it to auto-regressive models with exogenous inputs, and state-space models. Through both simulations and real-world modelling exercises, we demonstrate the efficacy of the ARR2 prior in improving sparse and reliable inference, while showing greater inference quality and predictive performance than other shrinkage priors. An open-source implementation of the prior is provided.;,citation_author=David Kohns;,citation_author=Noa Kallioinen;,citation_author=Yann McLatchie;,citation_author=Aki Vehtari;,citation_publication_date=2024-05-31;,citation_cover_date=2024-05-31;,citation_year=2024;,citation_fulltext_html_url=http://arxiv.org/abs/2405.19920;">
@@ -217,9 +185,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
-      priorDB
-      </li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../gen_linear_regression/gen_linear_regression_overview.html">Regression</a></li><li class="breadcrumb-item"><a href="../gen_linear_regression/gr2.html">Sparsity priors</a></li><li class="breadcrumb-item"><a href="../gen_linear_regression/becca.html">Beta Cauchy-Cauchy (BECCA)</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -252,13 +218,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Regression</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../gen_linear_regression/gen_linear_regression_overview.html" class="sidebar-item-text sidebar-link">
@@ -409,13 +375,13 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true">
  <span class="menu-text">Sparsity priors</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../gen_linear_regression/gr2.html" class="sidebar-item-text sidebar-link">
@@ -442,7 +408,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../gen_linear_regression/becca.html" class="sidebar-item-text sidebar-link">
+  <a href="../gen_linear_regression/becca.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Beta Cauchy-Cauchy (BECCA)</span></a>
   </div>
 </li>
@@ -534,20 +500,11 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#description" id="toc-description" class="nav-link active" data-scroll-target="#description">Description</a></li>
-  <li><a href="#definition" id="toc-definition" class="nav-link" data-scroll-target="#definition">Definition</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
-  <li><a href="#stan-code" id="toc-stan-code" class="nav-link" data-scroll-target="#stan-code">Stan code</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/n-kall/priorDB/blob/main/gen_linear_regression/conway_maxwell_poisson.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/n-kall/priorDB/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Conway-Maxwell-Poisson model</h1></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../gen_linear_regression/gen_linear_regression_overview.html">Regression</a></li><li class="breadcrumb-item"><a href="../gen_linear_regression/gr2.html">Sparsity priors</a></li><li class="breadcrumb-item"><a href="../gen_linear_regression/becca.html">Beta Cauchy-Cauchy (BECCA)</a></li></ol></nav><h1 class="title display-7">Beta Cauchy-Cauchy (BECCA)</h1></header>
 
 <header id="title-block-header">
 
@@ -556,36 +513,24 @@ window.Quarto = {
 </header>
 
 
-<section id="description" class="level2">
-<h2 class="anchored" data-anchor-id="description">Description</h2>
-<p>The Conway-Maxwell-Poisson distribution is used to model count data.</p>
-</section>
-<section id="definition" class="level2">
-<h2 class="anchored" data-anchor-id="definition">Definition</h2>
-<p>For non-negative discrete outcome <span class="math inline">\(y\)</span> and predictors <span class="math inline">\(x\)</span>, the model is:</p>
+<p>Global-local shrinkage prior. <span class="citation" data-cites="rodrigoBetaCauchyCauchyBECCA2025">(<a href="#ref-rodrigoBetaCauchyCauchyBECCA2025" role="doc-biblioref">Rodrigo et al. 2025</a>)</span></p>
 <p><span class="math display">\[
-P(X = x) = \frac{\lambda^x}{(x!)^\nu Z(\lambda, \nu)}
+\begin{align}
+     \beta_j \;&amp;\sim \text{normal}(0, g \sigma^2 \gamma_j^2) \\
+     \gamma_j \;&amp;\sim \text{Beta}(u, v) \\
+     g \;&amp;\sim \text{Cauchy}^+(0, 1) \\
+     u \;&amp;\sim \text{Cauchy}^+(0, 1) \\
+     v \;&amp;\sim \text{Cauchy}^+(0, 1) \\
+     \sigma^2 \;&amp;\sim p(\sigma^2)
+\end{align}
 \]</span></p>
-</section>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section"></h2>
-<p>This is based on <span class="citation" data-cites="meyerNonWeaklyInformativePriors2023">(<a href="#ref-meyerNonWeaklyInformativePriors2023" role="doc-biblioref">Meyer, Graye, and Sellers 2023</a>)</span>.</p>
-</section>
-<section id="stan-code" class="level1">
-<h1>Stan code</h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode stan code-with-copy"><code class="sourceCode stan"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>See also:</p>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/Conway%E2%80%93Maxwell%E2%80%93Poisson_distribution">Wikipedia</a></li>
-</ul>
 
 
 
-</section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-meyerNonWeaklyInformativePriors2023" class="csl-entry" role="listitem">
-Meyer, Mark J., Amia Graye, and Kimberly F. Sellers. 2023. <span>“On <span>Non-</span> and <span>Weakly-Informative Priors</span> for the <span>Conway-Maxwell-Poisson</span> (<span>COM-Poisson</span>) <span>Distribution</span>.”</span> arXiv. <a href="https://arxiv.org/abs/2311.18053">https://arxiv.org/abs/2311.18053</a>.
+<div id="ref-rodrigoBetaCauchyCauchyBECCA2025" class="csl-entry" role="listitem">
+Rodrigo, Linduni M., Robert Kohn, Hadi M. Afshar, and Sally Cripps. 2025. <span>“A <span>Beta Cauchy-Cauchy</span> (<span>BECCA</span>) Shrinkage Prior for <span>Bayesian</span> Variable Selection.”</span> January 13, 2025. <a href="https://doi.org/10.48550/arXiv.2501.07061">https://doi.org/10.48550/arXiv.2501.07061</a>.
 </div>
 </div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1149,9 +1094,21 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../gen_linear_regression/l1_ball.html" class="pagination-link" aria-label="L1 Ball">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">L1 Ball</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../autoregression/autoregression_overview.html" class="pagination-link" aria-label="Overview">
+        <span class="nav-page-text">Overview</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/n-kall/priorDB/blob/main/gen_linear_regression/conway_maxwell_poisson.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/n-kall/priorDB/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/n-kall/priorDB/blob/main/gen_linear_regression/becca.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/n-kall/priorDB/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

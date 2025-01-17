@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -38,12 +38,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-c75bcb89907db7808f0349b764a1a524.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-b3883a83b6cdceb4314f965facc5c958.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -80,6 +80,7 @@ ul.task-list li input[type="checkbox"] {
 <meta name="citation_author" content="Noa Kallioinen">
 <meta name="citation_fulltext_html_url" content="https://n-kall.github.io/priorDB/Stan_prior_choice.html">
 <meta name="citation_language" content="en">
+<meta name="citation_reference" content="citation_title=A Beta Cauchy-Cauchy (BECCA) shrinkage prior for Bayesian variable selection;,citation_author=Linduni M. Rodrigo;,citation_author=Robert Kohn;,citation_author=Hadi M. Afshar;,citation_author=Sally Cripps;,citation_publication_date=2025-01-13;,citation_cover_date=2025-01-13;,citation_year=2025;,citation_fulltext_html_url=http://arxiv.org/abs/2501.07061;,citation_doi=10.48550/arXiv.2501.07061;">
 <meta name="citation_reference" content="citation_title=The ARR2 prior: Flexible predictive prior definition for Bayesian auto-regressions;,citation_abstract=We present the ARR2 prior, a joint prior over the auto-regressive components in Bayesian time-series models and their induced $R^2$. Compared to other priors designed for times-series models, the ARR2 prior allows for flexible and intuitive shrinkage. We derive the prior for pure auto-regressive models, and extend it to auto-regressive models with exogenous inputs, and state-space models. Through both simulations and real-world modelling exercises, we demonstrate the efficacy of the ARR2 prior in improving sparse and reliable inference, while showing greater inference quality and predictive performance than other shrinkage priors. An open-source implementation of the prior is provided.;,citation_author=David Kohns;,citation_author=Noa Kallioinen;,citation_author=Yann McLatchie;,citation_author=Aki Vehtari;,citation_publication_date=2024-05-31;,citation_cover_date=2024-05-31;,citation_year=2024;,citation_fulltext_html_url=http://arxiv.org/abs/2405.19920;">
 <meta name="citation_reference" content="citation_title=A default prior for regression coefficients;,citation_author=Erik Zwet;,citation_publication_date=2018-10;,citation_cover_date=2018-10;,citation_year=2018;,citation_fulltext_html_url=https://arxiv.org/abs/1809.08449;,citation_journal_title=arXiv:1809.08449 [stat];">
 <meta name="citation_reference" content="citation_title=Penalising Model Component Complexity: A Principled, Practical Approach to Constructing Priors;,citation_author=Daniel Simpson;,citation_author=Håvard Rue;,citation_author=Andrea Riebler;,citation_author=Thiago G. Martins;,citation_author=Sigrunn H. Sørbye;,citation_publication_date=2017-02;,citation_cover_date=2017-02;,citation_year=2017;,citation_issue=1;,citation_doi=10.1214/16-STS576;,citation_issn=0883-4237;,citation_volume=32;,citation_language=en-US;,citation_journal_title=Statistical Science;">
@@ -356,6 +357,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">L1 Ball</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./gen_linear_regression/becca.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Beta Cauchy-Cauchy (BECCA)</span></a>
+  </div>
+</li>
       </ul>
   </li>
       </ul>
@@ -448,10 +455,10 @@ ul.task-list li input[type="checkbox"] {
         
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Stan Prior Choice Recommendations</h1></header>
 
 <header id="title-block-header">
-<h1 class="title display-7">Stan Prior Choice Recommendations</h1>
+
 <p class="author"></p>
 
 </header>
@@ -688,8 +695,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -800,7 +805,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
