@@ -1,14 +1,22 @@
 project:
   type: website
   execute-dir: project
+
 website:
   title: "priorDB"
+  description: "A collaborative database of models and their priors" 
+  site-url: https://n-kall.github.io/priorDB/
+  repo-url: https://github.com/n-kall/priorDB
+  repo-actions: [source, issue]
+  page-navigation: true
   sidebar:
     collapse-level: 1
     contents:
+      - text: "Models"
       - section: "Regression"
         contents:
-          - gen_linear_regression/gen_linear_regression_overview.qmd
+          - text: "Overview"
+            href: gen_linear_regression/gen_linear_regression_overview.qmd
           - section: "Continuous outcome"
             contents:
               - section: "Unbounded"
@@ -42,29 +50,49 @@ website:
             - gen_linear_regression/l1_ball.qmd
       - section: "Autoregression"
         contents:
-          - autoregression/autoregression_overview.qmd
+          - text: "Overview"
+            href: autoregression/autoregression_overview.qmd
           - autoregression/arr2.qmd
           - autoregression/minnesota.qmd
-
       - section: "Hierarchical regression"
         contents:
-          - hierarchical_regression/hierarchical_regression_overview.qmd
+          - text: "Overview"
+            href: hierarchical_regression/hierarchical_regression_overview.qmd
           - hierarchical_regression/r2d2m2.qmd
-      - text: "Tools"
+      - text: "<br>"
+
+      - text: "External resources"
+      - text: "Software Tools"
         href: tools.qmd
+      - text: "Stan prior guide"
+        href: Stan_prior_choice.qmd        
+      - text: "<br>"
       - text: "Contributors"
         href: contributors.md
-        
+
+
 format:
   html:
-    theme: cosmo
     css: styles.css
     toc: true
     code-fold: true
-
+    template-partials:
+      - title-block.html  ## remove list of authors from the header of all pages
+    include-in-header:
+      - text: |
+          <meta name="google-site-verification" content="JBA8wBXkShP3bdTtVwzNv-fM1iTo8HZ0hkLK5ZbRgV8" /> 
+           
+theme:
+  light: cosmo
+  dark: darkly
 
 filters:
   - include-code-files
 
-
 bibliography: references.bib
+
+author:
+  - name: Noa Kallioinen
+    affiliation: Aalto University
+    orcid: 0000-0003-1586-8382 
+google-scholar: true
