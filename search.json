@@ -144,7 +144,7 @@
     "href": "gen_linear_regression/ordinal.html#see-also",
     "title": "Ordered logistic model",
     "section": "See also",
-    "text": "See also\n\nStan Function Reference\nStan Users Guide",
+    "text": "See also\n\nStan Function Reference\nStan Users Guide\nPyMC API",
     "crumbs": [
       "Regression",
       "Discrete outcome",
@@ -235,7 +235,7 @@
     "href": "gen_linear_regression/student_t.html#see-also",
     "title": "Student-t model",
     "section": "See also",
-    "text": "See also\n\nDistribution explorer\nPreliZ\nStan Functions Reference\nbambi example",
+    "text": "See also\n\nDistribution explorer\nPreliZ\nStan Functions Reference\nPyMC API\nbambi example",
     "crumbs": [
       "Regression",
       "Continuous outcome",
@@ -386,7 +386,7 @@
     "href": "gen_linear_regression/negative_binomial.html#see-also",
     "title": "Negative-binomial model",
     "section": "See also",
-    "text": "See also\n\nDistribution explorer\nPreliZ\nAki Vehtari’s case study\nStan Functions Reference\nbambi example",
+    "text": "See also\n\nDistribution explorer\nPreliZ\nAki Vehtari’s case study\nStan Functions Reference\nPyMC API\nbambi example",
     "crumbs": [
       "Regression",
       "Discrete outcome",
@@ -631,7 +631,7 @@
     "href": "gen_linear_regression/poisson.html#see-also",
     "title": "Poisson model",
     "section": "See also",
-    "text": "See also\n\nDistribution explorer\nPreliZ\nStan Functions Reference\nbrms tutorial paper",
+    "text": "See also\n\nDistribution explorer\nPreliZ\nStan Functions Reference\nPyMC API\nbrms tutorial paper",
     "crumbs": [
       "Regression",
       "Discrete outcome",
@@ -696,7 +696,7 @@
     "href": "gen_linear_regression/beta.html#see-also",
     "title": "Beta model",
     "section": "See also",
-    "text": "See also\n\nDistribution explorer\nPreliZ\nStan Functions Reference\nrstanarm manual\nbambi manual\nAndrew Wheiss’ blog",
+    "text": "See also\n\nDistribution explorer\nPreliZ\nStan Functions Reference\nPyMC API\nrstanarm manual\nbambi manual\nAndrew Wheiss’ blog",
     "crumbs": [
       "Regression",
       "Continuous outcome",
@@ -787,7 +787,7 @@
     "href": "gen_linear_regression/normal.html#see-also",
     "title": "Normal model",
     "section": "See also",
-    "text": "See also\n\nDistribution explorer\nPreliZ\nStan Functions Reference\nbambi example",
+    "text": "See also\n\nDistribution explorer\nPreliZ\nStan Functions Reference\nPyMC API\nbambi example",
     "crumbs": [
       "Regression",
       "Continuous outcome",
@@ -872,7 +872,7 @@
     "href": "gen_linear_regression/binomial.html#see-also",
     "title": "Binomial model",
     "section": "See also",
-    "text": "See also\n\nDistribution explorer\nStan Functions Reference",
+    "text": "See also\n\nDistribution explorer\nStan Functions Reference\nPyMC API",
     "crumbs": [
       "Regression",
       "Discrete outcome",
@@ -950,7 +950,7 @@
     "href": "gen_linear_regression/bernoulli_logit.html#see-also",
     "title": "Bernoulli model",
     "section": "See also",
-    "text": "See also\n\nDistribution explorer\nPreliZ\nStan Functions Reference\nJörn Alexander Quent’s notebook",
+    "text": "See also\n\nDistribution explorer\nPreliZ\nStan Functions Reference\nPyMC API\nJörn Alexander Quent’s notebook",
     "crumbs": [
       "Regression",
       "Discrete outcome",
