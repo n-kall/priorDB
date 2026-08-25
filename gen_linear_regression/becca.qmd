@@ -1,0 +1,17 @@
+---
+title: Beta Cauchy-Cauchy (BECCA)
+---
+
+Global-local shrinkage prior. [@rodrigoBetaCauchyCauchyBECCA2025]
+
+
+$$
+\begin{align}
+     \beta_j \;&\sim \text{normal}(0, g \sigma^2 \gamma_j^2) \\
+     \gamma_j \;&\sim \text{Beta}(u, v) \\
+     g \;&\sim \text{Cauchy}^+(0, 1) \\
+	 u \;&\sim \text{Cauchy}^+(0, 1) \\
+	 v \;&\sim \text{Cauchy}^+(0, 1) \\
+	 \sigma^2 \;&\sim p(\sigma^2)
+\end{align}
+$$

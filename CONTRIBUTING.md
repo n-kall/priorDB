@@ -2,6 +2,8 @@
 
 We welcome contributions to PriorDB, we rely on contributions from the community to keep the database up-to-date and accurate. 
 
+By contributing to PriorDB, you agree that your contributions will be licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) (documentation) and the [BSD 3-Clause license](https://opensource.org/license/bsd-3-clause) (code).
+
 ## Reporting issues
 
 If you encounter any error or typo in PriorDB, please report an issue to our [issue tracker](https://github.com/n-kall/PriorDB/issues). Please check if the issue has already been reported before creating a new one. 

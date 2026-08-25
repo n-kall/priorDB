@@ -30,3 +30,4 @@ for observation $i$.
 
 - [Distribution explorer](https://distribution-explorer.github.io/discrete/binomial.html)
 - [Stan Functions Reference](https://mc-stan.org/docs/functions-reference/bounded_discrete_distributions.html#binomial-distribution)
+- [PyMC API](https://www.pymc.io/projects/docs/en/stable/api/distributions/generated/pymc.Binomial.html)
