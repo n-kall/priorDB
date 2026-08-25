@@ -8,3 +8,9 @@ For each model, the parameters requiring priors are listed, as well as recommend
 ## Contributing
 
 We welcome contributions to PriorDB, we rely on contributions from the community to keep the database up-to-date and accurate. For more information on how to contribute, please see the [contribution guidelines](https://github.com/n-kall/priorDB/blob/main/CONTRIBUTING.md).
+
+## License
+
+The documentation and other written content in PriorDB is licensed under the [Creative Commons Attribution 4.0 International license (CC BY 4.0)](LICENSE-docs).
+
+The code examples are licensed under the [BSD 3-Clause license](LICENSE). Third-party code included in PriorDB remains under its original license.
