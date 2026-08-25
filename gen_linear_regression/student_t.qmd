@@ -50,4 +50,5 @@ $$
 - [Distribution explorer](https://distribution-explorer.github.io/continuous/student_t.html)
 - [PreliZ](https://preliz.readthedocs.io/en/latest/examples/gallery/students_t.html)
 - [Stan Functions Reference](https://mc-stan.org/docs/functions-reference/unbounded_continuous_distributions.html#student-t-distribution)
+- [PyMC API](https://www.pymc.io/projects/docs/en/stable/api/distributions/generated/pymc.StudentT.html)
 - [bambi example](https://bambinos.github.io/bambi/notebooks/t_regression.html)
