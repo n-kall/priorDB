@@ -29,3 +29,5 @@ $g$ is most commonly the logit function.
 | $x_i$   | Observed predictors |
 | $\alpha$ | Intercept |
 | $\beta$ | Regression coefficients (predictor weights) |
+| $\eta_i$ | Linear predictor |
+| $\theta$ | Other parameters of the observation model (e.g., variance for the normal distribution) |
