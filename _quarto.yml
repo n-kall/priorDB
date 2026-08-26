@@ -28,12 +28,12 @@ website:
             contents:
               - section: "Unbounded"
                 contents:
-                  - gen_linear_regression/continuous_unbounded_overview.md
+                  - gen_linear_regression/continuous_unbounded_overview.qmd
                   - gen_linear_regression/normal.qmd
                   - gen_linear_regression/student_t.qmd
               - section: "Bounded"
                 contents:
-                  - gen_linear_regression/continuous_bounded_overview.md
+                  - gen_linear_regression/continuous_bounded_overview.qmd
                   - gen_linear_regression/beta.qmd
           - section: "Discrete outcome"
             contents:
