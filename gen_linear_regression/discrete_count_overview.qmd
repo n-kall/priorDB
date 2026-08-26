@@ -13,4 +13,4 @@ trials, then the [binomial model](binomial.qmd) is appropriate.
 
 In cases where there is an over-representation of zeroes in the
 data, this can be modelled with zero-inflated versions of the
-distributions.
+distributions. Alternatively, hurdle models are useful when the process generating the zero counts is conceptually different from the one generating the positive counts.
