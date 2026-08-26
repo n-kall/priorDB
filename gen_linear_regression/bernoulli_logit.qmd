@@ -42,6 +42,7 @@ $\alpha \sim \text{logistic}(\sigma)$
 3. select $\sigma = \sigma_n$ such that $P(1 - s_n <
    \text{logit}^{-1}(\alpha) < s_n | \sigma = \sigma_n) = 1 - q$.
 
+:::{.example .stan}
 ```r
 logis_sigma <- function(n, q) {
 
@@ -55,6 +56,21 @@ logis_sigma <- function(n, q) {
   root$root
 }
 ```
+:::
+
+:::{.example .pymc}
+```python
+import numpy as np
+from scipy.optimize import brentq
+from scipy.stats import logistic
+from scipy.special import logit
+
+def logis_sigma(n, q):
+    s_n = np.exp(-1 / (2 * n))
+    f = lambda sigma: logistic.sf(logit(s_n), scale=sigma) - q / 2
+    return brentq(f, 1e-6, 10)
+```
+:::
 
 ### Weakly informative exponential power prior
 
@@ -64,7 +80,16 @@ $p(\alpha) \propto \exp{(-\text{abs}({\alpha / \sqrt(2) \sigma})^\gamma)}$
 
 :::{.example .stan}
 ```stan
-target += -abs((alpha) / (sqrt(2.0) * alpha_scale))^(alpha_power);
+target += -abs((alpha) / (sqrt(2.0) * sigma))^gamma;
+```
+:::
+
+:::{.example .pymc}
+```python
+def exp_power_logp(value, sigma, gamma):
+    return -pt.abs(value / (pt.sqrt(2.0) * sigma)) ** gamma
+
+alpha = pm.CustomDist("alpha", sigma, gamma, logp=exp_power_logp)
 ```
 :::
 
