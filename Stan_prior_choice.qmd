@@ -1,0 +1,6 @@
+---
+title: "Stan Prior Choice Recommendations"
+---
+
+Much of PriorDB is built on the [Stan Prior Choice
+Recommendations](https://github.com/stan-dev/stan/wiki/Prior-Choice-Recommendations).

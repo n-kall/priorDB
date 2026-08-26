@@ -4,7 +4,7 @@ title: ARR2
 
 ## Description
 
-Like the R2-D2 prior [@r2d2] but for autoregression.
+Developed by [@kohnsARR2PriorFlexible2024a], it is similar to the R2-D2 prior [@zhangBayesianRegressionUsing2022a] but for autoregression.
 
 ## Definition
 
@@ -26,5 +26,5 @@ $$
 
 ## Stan code
 
-```{.stan include="stan/arr2.stan"}
+```{.stan include="../stan/arr2.stan"}
 ```
