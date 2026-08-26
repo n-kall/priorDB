@@ -1,0 +1,7 @@
+---
+title: Continuous unbounded outcome
+---
+
+When observations are unbounded and continuous, the most common model
+is the [normal model](normal.qmd). When the observations may include
+outliers, the [Student-t model](student_t.qmd) may be appropriate.
