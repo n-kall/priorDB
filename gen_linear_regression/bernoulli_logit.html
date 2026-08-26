@@ -610,6 +610,7 @@ y_i &amp;\sim \text{Bernoulli}(\text{logit}^{-1}(\eta_i)) \\
 <li><p>select <span class="math inline">\(\sigma = \sigma_n\)</span> such that <span class="math inline">\(P(1 - s_n &lt;
 \text{logit}^{-1}(\alpha) &lt; s_n | \sigma = \sigma_n) = 1 - q\)</span>.</p></li>
 </ol>
+<div class="example stan">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>logis_sigma <span class="ot">&lt;-</span> <span class="cf">function</span>(n, q) {</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  s_n <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="sc">-</span><span class="dv">1</span> <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> n))</span>
@@ -621,26 +622,62 @@ y_i &amp;\sim \text{Bernoulli}(\text{logit}^{-1}(\eta_i)) \\
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  root<span class="sc">$</span>root</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="example pymc">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> brentq</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> logistic</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.special <span class="im">import</span> logit</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> logis_sigma(n, q):</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    s_n <span class="op">=</span> np.exp(<span class="op">-</span><span class="dv">1</span> <span class="op">/</span> (<span class="dv">2</span> <span class="op">*</span> n))</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    f <span class="op">=</span> <span class="kw">lambda</span> sigma: logistic.sf(logit(s_n), scale<span class="op">=</span>sigma) <span class="op">-</span> q <span class="op">/</span> <span class="dv">2</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> brentq(f, <span class="fl">1e-6</span>, <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 </section>
 <section id="weakly-informative-exponential-power-prior" class="level3">
 <h3 class="anchored" data-anchor-id="weakly-informative-exponential-power-prior">Weakly informative exponential power prior</h3>
 <p><span class="citation" data-cites="boonstraDefaultPriorsIntercept2019a">Boonstra et al. (<a href="#ref-boonstraDefaultPriorsIntercept2019a" role="doc-biblioref">2019</a>)</span> suggested an exponential power prior:</p>
 <p><span class="math inline">\(p(\alpha) \propto \exp{(-\text{abs}({\alpha / \sqrt(2) \sigma})^\gamma)}\)</span></p>
 <div class="example stan">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode stan code-with-copy"><code class="sourceCode stan"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">target +=</span> -abs((alpha) / (sqrt(<span class="fl">2.0</span>) * alpha_scale))^(alpha_power);</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode stan code-with-copy"><code class="sourceCode stan"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">target +=</span> -abs((alpha) / (sqrt(<span class="fl">2.0</span>) * sigma))^gamma;</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="example pymc">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pytensor.tensor <span class="im">as</span> pt</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> exp_power_logp(value, sigma, gamma):</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="op">-</span>pt.<span class="bu">abs</span>(value <span class="op">/</span> (pt.sqrt(<span class="fl">2.0</span>) <span class="op">*</span> sigma)) <span class="op">**</span> gamma</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>alpha <span class="op">=</span> pm.CustomDist(<span class="st">"alpha"</span>, sigma, gamma, logp<span class="op">=</span>exp_power_logp)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Similar to the method for the logistic prior, choosing <span class="math inline">\(\sigma\)</span> can be done with the following function:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ep_sigma <span class="ot">&lt;-</span> <span class="cf">function</span>(gamma, n, q) {</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  s_n <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="sc">-</span><span class="dv">1</span> <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> n))</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  root <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    \(sigma) <span class="fu">pgamma</span>(<span class="at">q =</span> (<span class="fu">qlogis</span>(s_n) <span class="sc">/</span> (<span class="fu">sqrt</span>(<span class="dv">2</span>) <span class="sc">*</span> sigma))<span class="sc">^</span>gamma,</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">shape =</span> <span class="dv">1</span> <span class="sc">/</span> gamma, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>) <span class="sc">-</span> q,</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">interval =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">10</span>))</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  root<span class="sc">$</span>root</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="example stan">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ep_sigma <span class="ot">&lt;-</span> <span class="cf">function</span>(gamma, n, q) {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  s_n <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="sc">-</span><span class="dv">1</span> <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> n))</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  root <span class="ot">&lt;-</span> <span class="fu">uniroot</span>(</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    \(sigma) <span class="fu">pgamma</span>(<span class="at">q =</span> (<span class="fu">qlogis</span>(s_n) <span class="sc">/</span> (<span class="fu">sqrt</span>(<span class="dv">2</span>) <span class="sc">*</span> sigma))<span class="sc">^</span>gamma,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">shape =</span> <span class="dv">1</span> <span class="sc">/</span> gamma, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>) <span class="sc">-</span> q,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">interval =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">10</span>))</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  root<span class="sc">$</span>root</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="example pymc">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> brentq</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> gamma <span class="im">as</span> gamma_dist</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.special <span class="im">import</span> logit</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ep_sigma(gamma, n, q):</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    s_n <span class="op">=</span> np.exp(<span class="op">-</span><span class="dv">1</span> <span class="op">/</span> (<span class="dv">2</span> <span class="op">*</span> n))</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    f <span class="op">=</span> <span class="kw">lambda</span> sigma: gamma_dist.sf(</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        (logit(s_n) <span class="op">/</span> (np.sqrt(<span class="dv">2</span>) <span class="op">*</span> sigma)) <span class="op">**</span> gamma, a<span class="op">=</span><span class="dv">1</span> <span class="op">/</span> gamma</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    ) <span class="op">-</span> q</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> brentq(f, <span class="fl">1e-6</span>, <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><span class="math inline">\(\sigma\)</span> should be computed once, before fitting, and then passed to the model as a fixed constant.</p>
 </section>
 </section>
 <section id="prior-on-beta" class="level2">
