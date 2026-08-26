@@ -8,7 +8,7 @@
 
 <meta name="author" content="Noa Kallioinen">
 
-<title>Poisson model – priorDB</title>
+<title>Continuous bounded outcome – priorDB</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -37,8 +37,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../gen_linear_regression/negative_binomial.html" rel="next">
-<link href="../gen_linear_regression/discrete_count_overview.html" rel="prev">
+<link href="../gen_linear_regression/beta.html" rel="next">
+<link href="../gen_linear_regression/student_t.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -79,40 +79,11 @@ ul.task-list li input[type="checkbox"] {
 <meta name="google-site-verification" content="JBA8wBXkShP3bdTtVwzNv-fM1iTo8HZ0hkLK5ZbRgV8"> 
  
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
-<meta name="citation_title" content="Poisson model">
+<meta name="citation_title" content="Continuous bounded outcome">
 <meta name="citation_author" content="Noa Kallioinen">
-<meta name="citation_fulltext_html_url" content="https://n-kall.github.io/priorDB/gen_linear_regression/poisson.html">
+<meta name="citation_fulltext_html_url" content="https://n-kall.github.io/priorDB/gen_linear_regression/continuous_bounded_overview.html">
 <meta name="citation_language" content="en">
 <meta name="citation_reference" content="citation_title=A Beta Cauchy-Cauchy (BECCA) shrinkage prior for Bayesian variable selection;,citation_author=Linduni M. Rodrigo;,citation_author=Robert Kohn;,citation_author=Hadi M. Afshar;,citation_author=Sally Cripps;,citation_publication_date=2025-01-13;,citation_cover_date=2025-01-13;,citation_year=2025;,citation_fulltext_html_url=http://arxiv.org/abs/2501.07061;,citation_doi=10.48550/arXiv.2501.07061;">
 <meta name="citation_reference" content="citation_title=The ARR2 prior: Flexible predictive prior definition for Bayesian auto-regressions;,citation_abstract=We present the ARR2 prior, a joint prior over the auto-regressive components in Bayesian time-series models and their induced $R^2$. Compared to other priors designed for times-series models, the ARR2 prior allows for flexible and intuitive shrinkage. We derive the prior for pure auto-regressive models, and extend it to auto-regressive models with exogenous inputs, and state-space models. Through both simulations and real-world modelling exercises, we demonstrate the efficacy of the ARR2 prior in improving sparse and reliable inference, while showing greater inference quality and predictive performance than other shrinkage priors. An open-source implementation of the prior is provided.;,citation_author=David Kohns;,citation_author=Noa Kallioinen;,citation_author=Yann McLatchie;,citation_author=Aki Vehtari;,citation_publication_date=2024-05-31;,citation_cover_date=2024-05-31;,citation_year=2024;,citation_fulltext_html_url=http://arxiv.org/abs/2405.19920;">
@@ -170,7 +141,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../gen_linear_regression/gen_linear_regression_overview.html">Regression</a></li><li class="breadcrumb-item">Discrete outcome</li><li class="breadcrumb-item"><a href="../gen_linear_regression/discrete_count_overview.html">Count</a></li><li class="breadcrumb-item"><a href="../gen_linear_regression/poisson.html">Poisson model</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../gen_linear_regression/gen_linear_regression_overview.html">Regression</a></li><li class="breadcrumb-item">Continuous outcome</li><li class="breadcrumb-item"><a href="../gen_linear_regression/continuous_bounded_overview.html">Bounded</a></li><li class="breadcrumb-item"><a href="../gen_linear_regression/continuous_bounded_overview.html">Continuous bounded outcome</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -224,13 +195,13 @@ window.Quarto = {
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Continuous outcome</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
@@ -262,16 +233,16 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Bounded</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../gen_linear_regression/continuous_bounded_overview.html" class="sidebar-item-text sidebar-link">
+  <a href="../gen_linear_regression/continuous_bounded_overview.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Continuous bounded outcome</span></a>
   </div>
 </li>
@@ -287,13 +258,13 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Discrete outcome</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
@@ -313,13 +284,13 @@ window.Quarto = {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
  <span class="menu-text">Count</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth3 show">  
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth3 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../gen_linear_regression/discrete_count_overview.html" class="sidebar-item-text sidebar-link">
@@ -328,7 +299,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../gen_linear_regression/poisson.html" class="sidebar-item-text sidebar-link active">
+  <a href="../gen_linear_regression/poisson.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Poisson model</span></a>
   </div>
 </li>
@@ -509,20 +480,11 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#description" id="toc-description" class="nav-link active" data-scroll-target="#description">Description</a></li>
-  <li><a href="#definition" id="toc-definition" class="nav-link" data-scroll-target="#definition">Definition</a></li>
-  <li><a href="#parameters-needing-priors" id="toc-parameters-needing-priors" class="nav-link" data-scroll-target="#parameters-needing-priors">Parameters needing priors</a></li>
-  <li><a href="#see-also" id="toc-see-also" class="nav-link" data-scroll-target="#see-also">See also</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/n-kall/priorDB/blob/main/gen_linear_regression/poisson.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/n-kall/priorDB/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../gen_linear_regression/gen_linear_regression_overview.html">Regression</a></li><li class="breadcrumb-item">Discrete outcome</li><li class="breadcrumb-item"><a href="../gen_linear_regression/discrete_count_overview.html">Count</a></li><li class="breadcrumb-item"><a href="../gen_linear_regression/poisson.html">Poisson model</a></li></ol></nav><h1 class="title display-7">Poisson model</h1></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../gen_linear_regression/gen_linear_regression_overview.html">Regression</a></li><li class="breadcrumb-item">Continuous outcome</li><li class="breadcrumb-item"><a href="../gen_linear_regression/continuous_bounded_overview.html">Bounded</a></li><li class="breadcrumb-item"><a href="../gen_linear_regression/continuous_bounded_overview.html">Continuous bounded outcome</a></li></ol></nav><h1 class="title display-7">Continuous bounded outcome</h1></header>
 
 <header id="title-block-header">
 
@@ -531,39 +493,10 @@ window.Quarto = {
 </header>
 
 
-<section id="description" class="level2">
-<h2 class="anchored" data-anchor-id="description">Description</h2>
-<p>Regression with Poisson model is a simple model used for count data.</p>
-</section>
-<section id="definition" class="level2">
-<h2 class="anchored" data-anchor-id="definition">Definition</h2>
-<p>For discrete positive outcome <span class="math inline">\(y\)</span> and predictors <span class="math inline">\(x\)</span>, the model is:</p>
-<p><span class="math display">\[
-\begin{align}
-y_i &amp;\sim \text{Poisson}(\exp{\eta_i}) \\
-\eta_i &amp;= \alpha + \beta \cdot x_i
-\end{align}
-\]</span></p>
-</section>
-<section id="parameters-needing-priors" class="level2">
-<h2 class="anchored" data-anchor-id="parameters-needing-priors">Parameters needing priors</h2>
-<ul>
-<li><span class="math inline">\(\alpha\)</span> (intercept)</li>
-<li><span class="math inline">\(\beta\)</span> (predictor weights)</li>
-</ul>
-</section>
-<section id="see-also" class="level2">
-<h2 class="anchored" data-anchor-id="see-also">See also</h2>
-<ul>
-<li><a href="https://distribution-explorer.github.io/discrete/poisson.html">Distribution explorer</a></li>
-<li><a href="https://preliz.readthedocs.io/en/latest/examples/gallery/poisson.html">PreliZ</a></li>
-<li><a href="https://mc-stan.org/docs/functions-reference/unbounded_discrete_distributions.html#poisson-log-glm">Stan Functions Reference</a></li>
-<li><a href="https://www.pymc.io/projects/docs/en/stable/api/distributions/generated/pymc.Poisson.html">PyMC API</a></li>
-<li><a href="https://compass.onlinelibrary.wiley.com/doi/10.1111/lnc3.12439">brms tutorial paper</a></li>
-</ul>
+<p>For lower-bounded observations, there are the <a href="gamma.qmd">gamma model</a>, <a href="lognormal.qmd">lognormal</a></p>
+<p>For both upper- and lower-bounded observations, the [beta model] may be appropriate, particularly if the bounds are 0 and 1, or if the data can be transformed, or the distribution scaled, to match these bounds.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -968,18 +901,18 @@ y_i &amp;\sim \text{Poisson}(\exp{\eta_i}) \\
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../gen_linear_regression/discrete_count_overview.html" class="pagination-link" aria-label="Discrete count outcome">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Discrete count outcome</span>
+      <a href="../gen_linear_regression/student_t.html" class="pagination-link" aria-label="Student-t model">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Student-t model</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../gen_linear_regression/negative_binomial.html" class="pagination-link" aria-label="Negative-binomial model">
-        <span class="nav-page-text">Negative-binomial model</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../gen_linear_regression/beta.html" class="pagination-link" aria-label="Beta model">
+        <span class="nav-page-text">Beta model</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/n-kall/priorDB/blob/main/gen_linear_regression/poisson.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/n-kall/priorDB/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../scripts/language_select.js"></script>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/n-kall/priorDB/blob/main/gen_linear_regression/continuous_bounded_overview.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/n-kall/priorDB/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer><script src="../scripts/language_select.js"></script>
 
 
 
