@@ -12,7 +12,7 @@ sd_y = y.std(ddof=1)
 # HyperParameters for the R2D2 prior
 # Adjust as needed for your specific problem
 K = X.shape[1]
-cons_D2 = np.full(K, 1/K)
+cons_D2 = np.full(K, 1)
 mean_R2 = 0.3
 prec_R2 = 3
 
