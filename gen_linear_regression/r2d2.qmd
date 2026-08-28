@@ -43,5 +43,6 @@ Priors on $\alpha$ and $\sigma$. Hyperparameters $\xi$, $\mu_{R^2}$, $\phi_{R^2}
 :::
 
 ::: {.example .pymc}
-
+```{.python include="../pymc/r2d2.py"}
+```
 :::
