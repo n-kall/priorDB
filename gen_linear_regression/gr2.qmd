@@ -1,10 +1,10 @@
 ---
-title: Generalised R2
+title: Generalized decomposition R2
 ---
 
 # Description
 
-The GR2 prior [@aguilarGeneralizedDecompositionPriors2024] is a global-local shrinkage prior. It is a generalisation of the R2-D2.
+The GDR2 prior [@aguilarGeneralizedDecompositionPriors2024] is a global-local shrinkage prior that generalizes [R2D2](gen_linear_regression/r2d2.html) by replacing the Dirichlet decomposition of the total explained variance with other distributions on the simplex. From this perspective the R2D2 prior is a special case, and many alternative decompositions are possible. In particular, one useful alternative is the Logistic-Normal distribution, because it allows for a flexible way to encode prior dependence between the variance proportions.
 
 # Definition
 
@@ -12,34 +12,65 @@ For a linear model:
 
 $$
 \begin{align}
-y_i &\sim \text{normal} (\mu_i,\sigma^2) \\
-\mu_i &= \alpha + \beta \cdot x_i
+y_i &\sim \text{normal}(\mu_i,\sigma^2) \\
+\mu_i &= \alpha + \sum_{k=1}^{K}\beta_k x_{ik}
 \end{align}
 $$
 
-The prior is:
+The GDR2 prior is:
 
 $$
 \begin{align}
-\beta_k &\sim \text{normal}\left(0, \sigma^2 \phi_k \tau^2\right) \\
-\tau^2 &= \frac{R^2}{1 - R^2} \\
-R^2 &\sim \text{beta}(\mu_{R^2},\varphi_{R^2}) \\ 
-\phi \sim p(\nu_\phi) \\
+\beta_k &\sim \text{normal}\left(0,\sigma^2\phi_k\tau^2\right) \\
+\tau^2 &= \frac{R^2}{1-R^2} \\
+R^2 &\sim \text{beta}(\mu_{R^2},\varphi_{R^2}) \\
+\phi &\sim p(\nu_\phi) \\
 \sigma &\sim p(\sigma) \\
 \alpha &\sim p(\alpha)
 \end{align}
 $$
 
+where $\phi=(\phi_1,\ldots,\phi_K)$ lies on the simplex,
+
+$$
+\phi_k \geq 0,\qquad \sum_{k=1}^{K}\phi_k=1.
+$$
+
+The proportions $\phi_k$ determine how the global scale $\tau^2$ is allocated among the regression coefficients. The GDR2 framework allows different distributions for $\phi$; the Logistic-Normal distribution is the principal alternative to the Dirichlet distribution considered in the paper by @aguilarGeneralizedDecompositionPriors2024.
+
+For a symmetric Logistic-Normal decomposition, let
+
+$$
+\eta \sim \text{normal}_K(\mu_\phi,\Sigma_\phi)
+$$
+
+and transform to the simplex using
+
+$$
+\phi_k =
+\frac{\exp(\eta_k)}
+{\sum_{j=1}^{K}\exp(\eta_j)}.
+$$
+
+The mean vector $\mu_\phi$ and covariance matrix $\Sigma_\phi$ determine the prior distribution and dependence structure between the variance proportions. Setting $\mu_{\phi,k}=0$ for all $k$ gives a symmetric prior for the variance proportions.
 
 # Things to specify
 
-Priors on $\alpha$ and $\sigma$. Hyperparameters $\xi$, $\mu_{R^2}$, $\phi_{R^2}$. 
+Priors on $\alpha$ and $\sigma$.
 
-Prior on simplex $\phi$.
+Hyperparameters $\mu_{R^2}$ and $\varphi_{R^2}$ for the prior on $R^2$.
+
+Hyperparameters $\mu_\phi$ and $\Sigma_\phi$ for the Logistic-Normal prior on the simplex.
+
 
 # Implementation
 
 ::: {.example .stan}
-```{.stan include="../stan/r2d2.stan"}
+```{.stan include="../stan/gdr2.stan"}
+```
+:::
+
+::: {.example .pymc}
+```{.python include="../pymc/gdr2.py"}
 ```
 :::

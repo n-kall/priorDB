@@ -13,8 +13,8 @@ For a linear model:
 
 $$
 \begin{align}
-y_i &\sim \text{normal} (\mu_i,\sigma^2) \\
-\mu_i &= \alpha + \beta \cdot x_i
+y_i &\sim \text{normal}(\mu_i,\sigma^2) \\
+\mu_i &= \alpha + \sum_{k=1}^{K}\beta_k x_{ik}
 \end{align}
 $$
 
@@ -22,7 +22,7 @@ The prior is:
 
 $$
 \begin{align}
-\beta_i &\sim \text{normal}\left(0, \frac{\sigma^2}{\sigma_{y_{t}\mid \theta}^2}\tau^2\psi_i\right) \\
+\beta_k &\sim \text{normal}\left(0, \frac{\sigma^2}{\sigma_{y_{t}\mid \theta}^2}\tau^2\psi_k\right) \\
 \tau^2 &= \frac{R^2}{1 - R^2} \\
 R^2 &\sim \text{beta}(\mu_{R^2},\phi_{R^2}) \\ 
 \psi &\sim \text{Dirichlet}(\xi_1,\dotsc,\xi_p) \\
@@ -31,6 +31,7 @@ R^2 &\sim \text{beta}(\mu_{R^2},\phi_{R^2}) \\
 \end{align}
 $$
 
+The proportions $\psi_k$ determine how the total prior variance $\tau^2$ is allocated among the regression coefficients.
 
 # Things to specify
 
