@@ -8,7 +8,7 @@
 
 <meta name="author" content="Noa Kallioinen">
 
-<title>Generalised R2 – priorDB</title>
+<title>Generalized decomposition R2 – priorDB</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -102,7 +102,7 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-e3adbaa939bcd423dddc8c8a834270b4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3e9b1289f5f353c49b617ce48ad2bc38.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -164,7 +164,7 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../styles.css">
-<meta name="citation_title" content="Generalised R2">
+<meta name="citation_title" content="Generalized decomposition R2">
 <meta name="citation_author" content="Noa Kallioinen">
 <meta name="citation_fulltext_html_url" content="https://n-kall.github.io/priorDB/gen_linear_regression/gr2.html">
 <meta name="citation_language" content="en">
@@ -224,7 +224,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../gen_linear_regression/gen_linear_regression_overview.html">Regression</a></li><li class="breadcrumb-item"><a href="../gen_linear_regression/gr2.html">Sparsity priors</a></li><li class="breadcrumb-item"><a href="../gen_linear_regression/gr2.html">Generalised R2</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../gen_linear_regression/gen_linear_regression_overview.html">Regression</a></li><li class="breadcrumb-item"><a href="../gen_linear_regression/gr2.html">Sparsity priors</a></li><li class="breadcrumb-item"><a href="../gen_linear_regression/gr2.html">Generalized decomposition R2</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -448,7 +448,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../gen_linear_regression/gr2.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Generalised R2</span></a>
+ <span class="menu-text">Generalized decomposition R2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -569,14 +569,17 @@ window.Quarto = {
    
   <ul>
   <li><a href="#description" id="toc-description" class="nav-link active" data-scroll-target="#description">Description</a></li>
-  <li><a href="#definition" id="toc-definition" class="nav-link" data-scroll-target="#definition">Definition</a></li>
+  <li><a href="#definition" id="toc-definition" class="nav-link" data-scroll-target="#definition">Definition</a>
+  <ul class="collapse">
+  <li><a href="#hyperparameter-specification-for-the-logistic-normal-decomposition" id="toc-hyperparameter-specification-for-the-logistic-normal-decomposition" class="nav-link" data-scroll-target="#hyperparameter-specification-for-the-logistic-normal-decomposition">Hyperparameter specification for the Logistic-Normal decomposition</a></li>
+  </ul></li>
   <li><a href="#things-to-specify" id="toc-things-to-specify" class="nav-link" data-scroll-target="#things-to-specify">Things to specify</a></li>
   <li><a href="#implementation" id="toc-implementation" class="nav-link" data-scroll-target="#implementation">Implementation</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/n-kall/priorDB/blob/main/gen_linear_regression/gr2.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/n-kall/priorDB/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../gen_linear_regression/gen_linear_regression_overview.html">Regression</a></li><li class="breadcrumb-item"><a href="../gen_linear_regression/gr2.html">Sparsity priors</a></li><li class="breadcrumb-item"><a href="../gen_linear_regression/gr2.html">Generalised R2</a></li></ol></nav><h1 class="title display-7">Generalised R2</h1></header>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../gen_linear_regression/gen_linear_regression_overview.html">Regression</a></li><li class="breadcrumb-item"><a href="../gen_linear_regression/gr2.html">Sparsity priors</a></li><li class="breadcrumb-item"><a href="../gen_linear_regression/gr2.html">Generalized decomposition R2</a></li></ol></nav><h1 class="title display-7">Generalized decomposition R2</h1></header>
 
 <header id="title-block-header">
 
@@ -587,109 +590,74 @@ window.Quarto = {
 
 <section id="description" class="level1">
 <h1>Description</h1>
-<p>The GR2 prior <span class="citation" data-cites="aguilarGeneralizedDecompositionPriors2024">(<a href="#ref-aguilarGeneralizedDecompositionPriors2024" role="doc-biblioref">Aguilar and Bürkner 2024</a>)</span> is a global-local shrinkage prior. It is a generalisation of the R2-D2.</p>
+<p>The GDR2 prior <span class="citation" data-cites="aguilarGeneralizedDecompositionPriors2024">(<a href="#ref-aguilarGeneralizedDecompositionPriors2024" role="doc-biblioref">Aguilar and Bürkner 2024</a>)</span> is a global-local shrinkage prior that generalizes <a href="r2d2.html">R2D2</a> by replacing the Dirichlet decomposition of the total explained variance with other distributions on the simplex. From this perspective the R2D2 prior is a special case, and many alternative decompositions are possible. In particular, one useful alternative is the Logistic-Normal distribution, because it allows for a flexible way to encode prior dependence between the variance proportions.</p>
 </section>
 <section id="definition" class="level1">
 <h1>Definition</h1>
 <p>For a linear model:</p>
 <p><span class="math display">\[
 \begin{align}
-y_i &amp;\sim \text{normal} (\mu_i,\sigma^2) \\
-\mu_i &amp;= \alpha + \beta \cdot x_i
+y_i &amp;\sim \text{normal}(\mu_i,\sigma^2) \\
+\mu_i &amp;= \alpha + \sum_{k=1}^{K}\beta_k x_{ik}
 \end{align}
 \]</span></p>
-<p>The prior is:</p>
+<p>The GDR2 prior is:</p>
 <p><span class="math display">\[
 \begin{align}
-\beta_k &amp;\sim \text{normal}\left(0, \sigma^2 \phi_k \tau^2\right) \\
-\tau^2 &amp;= \frac{R^2}{1 - R^2} \\
+\beta_k &amp;\sim \text{normal}\left(0,\sigma^2\phi_k\tau^2\right) \\
+\tau^2 &amp;= \frac{R^2}{1-R^2} \\
 R^2 &amp;\sim \text{beta}(\mu_{R^2},\varphi_{R^2}) \\
-\phi \sim p(\nu_\phi) \\
+\phi &amp;\sim p(\nu_\phi) \\
 \sigma &amp;\sim p(\sigma) \\
 \alpha &amp;\sim p(\alpha)
 \end{align}
 \]</span></p>
+<p>where <span class="math inline">\(\phi=(\phi_1,\ldots,\phi_K)\)</span> lies on the simplex,</p>
+<p><span class="math display">\[
+\phi_k \geq 0,\qquad \sum_{k=1}^{K}\phi_k=1.
+\]</span></p>
+<p>The proportions <span class="math inline">\(\phi_k\)</span> determine how the global scale <span class="math inline">\(\tau^2\)</span> is allocated among the regression coefficients. The GDR2 framework allows different distributions for <span class="math inline">\(\phi\)</span>; the Logistic-Normal distribution is the principal alternative to the Dirichlet distribution considered in the paper by <span class="citation" data-cites="aguilarGeneralizedDecompositionPriors2024">Aguilar and Bürkner (<a href="#ref-aguilarGeneralizedDecompositionPriors2024" role="doc-biblioref">2024</a>)</span>.</p>
+<p>For a Logistic-Normal decomposition, let <span class="math inline">\(\eta = (\eta_1,\ldots,\eta_{K-1})\)</span> follow a <span class="math inline">\((K-1)\)</span>-dimensional normal distribution,</p>
+<p><span class="math display">\[
+\eta \sim \text{normal}_{K-1}(\mu_\phi,\Sigma_\phi),
+\]</span></p>
+<p>and map it onto the simplex with the additive log-ratio transform, using the <span class="math inline">\(K\)</span>th component as the reference category:</p>
+<p><span class="math display">\[
+\phi_k =
+\frac{\exp(\eta_k)}
+{1+\sum_{j=1}^{K-1}\exp(\eta_j)},
+\qquad k=1,\ldots,K-1,
+\qquad
+\phi_K = 1-\sum_{k=1}^{K-1}\phi_k.
+\]</span></p>
+<p>Note that <span class="math inline">\(\eta\)</span> has only <span class="math inline">\(K-1\)</span> free components. The component <span class="math inline">\(\phi_K\)</span> is fixed. This is done so that the the transform becomes one-to-one, and <span class="math inline">\(\mu_\phi,\Sigma_\phi\)</span> are uniquely determined by the distribution of <span class="math inline">\(\phi\)</span>. A <span class="math inline">\(K\)</span>-dimensional softmax of <span class="math inline">\(K\)</span> free normals would <em>not</em> be identifiable, since shifting all of <span class="math inline">\(\eta\)</span> by a constant leaves <span class="math inline">\(\phi\)</span> unchanged.</p>
+<p>The mean vector <span class="math inline">\(\mu_\phi\)</span> and covariance matrix <span class="math inline">\(\Sigma_\phi\)</span> determine the prior distribution and dependence structure between the variance proportions. Setting <span class="math inline">\(\mu_{\phi,k}=0\)</span> for all <span class="math inline">\(k\)</span> means that, a priori, every proportion <span class="math inline">\(\phi_k\)</span> carries the same weight relative to the reference category, giving a symmetric prior for the variance proportions.</p>
+<section id="hyperparameter-specification-for-the-logistic-normal-decomposition" class="level2">
+<h2 class="anchored" data-anchor-id="hyperparameter-specification-for-the-logistic-normal-decomposition">Hyperparameter specification for the Logistic-Normal decomposition</h2>
+<p>Because the Logistic-Normal distribution’s properties are harder to reason about analytically than the Dirichlet’s, <span class="citation" data-cites="aguilarGeneralizedDecompositionPriors2024">Aguilar and Bürkner (<a href="#ref-aguilarGeneralizedDecompositionPriors2024" role="doc-biblioref">2024</a>)</span> recommend <strong>prior matching</strong>: choose a symmetric Dirichlet<span class="math inline">\((a_\pi)\)</span> with known, well-understood behavior (e.g.&nbsp;<span class="math inline">\(a_\pi \leq 1/2\)</span> for a decomposition that favors sparsity), then set <span class="math inline">\(\mu_\phi,\Sigma_\phi\)</span> to the Logistic-Normal distribution that minimizes the KL divergence to that Dirichlet. This has a closed form:</p>
+<p><span class="math display">\[
+\mu_k^{*} = 0,
+\qquad
+\sigma_{kk}^{*} = 2\,\varepsilon(a_\pi),
+\qquad
+\sigma_{kj}^{*} = \varepsilon(a_\pi) \; (k\neq j),
+\]</span></p>
+<p>where <span class="math inline">\(\varepsilon(\cdot)\)</span> is the trigamma function. This is referred to as the <strong>Full KL</strong> (or LNF) decomposition. A simpler variant drops the off-diagonal terms and keeps only the diagonal covariance <span class="math inline">\(\sigma_{kk}^{*}\)</span>, referred to as <strong>Scales KL</strong> (or LNS). Across the paper’s simulations and real-data case studies, LNS was consistently the best- or near-best-performing decomposition (in out-of-sample predictive accuracy and coefficient recovery), outperforming both the Dirichlet and the Full KL logistic-normal — so it’s a reasonable default when in doubt.</p>
+<p>For example, with <span class="math inline">\(a_\pi = 0.5\)</span> (a common sparsity-inducing choice), <span class="math inline">\(\varepsilon(0.5)=\pi^2/2\)</span>, so the LNS prior reduces to independent <span class="math inline">\(\eta_k \sim \text{normal}(0,\pi^2)\)</span>.</p>
+</section>
 </section>
 <section id="things-to-specify" class="level1">
 <h1>Things to specify</h1>
-<p>Priors on <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\sigma\)</span>. Hyperparameters <span class="math inline">\(\xi\)</span>, <span class="math inline">\(\mu_{R^2}\)</span>, <span class="math inline">\(\phi_{R^2}\)</span>.</p>
-<p>Prior on simplex <span class="math inline">\(\phi\)</span>.</p>
+<p>Priors on <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\sigma\)</span>. Hyperparameters <span class="math inline">\(\mu_{R^2}\)</span>, <span class="math inline">\(\varphi_{R^2}\)</span>, and <span class="math inline">\(\mu_\phi,\Sigma_\phi\)</span> (or equivalently <span class="math inline">\(a_\pi\)</span> for KL matching).</p>
+<p>Hyperparameters <span class="math inline">\(\mu_\phi\)</span> and <span class="math inline">\(\Sigma_\phi\)</span> for the Logistic-Normal prior on the simplex. Rather than specifying these directly, it is usually easier to pick a sparsity-inducing <span class="math inline">\(a_\pi\)</span> (as in the R2D2/Dirichlet case) and derive <span class="math inline">\(\mu_\phi,\Sigma_\phi\)</span> via KL/prior matching, optionally keeping only the diagonal of <span class="math inline">\(\Sigma_\phi\)</span> (the LNS variant) for improved shrinkage and predictive performance.</p>
 </section>
 <section id="implementation" class="level1">
 <h1>Implementation</h1>
 <div class="example stan">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode stan code-with-copy"><code class="sourceCode stan"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">functions</span> {</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">/* Efficient computation of the R2D2 prior</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">   * Args:</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">   *   z: standardized population-level coefficients</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">   *   phi: local weight parameters</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">   *   tau2: global scale parameter</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">   * Returns:</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">   *   population-level coefficients following the R2D2 prior</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">   */</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="dt">vector</span> R2D2(<span class="dt">vector</span> z, <span class="dt">vector</span> phi, <span class="dt">real</span> tau2) {</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> z .* sqrt(phi * tau2);</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="kw">data</span> {</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; N;</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; K;</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="dt">matrix</span>[N, K] X;</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="dt">vector</span>[N] Y;</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> prior_only;  <span class="co">// should the likelihood be ignored?</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="co">// concentration vector of the D2 prior</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="dt">vector</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt;[K<span class="dv">-1</span>] R2D2_cons_D2;</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="co">// data for the R2D2 prior</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; R2D2_mean_R2;  <span class="co">// mean of the R2 prior</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; R2D2_prec_R2;  <span class="co">// precision of the R2 prior</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="kw">transformed data</span> {</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="dt">int</span> Kc = K - <span class="dv">1</span>;</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  <span class="dt">matrix</span>[N, Kc] Xc; <span class="co">// centered version of X without an intercept</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  <span class="dt">vector</span>[Kc] means_X; <span class="co">// column means of X before centering</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  <span class="dt">real</span> sd_Y = sd(Y);</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">2</span> : K) {</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    means_X[i - <span class="dv">1</span>] = mean(X[ : , i]);</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    Xc[ : , i - <span class="dv">1</span>] = X[ : , i] - means_X[i - <span class="dv">1</span>];</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="kw">parameters</span> {</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>  <span class="co">// local parameters for the R2D2 prior</span></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>  <span class="dt">vector</span>[Kc] zb;</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>  <span class="dt">simplex</span>[Kc] R2D2_phi;</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>  <span class="co">// R2D2 shrinkage parameters</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>,<span class="kw">upper</span>=<span class="dv">1</span>&gt; R2D2_R2;  <span class="co">// R2 parameter</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>  <span class="dt">real</span>&lt;<span class="kw">lower</span>=<span class="dv">0</span>&gt; sigma;  <span class="co">// dispersion parameter</span></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>  <span class="dt">real</span> a_c;</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="kw">transformed parameters</span> {</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>  <span class="dt">vector</span>[Kc] b;  <span class="co">// population-level effects</span></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>  <span class="dt">real</span> R2D2_tau2;  <span class="co">// global R2D2 scale parameter</span></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>  <span class="dt">array</span>[Kc+<span class="dv">4</span>] <span class="dt">real</span> lprior;</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>  R2D2_tau2 = sigma^<span class="dv">2</span> * R2D2_R2 / (<span class="dv">1</span> - R2D2_R2);</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>  <span class="co">// compute actual regression coefficients</span></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>  b = R2D2(zb, R2D2_phi, R2D2_tau2);</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>  lprior[<span class="dv">1</span>] = student_t_lpdf(a_c | <span class="dv">4</span>, <span class="dv">0</span>, sd_Y);</span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (k <span class="cf">in</span> <span class="dv">1</span>:Kc) {</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    lprior[k+<span class="dv">1</span>] = std_normal_lpdf(zb[k]);</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>  lprior[Kc+<span class="dv">2</span>] = beta_lpdf(R2D2_R2 | R2D2_mean_R2 * R2D2_prec_R2, (<span class="dv">1</span> - R2D2_mean_R2) * R2D2_prec_R2);</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>  lprior[Kc+<span class="dv">3</span>] = dirichlet_lpdf(R2D2_phi | R2D2_cons_D2);</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>  lprior[Kc+<span class="dv">4</span>] = student_t_lpdf(sigma | <span class="dv">3</span>, <span class="dv">0</span>, sd_Y);</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="kw">model</span> {</span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>  <span class="co">// likelihood including constants</span></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (!prior_only) {</span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>    <span class="kw">target +=</span> normal_id_glm_lpdf(Y | Xc, a_c, b, sigma);</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>  <span class="co">// priors including constants</span></span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>  <span class="kw">target +=</span> sum(lprior);</span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code></code></pre>
+</div>
+<div class="example pymc">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 
 

@@ -102,7 +102,7 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-e3adbaa939bcd423dddc8c8a834270b4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3e9b1289f5f353c49b617ce48ad2bc38.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -448,7 +448,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../gen_linear_regression/gr2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Generalised R2</span></a>
+ <span class="menu-text">Generalized decomposition R2</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -594,14 +594,14 @@ window.Quarto = {
 <p>For a linear model:</p>
 <p><span class="math display">\[
 \begin{align}
-y_i &amp;\sim \text{normal} (\mu_i,\sigma^2) \\
-\mu_i &amp;= \alpha + \beta \cdot x_i
+y_i &amp;\sim \text{normal}(\mu_i,\sigma^2) \\
+\mu_i &amp;= \alpha + \sum_{k=1}^{K}\beta_k x_{ik}
 \end{align}
 \]</span></p>
 <p>The prior is:</p>
 <p><span class="math display">\[
 \begin{align}
-\beta_i &amp;\sim \text{normal}\left(0, \frac{\sigma^2}{\sigma_{y_{t}\mid \theta}^2}\tau^2\psi_i\right) \\
+\beta_k &amp;\sim \text{normal}\left(0, \frac{\sigma^2}{\sigma_{y_{t}\mid \theta}^2}\tau^2\psi_k\right) \\
 \tau^2 &amp;= \frac{R^2}{1 - R^2} \\
 R^2 &amp;\sim \text{beta}(\mu_{R^2},\phi_{R^2}) \\
 \psi &amp;\sim \text{Dirichlet}(\xi_1,\dotsc,\xi_p) \\
@@ -609,6 +609,7 @@ R^2 &amp;\sim \text{beta}(\mu_{R^2},\phi_{R^2}) \\
 \alpha &amp;\sim p(\alpha)
 \end{align}
 \]</span></p>
+<p>The proportions <span class="math inline">\(\psi_k\)</span> determine how the total prior variance <span class="math inline">\(\tau^2\)</span> is allocated among the regression coefficients.</p>
 </section>
 <section id="things-to-specify" class="level1">
 <h1>Things to specify</h1>
@@ -707,7 +708,7 @@ R^2 &amp;\sim \text{beta}(\mu_{R^2},\phi_{R^2}) \\
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>K <span class="op">=</span> X.shape[<span class="dv">1</span>]</span>
 <span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>cons_D2 <span class="op">=</span> np.full(K, <span class="dv">1</span>)</span>
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>mean_R2 <span class="op">=</span> <span class="fl">0.3</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>prec_R2 <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>prec_R2 <span class="op">=</span> <span class="fl">3.0</span></span>
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> pm.Model() <span class="im">as</span> model:</span>
 <span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># prior for the intercept and error term</span></span>
@@ -1142,8 +1143,8 @@ Zhang, Yan Dora, Brian P. Naughton, Howard D. Bondell, and Brian J. Reich. 2022.
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../gen_linear_regression/gr2.html" class="pagination-link" aria-label="Generalised R2">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Generalised R2</span>
+      <a href="../gen_linear_regression/gr2.html" class="pagination-link" aria-label="Generalized decomposition R2">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Generalized decomposition R2</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
