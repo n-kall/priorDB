@@ -4,7 +4,7 @@ title: Generalized decomposition R2
 
 # Description
 
-The GDR2 prior [@aguilarGeneralizedDecompositionPriors2024] is a global-local shrinkage prior that generalizes [R2D2](gen_linear_regression/r2d2.html) by replacing the Dirichlet decomposition of the total explained variance with other distributions on the simplex. From this perspective the R2D2 prior is a special case, and many alternative decompositions are possible. In particular, one useful alternative is the Logistic-Normal distribution, because it allows for a flexible way to encode prior dependence between the variance proportions.
+The GDR2 prior [@aguilarGeneralizedDecompositionPriors2024] is a global-local shrinkage prior that generalizes [R2D2](r2d2.html) by replacing the Dirichlet decomposition of the total explained variance with other distributions on the simplex. From this perspective the R2D2 prior is a special case, and many alternative decompositions are possible. In particular, one useful alternative is the Logistic-Normal distribution, because it allows for a flexible way to encode prior dependence between the variance proportions.
 
 # Definition
 
@@ -38,35 +38,53 @@ $$
 
 The proportions $\phi_k$ determine how the global scale $\tau^2$ is allocated among the regression coefficients. The GDR2 framework allows different distributions for $\phi$; the Logistic-Normal distribution is the principal alternative to the Dirichlet distribution considered in the paper by @aguilarGeneralizedDecompositionPriors2024.
 
-For a symmetric Logistic-Normal decomposition, let
+For a Logistic-Normal decomposition, let $\eta = (\eta_1,\ldots,\eta_{K-1})$ follow a $(K-1)$-dimensional normal distribution,
 
 $$
-\eta \sim \text{normal}_K(\mu_\phi,\Sigma_\phi)
+\eta \sim \text{normal}_{K-1}(\mu_\phi,\Sigma_\phi),
 $$
 
-and transform to the simplex using
+and map it onto the simplex with the additive log-ratio transform, using the $K$th component as the reference category:
 
 $$
 \phi_k =
 \frac{\exp(\eta_k)}
-{\sum_{j=1}^{K}\exp(\eta_j)}.
+{1+\sum_{j=1}^{K-1}\exp(\eta_j)},
+\qquad k=1,\ldots,K-1,
+\qquad
+\phi_K = 1-\sum_{k=1}^{K-1}\phi_k.
 $$
 
-The mean vector $\mu_\phi$ and covariance matrix $\Sigma_\phi$ determine the prior distribution and dependence structure between the variance proportions. Setting $\mu_{\phi,k}=0$ for all $k$ gives a symmetric prior for the variance proportions.
+Note that $\eta$ has only $K-1$ free components. The component $\phi_K$ is fixed. This is done so that the the transform becomes one-to-one, and $\mu_\phi,\Sigma_\phi$ are uniquely determined by the distribution of $\phi$. A $K$-dimensional softmax of $K$ free normals would *not* be identifiable, since shifting all of $\eta$ by a constant leaves $\phi$ unchanged.
+
+The mean vector $\mu_\phi$ and covariance matrix $\Sigma_\phi$ determine the prior distribution and dependence structure between the variance proportions. Setting $\mu_{\phi,k}=0$ for all $k$ means that, a priori, every proportion $\phi_k$ carries the same weight relative to the reference category, giving a symmetric prior for the variance proportions.
+
+## Hyperparameter specification for the Logistic-Normal decomposition
+
+Because the Logistic-Normal distribution's properties are harder to reason about analytically than the Dirichlet's, @aguilarGeneralizedDecompositionPriors2024 recommend **prior matching**: choose a symmetric Dirichlet$(a_\pi)$ with known, well-understood behavior (e.g. $a_\pi \leq 1/2$ for a decomposition that favors sparsity), then set $\mu_\phi,\Sigma_\phi$ to the Logistic-Normal distribution that minimizes the KL divergence to that Dirichlet. This has a closed form:
+
+$$
+\mu_k^{*} = 0,
+\qquad
+\sigma_{kk}^{*} = 2\,\varepsilon(a_\pi),
+\qquad
+\sigma_{kj}^{*} = \varepsilon(a_\pi) \; (k\neq j),
+$$
+
+where $\varepsilon(\cdot)$ is the trigamma function. This is referred to as the **Full KL** (or LNF) decomposition. A simpler variant drops the off-diagonal terms and keeps only the diagonal covariance $\sigma_{kk}^{*}$, referred to as **Scales KL** (or LNS). Across the paper's simulations and real-data case studies, LNS was consistently the best- or near-best-performing decomposition (in out-of-sample predictive accuracy and coefficient recovery), outperforming both the Dirichlet and the Full KL logistic-normal — so it's a reasonable default when in doubt.
+
+For example, with $a_\pi = 0.5$ (a common sparsity-inducing choice), $\varepsilon(0.5)=\pi^2/2$, so the LNS prior reduces to independent $\eta_k \sim \text{normal}(0,\pi^2)$.
 
 # Things to specify
 
-Priors on $\alpha$ and $\sigma$.
+Priors on $\alpha$ and $\sigma$. Hyperparameters $\mu_{R^2}$, $\varphi_{R^2}$, and $\mu_\phi,\Sigma_\phi$ (or equivalently $a_\pi$ for KL matching).
 
-Hyperparameters $\mu_{R^2}$ and $\varphi_{R^2}$ for the prior on $R^2$.
-
-Hyperparameters $\mu_\phi$ and $\Sigma_\phi$ for the Logistic-Normal prior on the simplex.
-
+Hyperparameters $\mu_\phi$ and $\Sigma_\phi$ for the Logistic-Normal prior on the simplex. Rather than specifying these directly, it is usually easier to pick a sparsity-inducing $a_\pi$ (as in the R2D2/Dirichlet case) and derive $\mu_\phi,\Sigma_\phi$ via KL/prior matching, optionally keeping only the diagonal of $\Sigma_\phi$ (the LNS variant) for improved shrinkage and predictive performance.
 
 # Implementation
 
 ::: {.example .stan}
-```{.stan include="../stan/gdr2.stan"}
+```
 ```
 :::
 
