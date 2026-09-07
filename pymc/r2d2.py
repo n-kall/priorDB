@@ -14,7 +14,7 @@ sd_y = y.std(ddof=1)
 K = X.shape[1]
 cons_D2 = np.full(K, 1)
 mean_R2 = 0.3
-prec_R2 = 3
+prec_R2 = 3.0
 
 with pm.Model() as model:
     # prior for the intercept and error term
