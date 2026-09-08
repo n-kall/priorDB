@@ -61,7 +61,7 @@ model {
   // Scales KL (LNS) prior-matching default: independent N(0, pi) for a_pi = 0.5
   eta ~ normal(0, pi());
   
-  R2 ~ beta(mean_R2 * prec_R2, (1.0 - mean_R2) * prec_R2);
+  R2 ~ beta_proportion(mean_R2, prec_R2);
 
   // Likelihood
   if (!prior_only) {
