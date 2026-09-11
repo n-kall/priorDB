@@ -2,29 +2,51 @@
 title: ARR2
 ---
 
-## Description
+# Description
 
-Developed by [@kohnsARR2PriorFlexible2024a], it is similar to the R2-D2 prior [@zhangBayesianRegressionUsing2022a] but for autoregression.
+The ARR2 prior [@kohnsARR2PriorFlexible2024a] is a global-local shrinkage prior for autoregressive models. It adapts the R2-D2 prior [@zhangBayesianRegressionUsing2022a] to the time-series setting by placing a joint prior on the autoregressive coefficients and their induced $R^2$. Compared to other priors for time-series models, the ARR2 prior allows for flexible and interpretable shrinkage: the user can encode prior beliefs about the overall explanatory power of the lagged outcomes (via $R^2$) and about the relative importance of each lag (via the simplex proportions $\psi$).
 
-## Definition
+# Definition
+
+For an AR($p$) model:
 
 $$
-\begin{align*}
-\phi_i &\sim \text{normal}\left(0, \frac{\sigma^2}{\sigma_{y}^2}\tau^2\psi_i\right) \\
-\tau^2 &= \frac{R^2}{1 - R^2} \\
-R^2 &\sim \text{beta}(\mu_R,\sigma_R) \\ 
-\psi &\sim \text{Dirichlet}(\xi_1,\dotsc,\xi_p) \\
-\sigma^2 &\sim p(\sigma^2) \\
-\end{align*}
+\begin{align}
+y_t &\sim \text{normal}(\mu_t, \sigma^2), \quad t = p+1, \dotsc, T \\
+\mu_t &= \sum_{i=1}^{p} \phi_i \, y_{t-i}
+\end{align}
 $$
 
-## Things to specify
+the ARR2 prior is:
 
-- Prior on $\sigma^2$
-- $\xi_1 \dotsc \xi_p$ (concentration parameters corresponding to lag coefficients)
-- $\mu_R$ and $\sigma_R$ (location and precision of $R^2$ prior
+$$
+\begin{align}
+\phi_i &\sim \text{normal}\!\left(0,\; \frac{\sigma^2}{\sigma_y^2}\,\tau^2\,\psi_i\right) \\[6pt]
+\tau^2 &= \frac{R^2}{1 - R^2} \\[6pt]
+R^2 &\sim \text{beta}(\mu_{R^2},\, \varphi_{R^2}) \\[6pt]
+\psi &\sim \text{Dirichlet}(\xi_1, \dotsc, \xi_p) \\[6pt]
+\sigma &\sim p(\sigma)
+\end{align}
+$$
 
-## Stan code
+where $\sigma_y^2$ is the (unconditional) sample variance of $y$.
 
+The signal-to-noise ratio $\tau^2 = R^2/(1-R^2)$ reparameterizes the prior in terms of $R^2$, the proportion of variance in $y$ explained by the autoregressive component. The proportions $\psi_i$ lie on the simplex ($\psi_i \geq 0$, $\sum_i \psi_i = 1$) and determine how the total prior variance $\tau^2$ is allocated among the $p$ lag coefficients. A symmetric Dirichlet concentration $\xi_i = a_\pi$ with $a_\pi \leq 1/2$ favours sparsity, concentrating the explanatory power on a few lags.
+
+The scaling by $\sigma^2 / \sigma_y^2$ ensures that the prior on the AR coefficients is invariant to the units of $y$: the coefficients $\phi_i$ are dimensionless (they relate $y_t$ to past values of $y$ in the same units), and the factor $\sigma_y^2$ normalizes the prior variance relative to the unconditional variability of the series.
+
+# Things to specify
+
+Prior on $\sigma$. Hyperparameters $\mu_{R^2}$ and $\varphi_{R^2}$ (mean and precision of the $R^2$ prior), and $\xi_1, \dotsc, \xi_p$ (Dirichlet concentration parameters for the lag-coefficient proportions).
+
+# Implementation
+
+::: {.example .stan}
 ```{.stan include="../stan/arr2.stan"}
 ```
+:::
+
+::: {.example .pymc}
+```{.python include="../pymc/arr2.py"}
+```
+:::
